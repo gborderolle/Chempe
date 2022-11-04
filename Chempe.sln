@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31112.23
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Chempe", "Chempe\Chempe.csproj", "{5C274B9F-1A16-4ACE-AC2C-0AA1350C9498}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csproj", "{767E360F-8584-4C97-B4C5-8B834F00F893}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Services", "Services\Services.csproj", "{E3DA31D4-572B-463C-B1D0-1CF1B847FF85}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5C274B9F-1A16-4ACE-AC2C-0AA1350C9498}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C274B9F-1A16-4ACE-AC2C-0AA1350C9498}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C274B9F-1A16-4ACE-AC2C-0AA1350C9498}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C274B9F-1A16-4ACE-AC2C-0AA1350C9498}.Release|Any CPU.Build.0 = Release|Any CPU
+		{767E360F-8584-4C97-B4C5-8B834F00F893}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{767E360F-8584-4C97-B4C5-8B834F00F893}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{767E360F-8584-4C97-B4C5-8B834F00F893}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{767E360F-8584-4C97-B4C5-8B834F00F893}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3DA31D4-572B-463C-B1D0-1CF1B847FF85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3DA31D4-572B-463C-B1D0-1CF1B847FF85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3DA31D4-572B-463C-B1D0-1CF1B847FF85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3DA31D4-572B-463C-B1D0-1CF1B847FF85}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7DCDC7CF-B5BC-4C3E-BCBE-2EF04DC990CB}
+	EndGlobalSection
+EndGlobal
