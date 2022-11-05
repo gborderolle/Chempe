@@ -28,8 +28,23 @@ namespace Chempe
             services.AddDistributedMemoryCache();
             services.AddControllersWithViews();
             services.AddHttpContextAccessor();
-            services.AddTransient<Service_User_Client>();
-            services.AddTransient<Service_User_Investor>();
+
+            services.AddTransient<Service_Logs>();
+            services.AddTransient<Service_Acceptance>();
+            services.AddTransient<Service_Approval>();
+            services.AddTransient<Service_Assignment>();
+            services.AddTransient<Service_Document>();
+            services.AddTransient<Service_Global_variables>();
+            services.AddTransient<Service_Logs>();
+            services.AddTransient<Service_Person>();
+            services.AddTransient<Service_Photo>();
+            services.AddTransient<Service_Pledge>();
+            services.AddTransient<Service_Pledge_state>();
+            services.AddTransient<Service_Request>();
+            services.AddTransient<Service_User_client>();
+            services.AddTransient<Service_User_chempe>();
+            services.AddTransient<Service_User_investor>();
+            services.AddTransient<Service_Warrant>();
 
             bool contextIsLocal = false;
             if (!bool.TryParse(_configuration.GetConnectionString("ConnectionString_isLocal"), out contextIsLocal))
@@ -80,7 +95,8 @@ namespace Chempe
                     name: "default",
                     //pattern: "{controller=Home}/{action=Index}/{id?}");
                     //pattern: "{controller=User_client}/{action=Dashboard}/{id?}");
-                    pattern: "{controller=User_client}/{action=New_client}/{id?}");
+                    //pattern: "{controller=User_client}/{action=New_client}/{id?}");
+                    pattern: "{controller=User_client}/{action=New_request}/{id?}");
 
                 //endpoints.MapControllerRoute(
                 //   name: "GMaps_inicio",

@@ -3,14 +3,17 @@
 
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Chempeño</title>
+    <title>Chempeño: @ViewData["Title"] </title>
 
     <!-- Meta Tags -->
     <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
     <title>Chempeño</title>
-    <meta name="description" content="A modern CRM Dashboard Template with reusable and flexible components for your SaaS web applications by hencework. Based on Bootstrap." />
+    <meta name="description" content="Chempeño" />
     <!-- Favicon -->
     <link href="~/img/brand-sm.ico" rel="shortcut icon" type="image/x-icon" />
     <!-- Daterangepicker CSS -->
@@ -22,11 +25,22 @@
     <!-- JQuery UI CSS -->
     <link href="~/vendors/jquery/dist/jquery-ui.css" rel="stylesheet" type="text/css" />
 
+    <!-- Sweet Alert CSS -->
+    <link rel="stylesheet" href="~/vendors/sweetalert/sweetalert.css" />
+
     <!-- CSS -->
     <link href="~/css/style.css" rel="stylesheet" type="text/css">
     <style type="text/css">
         .pointer {
             cursor: pointer;
+        }
+
+        .swal-title {
+            padding: 0 !important;
+        }
+
+        .swal-footer {
+            margin: 0 !important;
         }
     </style>
 
@@ -756,6 +770,14 @@
     <script src="~/vendors/%40amcharts/amcharts4/themes/animated.js"></script>
     <!-- Apex JS -->
     <script src="~/vendors/apexcharts/dist/apexcharts.min.js"></script>
+
+    <!-- Sweet Alert JS -->
+    <script src="~/vendors/sweetalert/sweetalert.min.js"></script>
+
+    <!-- Auxiliar functions JS -->
+    <script src="~/js/auxiliar_functions.js"></script>
+
+
     <!-- Init JS -->
     <script src="~/js/init.js"></script>
     <script src="~/js/chips-init.js"></script>

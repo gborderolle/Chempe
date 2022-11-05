@@ -12,6 +12,12 @@ Acceptance - Aceptación del crédito por parte del cliente
 Assignment - Asignación del crédito a un usuario inversor
 
 
+Tengo que pedir factura de compra para oficializar los datos relevantes del Bien:
+- Fecha de compra
+- Antiguedad
+
+=> Calcular la amortización y valor razonable de mercado.
+
 ----
 Orden del proceso:
 

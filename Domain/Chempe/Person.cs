@@ -8,12 +8,17 @@ namespace Domain.Chempe
     {
         [Key]
         public int Person_ID { get; set; }
+        [MaxLength(80)]
         public string Full_name { get; set; }
+        [MaxLength(30)]
         public string Email { get; set; }
+        [MaxLength(20)]
+        public string Password { get; set; }
         public string Identification { get; set; }
+        public string Gender { get; set; }
         public DateTime? Date_born { get; set; }
-        [ForeignKey("User_client_ID")]
         public Photo Photo { get; set; }
+        [ForeignKey("User_client_ID")]
         public User_client User_client { get; set; }
         [ForeignKey("User_investor_ID")]
         public User_investor User_investor { get; set; }

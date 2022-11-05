@@ -103,6 +103,35 @@ namespace Domain.Migrations
                     b.ToTable("List_goods_type");
                 });
 
+            modelBuilder.Entity("Domain.Chempe.Logs", b =>
+                {
+                    b.Property<int>("Log_ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("Datetime_created")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("IP_client")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Info")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("Person_ID")
+                        .HasColumnType("int");
+
+                    b.HasKey("Log_ID");
+
+                    b.HasIndex("Person_ID");
+
+                    b.ToTable("Logs");
+                });
+
             modelBuilder.Entity("Domain.Chempe.Person", b =>
                 {
                     b.Property<int>("Person_ID")
@@ -114,13 +143,25 @@ namespace Domain.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Email")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)");
 
                     b.Property<string>("Full_name")
+                        .HasMaxLength(80)
+                        .HasColumnType("nvarchar(80)");
+
+                    b.Property<string>("Gender")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Identification")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Password")
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
+
+                    b.Property<int?>("Photo_ID")
+                        .HasColumnType("int");
 
                     b.Property<int?>("User_chempe_ID")
                         .HasColumnType("int");
@@ -128,19 +169,16 @@ namespace Domain.Migrations
                     b.Property<int?>("User_client_ID")
                         .HasColumnType("int");
 
-                    b.Property<int?>("User_client_ID1")
-                        .HasColumnType("int");
-
                     b.Property<int?>("User_investor_ID")
                         .HasColumnType("int");
 
                     b.HasKey("Person_ID");
 
+                    b.HasIndex("Photo_ID");
+
                     b.HasIndex("User_chempe_ID");
 
                     b.HasIndex("User_client_ID");
-
-                    b.HasIndex("User_client_ID1");
 
                     b.HasIndex("User_investor_ID");
 
@@ -253,12 +291,7 @@ namespace Domain.Migrations
                     b.Property<string>("User_name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("User_setting_ID")
-                        .HasColumnType("int");
-
                     b.HasKey("User_chempe_ID");
-
-                    b.HasIndex("User_setting_ID");
 
                     b.ToTable("User_chempe");
                 });
@@ -270,20 +303,7 @@ namespace Domain.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Password")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("User_name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("User_setting_ID")
-                        .HasColumnType("int");
-
                     b.HasKey("User_client_ID");
-
-                    b.HasIndex("User_setting_ID")
-                        .IsUnique()
-                        .HasFilter("[User_setting_ID] IS NOT NULL");
 
                     b.ToTable("User_client");
                 });
@@ -304,31 +324,9 @@ namespace Domain.Migrations
                     b.Property<string>("User_name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("User_setting_ID")
-                        .HasColumnType("int");
-
                     b.HasKey("User_investor_ID");
 
-                    b.HasIndex("User_setting_ID")
-                        .IsUnique()
-                        .HasFilter("[User_setting_ID] IS NOT NULL");
-
                     b.ToTable("User_investor");
-                });
-
-            modelBuilder.Entity("Domain.Chempe.User_setting", b =>
-                {
-                    b.Property<int>("User_setting_ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Value")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("User_setting_ID");
-
-                    b.ToTable("User_setting");
                 });
 
             modelBuilder.Entity("Domain.Chempe.Warrant", b =>
@@ -384,19 +382,28 @@ namespace Domain.Migrations
                     b.Navigation("User_assignment");
                 });
 
+            modelBuilder.Entity("Domain.Chempe.Logs", b =>
+                {
+                    b.HasOne("Domain.Chempe.Person", "Person")
+                        .WithMany()
+                        .HasForeignKey("Person_ID");
+
+                    b.Navigation("Person");
+                });
+
             modelBuilder.Entity("Domain.Chempe.Person", b =>
                 {
+                    b.HasOne("Domain.Chempe.Photo", "Photo")
+                        .WithMany()
+                        .HasForeignKey("Photo_ID");
+
                     b.HasOne("Domain.Chempe.User_chempe", "User_chempe")
                         .WithMany()
                         .HasForeignKey("User_chempe_ID");
 
-                    b.HasOne("Domain.Chempe.Photo", "Photo")
-                        .WithMany()
-                        .HasForeignKey("User_client_ID");
-
                     b.HasOne("Domain.Chempe.User_client", "User_client")
                         .WithMany()
-                        .HasForeignKey("User_client_ID1");
+                        .HasForeignKey("User_client_ID");
 
                     b.HasOne("Domain.Chempe.User_investor", "User_investor")
                         .WithMany()
@@ -453,33 +460,6 @@ namespace Domain.Migrations
                     b.Navigation("User_request");
                 });
 
-            modelBuilder.Entity("Domain.Chempe.User_chempe", b =>
-                {
-                    b.HasOne("Domain.Chempe.User_setting", "User_setting")
-                        .WithMany()
-                        .HasForeignKey("User_setting_ID");
-
-                    b.Navigation("User_setting");
-                });
-
-            modelBuilder.Entity("Domain.Chempe.User_client", b =>
-                {
-                    b.HasOne("Domain.Chempe.User_setting", "User_setting")
-                        .WithOne("User_client")
-                        .HasForeignKey("Domain.Chempe.User_client", "User_setting_ID");
-
-                    b.Navigation("User_setting");
-                });
-
-            modelBuilder.Entity("Domain.Chempe.User_investor", b =>
-                {
-                    b.HasOne("Domain.Chempe.User_setting", "User_setting")
-                        .WithOne("User_investor")
-                        .HasForeignKey("Domain.Chempe.User_investor", "User_setting_ID");
-
-                    b.Navigation("User_setting");
-                });
-
             modelBuilder.Entity("Domain.Chempe.Warrant", b =>
                 {
                     b.HasOne("Domain.Chempe.List_goods_type", "Goods_type")
@@ -487,13 +467,6 @@ namespace Domain.Migrations
                         .HasForeignKey("Goods_typeList_goods_type_ID");
 
                     b.Navigation("Goods_type");
-                });
-
-            modelBuilder.Entity("Domain.Chempe.User_setting", b =>
-                {
-                    b.Navigation("User_client");
-
-                    b.Navigation("User_investor");
                 });
 #pragma warning restore 612, 618
         }

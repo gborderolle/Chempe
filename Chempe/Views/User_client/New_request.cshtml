@@ -1,0 +1,144 @@
+﻿@{
+    ViewData["Title"] = "Nueva solicitud de crédito";
+    Layout = "/Views/Shared/_Layout_client.cshtml";
+}
+
+
+<section id="sec_6" class="hk-section">
+    <div class="hk-sec-title">
+        <h5>Inicio de nueva solicitud de crédito</h5>
+        <p>Ingrese sus datos básicos, por favor. Más adelante se le pedirá validar su identidad para mantener la seguridad del servicio.</p>
+    </div>
+
+
+    <div class="col-12">
+        <div class="alert alert-info card card-border card-int mb-4" role="alert">
+            <h4 class="alert-heading mb-2">Metodología</h4>
+            <p>Explicación de que el importe del crédito surge a partir del valor razonable de mercado del bien prendado.</p>
+            <hr class="hr-soft-success">
+            <p>Asegurarse de tener la documentación requerida para dar garantía al crédito, la plataforma y el sustento de la operativa.</p>
+            <div class="card-footer justify-content-between border-0" style="padding: 0;">
+                <span class="d-flex align-items-center fs-8"><i class="ri-information-fill fs-7 me-2"></i>Importante</span>
+                <a href="#" class="btn btn-sm btn-outline-secondary">Entendido</a>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+    <div class="hk-example card card-shadow card-wth-tabs">
+        <div class="card-header">
+            <ul class="nav nav-line nav-tabs nav-sm nav-light card-header-tabs">
+                <li class="nav-item">
+                    <a class="nav-link active" data-bs-toggle="tab" href="#prev_tab_5">
+                        <span class="nav-link-text">Información</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+
+
+
+        <div class="card-body p-0">
+            <div class="tab-content m-0">
+                <div class="tab-pane fade show active" id="prev_tab_5">
+                    <div class="container py-3">
+                        <div class="row">
+                            <div class="col">
+
+
+
+                                <div class="form-group">
+                                    <label class="form-label" for="input_name">Nombre completo</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                        <input type="text" class="form-control" id="input_name" placeholder="Nombre completo">
+                                        &nbsp;
+                                        <span class="form-text text-muted">Como figura en su Cédula de identidad</span>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="input-group col">
+                                        <label class="form-label" for="input_phone">Teléfono móvil</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text"><i class="fa fa-phone"></i></span>
+                                            <input type="text" class="form-control" id="input_phone" placeholder="" data-mask="099 999 999">
+                                        </div>
+                                    </div>
+                                    <div class="input-group col">
+                                        <label class="form-label" for="input_borndate">Fecha de nacimiento</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+                                            <input type="text" class="form-control datepicker" id="input_borndate" placeholder="Fecha de nacimiento">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="input_email">Correo electrónico</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text"><i class="fa fa-inbox"></i></span>
+                                        <input type="email" class="form-control" id="input_email" placeholder="Correo electrónico">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="input_password1">Contraseña</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text"><i class="fa fa-lock"></i></span>
+                                        <input type="password" class="form-control" id="input_password1" placeholder="Contraseña">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="input_password2">Confirmar contraseña</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text"><i class="fa fa-lock"></i></span>
+                                        <input type="password" class="form-control" id="input_password2" placeholder="Confirmar contraseña">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-label" for="input_identity">Cédula de identidad</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text"><i class="fa fa-id-card"></i></span>
+                                        <input type="text" class="form-control" id="input_identity" placeholder="" data-mask="9.999.999-9">
+                                        &nbsp;
+                                        <span class="form-text text-muted">Ejemplo "1.234.567-8"</span>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="form-check">
+                                        <input class="form-check-input pointer" id="input_checkTerms" type="checkbox">
+                                        <label class="form-check-label pointer" for="input_checkTerms">He leído y acepto los términos y condiciones de uso.</label>
+                                    </div>
+                                </div>
+                                <input type="button" class="btn btn-primary me-1" onclick="btn_submit()" value="Iniciar solicitud">
+                                @*<button type="submit" class="btn btn-light">Cancel</button>*@
+
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+</section>
+
+@section scripts{
+    <!-- Jasny-bootstrap JS -->
+    <script src="~/vendors/jasny-bootstrap/dist/js/jasny-bootstrap.min.js"></script>
+
+    <!-- Page JS -->
+    <script src="~/js/pages/new_client.js"></script>
+}

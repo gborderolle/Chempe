@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "lBUrM2+lX4rexxmKdMATSRR79sT6K2GAyyKecfom3/qQvbBgrjpSi7D1Ht+hxXDWIRF/Maivbi+Z2Z5Na7+33Q==",
+  "dgSpecHash": "r1xWUix+I9piTn4phD/k/u/YoF97AKzruPbaEO83rmYXkRsmMqmIWz+cmPEzSUi8nFQw9hY8xtWf0BDRhFwyBw==",
   "success": true,
   "projectFilePath": "D:\\Documents\\GitHub\\Chempe\\Services\\Services.csproj",
   "expectedPackageFiles": [
@@ -112,7 +112,8 @@
     "C:\\Users\\Gonzalo\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\Gonzalo\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Users\\Gonzalo\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
-    "C:\\Users\\Gonzalo\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512"
+    "C:\\Users\\Gonzalo\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512",
+    "C:\\Users\\Gonzalo\\.nuget\\packages\\timezoneconverter\\6.0.1\\timezoneconverter.6.0.1.nupkg.sha512"
   ],
   "logs": []
 }

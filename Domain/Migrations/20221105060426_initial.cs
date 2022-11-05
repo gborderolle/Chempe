@@ -49,16 +49,44 @@ namespace Domain.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "User_setting",
+                name: "User_chempe",
                 columns: table => new
                 {
-                    User_setting_ID = table.Column<int>(type: "int", nullable: false)
+                    User_chempe_ID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Value = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    User_name = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Password = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_User_setting", x => x.User_setting_ID);
+                    table.PrimaryKey("PK_User_chempe", x => x.User_chempe_ID);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "User_client",
+                columns: table => new
+                {
+                    User_client_ID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1")
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_User_client", x => x.User_client_ID);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "User_investor",
+                columns: table => new
+                {
+                    User_investor_ID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    User_name = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Password = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Image_Url = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_User_investor", x => x.User_investor_ID);
                 });
 
             migrationBuilder.CreateTable(
@@ -80,70 +108,6 @@ namespace Domain.Migrations
                         column: x => x.Goods_typeList_goods_type_ID,
                         principalTable: "List_goods_type",
                         principalColumn: "List_goods_type_ID",
-                        onDelete: ReferentialAction.Restrict);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "User_chempe",
-                columns: table => new
-                {
-                    User_chempe_ID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    User_name = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Password = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    User_setting_ID = table.Column<int>(type: "int", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_User_chempe", x => x.User_chempe_ID);
-                    table.ForeignKey(
-                        name: "FK_User_chempe_User_setting_User_setting_ID",
-                        column: x => x.User_setting_ID,
-                        principalTable: "User_setting",
-                        principalColumn: "User_setting_ID",
-                        onDelete: ReferentialAction.Restrict);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "User_client",
-                columns: table => new
-                {
-                    User_client_ID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    User_name = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Password = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    User_setting_ID = table.Column<int>(type: "int", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_User_client", x => x.User_client_ID);
-                    table.ForeignKey(
-                        name: "FK_User_client_User_setting_User_setting_ID",
-                        column: x => x.User_setting_ID,
-                        principalTable: "User_setting",
-                        principalColumn: "User_setting_ID",
-                        onDelete: ReferentialAction.Restrict);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "User_investor",
-                columns: table => new
-                {
-                    User_investor_ID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    User_name = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Password = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Image_Url = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    User_setting_ID = table.Column<int>(type: "int", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_User_investor", x => x.User_investor_ID);
-                    table.ForeignKey(
-                        name: "FK_User_investor_User_setting_User_setting_ID",
-                        column: x => x.User_setting_ID,
-                        principalTable: "User_setting",
-                        principalColumn: "User_setting_ID",
                         onDelete: ReferentialAction.Restrict);
                 });
 
@@ -235,12 +199,14 @@ namespace Domain.Migrations
                 {
                     Person_ID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Full_name = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Email = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Full_name = table.Column<string>(type: "nvarchar(80)", maxLength: 80, nullable: true),
+                    Email = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: true),
+                    Password = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: true),
                     Identification = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Gender = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Date_born = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    Photo_ID = table.Column<int>(type: "int", nullable: true),
                     User_client_ID = table.Column<int>(type: "int", nullable: true),
-                    User_client_ID1 = table.Column<int>(type: "int", nullable: true),
                     User_investor_ID = table.Column<int>(type: "int", nullable: true),
                     User_chempe_ID = table.Column<int>(type: "int", nullable: true)
                 },
@@ -248,8 +214,8 @@ namespace Domain.Migrations
                 {
                     table.PrimaryKey("PK_Person", x => x.Person_ID);
                     table.ForeignKey(
-                        name: "FK_Person_Photo_User_client_ID",
-                        column: x => x.User_client_ID,
+                        name: "FK_Person_Photo_Photo_ID",
+                        column: x => x.Photo_ID,
                         principalTable: "Photo",
                         principalColumn: "Photo_ID",
                         onDelete: ReferentialAction.Restrict);
@@ -260,8 +226,8 @@ namespace Domain.Migrations
                         principalColumn: "User_chempe_ID",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_Person_User_client_User_client_ID1",
-                        column: x => x.User_client_ID1,
+                        name: "FK_Person_User_client_User_client_ID",
+                        column: x => x.User_client_ID,
                         principalTable: "User_client",
                         principalColumn: "User_client_ID",
                         onDelete: ReferentialAction.Restrict);
@@ -321,6 +287,29 @@ namespace Domain.Migrations
                         onDelete: ReferentialAction.Restrict);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "Logs",
+                columns: table => new
+                {
+                    Log_ID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Datetime_created = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Person_ID = table.Column<int>(type: "int", nullable: true),
+                    IP_client = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Info = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Logs", x => x.Log_ID);
+                    table.ForeignKey(
+                        name: "FK_Logs_Person_Person_ID",
+                        column: x => x.Person_ID,
+                        principalTable: "Person",
+                        principalColumn: "Person_ID",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_Acceptance_User_client_ID",
                 table: "Acceptance",
@@ -337,6 +326,16 @@ namespace Domain.Migrations
                 column: "User_investor_ID");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Logs_Person_ID",
+                table: "Logs",
+                column: "Person_ID");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Person_Photo_ID",
+                table: "Person",
+                column: "Photo_ID");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Person_User_chempe_ID",
                 table: "Person",
                 column: "User_chempe_ID");
@@ -345,11 +344,6 @@ namespace Domain.Migrations
                 name: "IX_Person_User_client_ID",
                 table: "Person",
                 column: "User_client_ID");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Person_User_client_ID1",
-                table: "Person",
-                column: "User_client_ID1");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Person_User_investor_ID",
@@ -387,25 +381,6 @@ namespace Domain.Migrations
                 column: "User_client_ID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_User_chempe_User_setting_ID",
-                table: "User_chempe",
-                column: "User_setting_ID");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_User_client_User_setting_ID",
-                table: "User_client",
-                column: "User_setting_ID",
-                unique: true,
-                filter: "[User_setting_ID] IS NOT NULL");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_User_investor_User_setting_ID",
-                table: "User_investor",
-                column: "User_setting_ID",
-                unique: true,
-                filter: "[User_setting_ID] IS NOT NULL");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Warrant_Goods_typeList_goods_type_ID",
                 table: "Warrant",
                 column: "Goods_typeList_goods_type_ID");
@@ -417,13 +392,13 @@ namespace Domain.Migrations
                 name: "Acceptance");
 
             migrationBuilder.DropTable(
-                name: "Person");
+                name: "Logs");
 
             migrationBuilder.DropTable(
                 name: "Pledge");
 
             migrationBuilder.DropTable(
-                name: "Photo");
+                name: "Person");
 
             migrationBuilder.DropTable(
                 name: "Approval");
@@ -441,6 +416,9 @@ namespace Domain.Migrations
                 name: "Warrant");
 
             migrationBuilder.DropTable(
+                name: "Photo");
+
+            migrationBuilder.DropTable(
                 name: "User_chempe");
 
             migrationBuilder.DropTable(
@@ -451,9 +429,6 @@ namespace Domain.Migrations
 
             migrationBuilder.DropTable(
                 name: "List_goods_type");
-
-            migrationBuilder.DropTable(
-                name: "User_setting");
         }
     }
 }
