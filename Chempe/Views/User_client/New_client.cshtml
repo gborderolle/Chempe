@@ -30,109 +30,91 @@
                             <div class="col">
 
 
-                                <form>
-                                    <div class="form-group">
-                                        <label class="form-label" for="exampleInputuname_1">Nombre completo</label>
+                                <div class="form-group">
+                                    <label class="form-label" for="input_name">Nombre completo</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                        <input type="text" class="form-control" id="input_name" placeholder="Nombre completo">
+                                        &nbsp;
+                                        <span class="form-text text-muted">Como figura en su Cédula de identidad</span>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="input-group col">
+                                        <label class="form-label" for="input_phone">Teléfono móvil</label>
                                         <div class="input-group">
-                                            <span class="input-group-text"><i class="fa fa-user"></i></span>
-                                            <input type="text" class="form-control" id="exampleInputuname_1" placeholder="Nombre completo">
-                                            &nbsp;
-                                            <span class="form-text text-muted">Como figura en su Cédula de identidad</span>
+                                            <span class="input-group-text"><i class="fa fa-phone"></i></span>
+                                            <input type="text" class="form-control" id="input_phone" placeholder="" data-mask="099 999 999">
                                         </div>
                                     </div>
-                                    <div class="form-group row">
-                                        <div class="input-group col">
-                                            <label class="form-label" for="exampleInputuname_1">Teléfono móvil</label>
-                                            <div class="input-group">
-                                                <span class="input-group-text"><i class="fa fa-phone"></i></span>
-                                                <input type="text" class="form-control" id="exampleInputuname_1" placeholder="" data-mask="099 999 999">
-                                            </div>
-                                        </div>
-                                        <div class="input-group col">
-                                            <label class="form-label" for="exampleInputuname_1">Fecha de nacimiento</label>
-                                            <div class="input-group">
-                                                <span class="input-group-text"><i class="fa fa-calendar"></i></span>
-                                                <input type="text" class="form-control" id="datepicker" placeholder="Fecha de nacimiento">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="form-label" for="exampleInputEmail_1">Correo electrónico</label>
+                                    <div class="input-group col">
+                                        <label class="form-label" for="input_borndate">Fecha de nacimiento</label>
                                         <div class="input-group">
-                                            <span class="input-group-text"><i class="fa fa-inbox"></i></span>
-                                            <input type="email" class="form-control" id="exampleInputEmail_1" placeholder="Correo electrónico">
+                                            <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+                                            <input type="text" class="form-control datepicker" id="input_borndate" placeholder="Fecha de nacimiento">
                                         </div>
                                     </div>
-                                    <div class="form-group">
-                                        <label class="form-label" for="exampleInputpwd_1">Contraseña</label>
-                                        <div class="input-group">
-                                            <span class="input-group-text"><i class="fa fa-lock"></i></span>
-                                            <input type="password" class="form-control" id="exampleInputpwd_1" placeholder="Contraseña">
-                                        </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="input_email">Correo electrónico</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text"><i class="fa fa-inbox"></i></span>
+                                        <input type="email" class="form-control" id="input_email" placeholder="Correo electrónico">
                                     </div>
-                                    <div class="form-group">
-                                        <label class="form-label" for="exampleInputpwd_2">Confirmar contraseña</label>
-                                        <div class="input-group">
-                                            <span class="input-group-text"><i class="fa fa-lock"></i></span>
-                                            <input type="password" class="form-control" id="exampleInputpwd_2" placeholder="Confirmar contraseña">
-                                        </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="input_password1">Contraseña</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text"><i class="fa fa-lock"></i></span>
+                                        <input type="password" class="form-control" id="input_password1" placeholder="Contraseña">
                                     </div>
-                                    <div class="form-group row">
-                                        <div class="input-group col">
-                                            <label class="form-label">Género</label>
-                                            <div style="padding: 5px;">
-                                                <div class="form-check mb-1">
-                                                    <input id="radio_1" name="radio1" class="form-check-input" checked="" type="radio">
-                                                    <label class="form-check-label" for="radio_1">Masculino</label>
-                                                </div>
-                                                <div class="form-check">
-                                                    <input id="radio_2" name="radio1" class="form-check-input" checked="" type="radio">
-                                                    <label class="form-check-label" for="radio_1">Femenino</label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="input-group col">
-                                            <label class="form-label" for="exampleInputuname_1">Cédula de identidad</label>
-                                            <div class="input-group">
-                                                <span class="input-group-text"><i class="fa fa-id-card"></i></span>
-                                                <input type="text" class="form-control" id="exampleInputuname_1" placeholder="" data-mask="9.999.999-9">
-                                                &nbsp;
-                                                <span class="form-text text-muted">Ejemplo "1.234.567-8"</span>
-                                            </div>
-                                        </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="input_password2">Confirmar contraseña</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text"><i class="fa fa-lock"></i></span>
+                                        <input type="password" class="form-control" id="input_password2" placeholder="Confirmar contraseña">
                                     </div>
+                                </div>
 
-                                    <div class="form-group">
-                                        <div class="form-check">
-                                            <input class="form-check-input" id="checkbox_1" type="checkbox">
-                                            <label class="form-check-label" for="checkbox_1">He leído y acepto los términos y condiciones de uso.</label>
-                                        </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="input_identity">Cédula de identidad</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text"><i class="fa fa-id-card"></i></span>
+                                        <input type="text" class="form-control" id="input_identity" placeholder="" data-mask="9.999.999-9">
+                                        &nbsp;
+                                        <span class="form-text text-muted">Ejemplo "1.234.567-8"</span>
                                     </div>
-                                    <button type="submit" class="btn btn-primary me-1">Registrarme</button>
-                                    @*<button type="submit" class="btn btn-light">Cancel</button>*@
-                                </form>
+                                </div>
 
+                                <div class="form-group">
+                                    <div class="form-check">
+                                        <input class="form-check-input pointer" id="input_checkTerms" type="checkbox">
+                                        <label class="form-check-label pointer" for="input_checkTerms">He leído y acepto los términos y condiciones de uso.</label>
+                                    </div>
+                                </div>
+                                <input type="button" class="btn btn-primary me-1" onclick="btn_submit()" value="Registrarme">
+                                <button type="submit" class="btn btn-light">Cancelar</button>
+
+
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+
+
         </div>
+    </section>
 
+    @section scripts{
+        <!-- Jasny-bootstrap JS -->
+        <script src="~/vendors/jasny-bootstrap/dist/js/jasny-bootstrap.min.js"></script>
 
-
-    </div>
-</section>
-
-@section scripts{
-    <!-- Jasny-bootstrap  JavaScript -->
-    <script src="~/vendors/jasny-bootstrap/dist/js/jasny-bootstrap.min.js"></script>
-
-    <script>
-        $(function () {
-            $("#datepicker").datepicker();
-        });
-    </script>
-}
+        <!-- Page JS -->
+        <script src="~/js/pages/new_client.js"></script>
+    }
 
 

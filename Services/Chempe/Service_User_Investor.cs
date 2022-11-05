@@ -3,16 +3,16 @@ using Microsoft.Extensions.Configuration;
 
 namespace Services.Chempe
 {
-    public class Service_User_Investor
+    public class Service_User_investor
     {
-        private readonly Chempedb_context _chevacaDB_context;
+        private readonly Chempedb_context _chempedb_context;
         private readonly IConfiguration _configuration;
 
         Configurations _configurations = new();
 
-        public Service_User_Investor(Chempedb_context chevacaDB_context, IConfiguration configuration)
+        public Service_User_investor(Chempedb_context chempedb_context, IConfiguration configuration)
         {
-            _chevacaDB_context = chevacaDB_context;
+            _chempedb_context = chempedb_context;
             _configuration = configuration;
         }
     }

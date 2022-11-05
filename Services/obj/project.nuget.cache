@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "T7q0cte4FpXg1BpF8Q/0QmWXLpvfqp7luWWBj8HJeezbUgdJw1XlNzU8Bc60URB2NXInWnHyQTxZNYf3UV0pzA==",
+  "dgSpecHash": "r1xWUix+I9piTn4phD/k/u/YoF97AKzruPbaEO83rmYXkRsmMqmIWz+cmPEzSUi8nFQw9hY8xtWf0BDRhFwyBw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Gonzalo\\Documents\\GitHub\\Chempe\\Services\\Services.csproj",
+  "projectFilePath": "D:\\Documents\\GitHub\\Chempe\\Services\\Services.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Gonzalo\\.nuget\\packages\\microsoft.aspnetcore.http\\2.2.2\\microsoft.aspnetcore.http.2.2.2.nupkg.sha512",
     "C:\\Users\\Gonzalo\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
@@ -112,7 +112,8 @@
     "C:\\Users\\Gonzalo\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\Gonzalo\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Users\\Gonzalo\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
-    "C:\\Users\\Gonzalo\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512"
+    "C:\\Users\\Gonzalo\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512",
+    "C:\\Users\\Gonzalo\\.nuget\\packages\\timezoneconverter\\6.0.1\\timezoneconverter.6.0.1.nupkg.sha512"
   ],
   "logs": []
 }
