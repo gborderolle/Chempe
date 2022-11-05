@@ -83,3 +83,4 @@ D:\Documents\GitHub\Chempe\Chempe\obj\Debug\net5.0\Razor\Views\User_client\Dashb
 D:\Documents\GitHub\Chempe\Chempe\obj\Debug\net5.0\Razor\Views\User_client\New_client.cshtml.g.cs
 D:\Documents\GitHub\Chempe\Chempe\bin\Debug\net5.0\TimeZoneConverter.dll
 D:\Documents\GitHub\Chempe\Chempe\obj\Debug\net5.0\Razor\Views\User_client\New_request.cshtml.g.cs
+D:\Documents\GitHub\Chempe\Chempe\obj\Debug\net5.0\Razor\Views\User_client\Client_validation.cshtml.g.cs

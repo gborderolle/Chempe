@@ -42,6 +42,12 @@ namespace Chempe.Controllers
             return View();
         }
 
+        public IActionResult client_validation()
+        {
+            return View();
+        }
+
+
         #endregion
 
         #region Llamadas Ajax 

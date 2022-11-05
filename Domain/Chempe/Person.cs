@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -24,6 +25,7 @@ namespace Domain.Chempe
         public User_investor User_investor { get; set; }
         [ForeignKey("User_chempe_ID")]
         public User_chempe User_chempe { get; set; }
+        public List<Document> List_documents { get; set; }
 
     }
 }

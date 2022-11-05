@@ -36,7 +36,7 @@
             <ul class="nav nav-line nav-tabs nav-sm nav-light card-header-tabs">
                 <li class="nav-item">
                     <a class="nav-link active" data-bs-toggle="tab" href="#prev_tab_5">
-                        <span class="nav-link-text">Información</span>
+                        <span class="nav-link-text">Información general</span>
                     </a>
                 </li>
             </ul>
@@ -53,63 +53,184 @@
                             <div class="col">
 
 
-
-                                <div class="form-group">
-                                    <label class="form-label" for="input_name">Nombre completo</label>
-                                    <div class="input-group">
-                                        <span class="input-group-text"><i class="fa fa-user"></i></span>
-                                        <input type="text" class="form-control" id="input_name" placeholder="Nombre completo">
-                                        &nbsp;
-                                        <span class="form-text text-muted">Como figura en su Cédula de identidad</span>
-                                    </div>
-                                </div>
                                 <div class="form-group row">
+
                                     <div class="input-group col">
-                                        <label class="form-label" for="input_phone">Teléfono móvil</label>
+                                        <label class="form-label" for="input_phone">Clasificación</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text"><i class="fa-solid ri-folder-add-fill"></i></span>
+
+                                            <select id="inputState" class="form-select">
+                                                <option selected>Seleccionar...</option>
+                                                <option>...</option>
+                                            </select>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="input-group col">
+                                        <label class="form-label" for="input_phone">Comprobante de compra</label>
                                         <div class="input-group">
                                             <span class="input-group-text"><i class="fa fa-phone"></i></span>
                                             <input type="text" class="form-control" id="input_phone" placeholder="" data-mask="099 999 999">
+                                            &nbsp;
+                                            <span class="form-text text-muted">Doble foto: frente y dorso. En lo posible utilizar la app CamScanner.</span>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+
+
+
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="card-header">
+            <ul class="nav nav-line nav-tabs nav-sm nav-light card-header-tabs">
+                <li class="nav-item">
+                    <a class="nav-link active" data-bs-toggle="tab" href="#prev_tab_5">
+                        <span class="nav-link-text">Información específica</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="card-body p-0">
+            <div class="tab-content m-0">
+                <div class="tab-pane fade show active" id="prev_tab_5">
+                    <div class="container py-3">
+                        <div class="row">
+                            <div class="col">
+
+
+                                <div class="form-group row">
+                                    <div class="input-group col">
+                                        <label class="form-label" for="input_borndate">Fecha de compra</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+                                            <input type="text" class="form-control datepicker" id="input_borndate" placeholder="Fecha de compra">
+                                            &nbsp;
+                                            <span class="form-text text-muted">Como figura en la boleta de compra</span>
                                         </div>
                                     </div>
                                     <div class="input-group col">
-                                        <label class="form-label" for="input_borndate">Fecha de nacimiento</label>
+                                        <label class="form-label" for="input_phone">Importe</label>
                                         <div class="input-group">
-                                            <span class="input-group-text"><i class="fa fa-calendar"></i></span>
-                                            <input type="text" class="form-control datepicker" id="input_borndate" placeholder="Fecha de nacimiento">
+                                            <span class="input-group-text"><i class="fa fa-money-bill"></i></span>
+                                            <input type="text" class="form-control" id="input_phone" placeholder="" data-mask="099 999 999">
+                                            &nbsp;
+                                            <span class="form-text text-muted">Como figura en la boleta de compra</span>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <label class="form-label" for="input_email">Correo electrónico</label>
-                                    <div class="input-group">
-                                        <span class="input-group-text"><i class="fa fa-inbox"></i></span>
-                                        <input type="email" class="form-control" id="input_email" placeholder="Correo electrónico">
+
+                                <div class="form-group row" style="margin-bottom:0;">
+                                    <div class="input-group col">
+                                        <div class="form-check">
+                                            <input class="form-check-input pointer" id="input_checkTerms" type="checkbox">
+                                            <label class="form-check-label pointer" for="input_checkTerms">¿Es smart TV?</label>
+                                        </div>
                                     </div>
+
+
+
+                                    <fieldset class="row col" style="display: inline;">
+                                        <legend class="col-form-label col-sm-2 pt-0">Tecnología</legend>
+                                        <div class="col-sm-10">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="gridTech" id="gridTech1" value="option1" checked>
+                                                <label class="form-check-label" for="gridTech1">
+                                                    LED
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="gridTech" id="gridTech2" value="option2">
+                                                <label class="form-check-label" for="gridTech2">
+                                                    LCD (cristal líquido)
+                                                </label>
+                                            </div>
+                                            <div class="form-check disabled">
+                                                <input class="form-check-input" type="radio" name="gridTech" id="gridTech3" value="option3">
+                                                <label class="form-check-label" for="gridTech3">
+                                                    Tubo
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+
+
+
                                 </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="card-header">
+            <ul class="nav nav-line nav-tabs nav-sm nav-light card-header-tabs">
+                <li class="nav-item">
+                    <a class="nav-link active" data-bs-toggle="tab" href="#prev_tab_5">
+                        <span class="nav-link-text">Estado del bien</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="card-body p-0">
+            <div class="tab-content m-0">
+                <div class="tab-pane fade show active" id="prev_tab_5">
+                    <div class="container py-3">
+                        <div class="row">
+                            <div class="col">
+
+
                                 <div class="form-group">
-                                    <label class="form-label" for="input_password1">Contraseña</label>
+                                    <label class="form-label" for="input_name">Fotos del bien</label>
                                     <div class="input-group">
-                                        <span class="input-group-text"><i class="fa fa-lock"></i></span>
-                                        <input type="password" class="form-control" id="input_password1" placeholder="Contraseña">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="form-label" for="input_password2">Confirmar contraseña</label>
-                                    <div class="input-group">
-                                        <span class="input-group-text"><i class="fa fa-lock"></i></span>
-                                        <input type="password" class="form-control" id="input_password2" placeholder="Confirmar contraseña">
+                                        <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                        <input type="text" class="form-control" id="input_name" placeholder="Fotos del bien">
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="form-label" for="input_identity">Cédula de identidad</label>
+                                    <label class="form-label" for="input_name">Comentarios</label>
                                     <div class="input-group">
-                                        <span class="input-group-text"><i class="fa fa-id-card"></i></span>
-                                        <input type="text" class="form-control" id="input_identity" placeholder="" data-mask="9.999.999-9">
-                                        &nbsp;
-                                        <span class="form-text text-muted">Ejemplo "1.234.567-8"</span>
+                                        <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                        <textarea class="form-control" id="input_name" placeholder="Comentarios que quiera incluir"></textarea>
                                     </div>
                                 </div>
+
+
+                                <div class="form-group row-short" style="display: flex;">
+                                    <div class="form-check col">
+                                        <input class="form-check-input pointer" id="input_checkTerms" type="checkbox">
+                                        <label class="form-check-label pointer" for="input_checkTerms">El bien declarado funciona 100%</label>
+                                    </div>
+                                    <div class="form-check col">
+                                        <input class="form-check-input pointer" id="input_checkTerms" type="checkbox">
+                                        <label class="form-check-label pointer" for="input_checkTerms">Los valores declarados corresponden a la realidad del bien.</label>
+                                    </div>
+                                </div>
+
+
+                                <hr style="border-bottom: 1px solid rgb(64 62 62)" />
 
                                 <div class="form-group">
                                     <div class="form-check">
@@ -119,8 +240,6 @@
                                 </div>
                                 <input type="button" class="btn btn-primary me-1" onclick="btn_submit()" value="Iniciar solicitud">
                                 @*<button type="submit" class="btn btn-light">Cancel</button>*@
-
-
 
 
                             </div>

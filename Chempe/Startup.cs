@@ -93,10 +93,11 @@ namespace Chempe
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    //pattern: "{controller=Home}/{action=Index}/{id?}");
-                    //pattern: "{controller=User_client}/{action=Dashboard}/{id?}");
-                    //pattern: "{controller=User_client}/{action=New_client}/{id?}");
-                    pattern: "{controller=User_client}/{action=New_request}/{id?}");
+        //pattern: "{controller=Home}/{action=Index}/{id?}");
+        //pattern: "{controller=User_client}/{action=Dashboard}/{id?}");
+        //pattern: "{controller=User_client}/{action=New_client}/{id?}");
+        //pattern: "{controller=User_client}/{action=New_request}/{id?}");
+        pattern: "{controller=User_client}/{action=client_validation}/{id?}"); // Pasar CI (param), levantar usuario y cargarle la CI (foto)
 
                 //endpoints.MapControllerRoute(
                 //   name: "GMaps_inicio",

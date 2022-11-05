@@ -1,0 +1,101 @@
+﻿@{
+    ViewData["Title"] = "Nuevo usuario";
+    Layout = "/Views/Shared/_Layout_client.cshtml";
+}
+
+<section id="sec_6" class="hk-section">
+    <div class="hk-sec-title">
+        <h5>Validación de usuario</h5>
+        <p>Para comenzar a operar en Chempeño, es necesario validar la identidad de los usuarios.</p>
+    </div>
+    <div class="hk-example card card-shadow card-wth-tabs">
+        <div class="card-header">
+            <ul class="nav nav-line nav-tabs nav-sm nav-light card-header-tabs">
+                <li class="nav-item">
+                    <a class="nav-link active" data-bs-toggle="tab" href="#prev_tab_5">
+                        <span class="nav-link-text">Información</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+
+
+        <div class="card-body p-0">
+            <div class="tab-content m-0">
+                <div class="tab-pane fade show active" id="prev_tab_5">
+                    <div class="container py-3">
+                        <div class="row">
+                            <div class="col">
+
+
+                                <div class="form-group">
+                                    <label class="form-label" for="input_name">Nombre completo</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                        <input type="text" class="form-control" id="input_name" disabled>
+                                        &nbsp;
+                                        <span class="form-text text-muted">Como figura en su Cédula de identidad</span>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="input-group row">
+                                        <div class="col">
+                                            <label class="form-label" for="input_name">Cédula de identidad (frente)</label>
+                                            <input type="file" class="form-control" aria-label="file example" placeholder="Foto del frente" required>
+                                            <div class="invalid-feedback">Example invalid form file feedback</div>
+                                        </div>
+                                        <div class="col">
+                                            <label class="form-label" for="input_name">Cédula de identidad (dorso)</label>
+                                            <input type="file" class="form-control" aria-label="file example" placeholder="Foto del dorso" required>
+                                            <div class="invalid-feedback">Example invalid form file feedback</div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="form-check">
+                                        <input class="form-check-input pointer" id="input_checkTerms" type="checkbox">
+                                        <label class="form-check-label pointer" for="input_checkTerms">La Cédula de identidad está vigente.</label>
+                                    </div>
+                                </div>
+
+                                <br />
+                                <hr style="border-bottom: 1px solid rgb(64 62 62)" />
+
+                                <div class="form-group">
+                                    <div class="form-check">
+                                        <input class="form-check-input pointer" id="input_checkTerms" type="checkbox">
+                                        <label class="form-check-label pointer" for="input_checkTerms">He leído y acepto los términos y condiciones de uso.</label>
+                                    </div>
+                                </div>
+                                <input type="button" class="btn btn-primary me-1" onclick="btn_submit()" value="Validar">
+                                <input type="button" class="btn btn-light" value="Cancelar">
+
+
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+    </div>
+</section>
+
+@section scripts{
+    <!-- Jasny-bootstrap JS -->
+    <script src="~/vendors/jasny-bootstrap/dist/js/jasny-bootstrap.min.js"></script>
+
+    <!-- Page JS -->
+    <script src="~/js/pages/client_validation.js"></script>
+}
