@@ -6,10 +6,10 @@ namespace Services.DTOs
     public class DTO_Person
     {
         public int Person_ID { get; set; }
+        public string Identification { get; set; }
         public string Full_name { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
-        public string Identification { get; set; }
         public string Gender { get; set; }
         public DateTime? Date_born { get; set; }
         public DTO_Photo Photo { get; set; }
