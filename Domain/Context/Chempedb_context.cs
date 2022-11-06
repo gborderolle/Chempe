@@ -5,6 +5,11 @@ namespace Domain.Context
 {
     public class Chempedb_context : DbContext
     {
+        // -------- DATOS ESTÁTICOS --------
+        public virtual DbSet<List_documents_type> List_documents_type { get; set; }
+        public virtual DbSet<List_goods_type> List_goods_type { get; set; }
+
+        // -------- DATOS DINÁMICOS --------
         public virtual DbSet<Logs> Logs { get; set; }
         public virtual DbSet<Person> Person { get; set; }
         public virtual DbSet<User_client> User_client { get; set; }
@@ -17,6 +22,8 @@ namespace Domain.Context
         public virtual DbSet<Assignment> Assignment { get; set; }
         public virtual DbSet<Request> Request { get; set; }
         public virtual DbSet<Warrant> Warrant { get; set; }
+        public virtual DbSet<Photo> Photo { get; set; }
+        public virtual DbSet<Document> Document { get; set; }
 
         public Chempedb_context(DbContextOptions<Chempedb_context> options)
             : base(options)

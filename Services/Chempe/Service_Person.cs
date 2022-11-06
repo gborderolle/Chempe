@@ -1,10 +1,10 @@
 ﻿using Domain.Chempe;
 using Domain.Context;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Services.DTOs;
 using Services.Models;
 using Services.Utils;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -41,12 +41,23 @@ namespace Services.Chempe
 
         #region DTO methods
 
-        public List<DTO_Document> Get_DTODocumentsIdentificationFromPersonByIdentification(string identification)
+        public DTO_Person Get_DTOPersonByIdentification(string identification)
         {
-            List<DTO_Document> list_documentsIdentification = new();
+            DTO_Person dto_person = new();
             if (!string.IsNullOrWhiteSpace(identification))
             {
-                Person person = _chempedb_context.Person.FirstOrDefault(e => e.Identification == identification);
+                Person person = _chempedb_context.Person.Include("List_documents.Documents_type").FirstOrDefault(e => e.Identification == identification);
+                dto_person = Utls.mapper.Map<DTO_Person>(person);
+            }
+            return dto_person;
+        }
+
+        public List<DTO_Document> Get_DTODocumentsIdentificationFromPersonByIdentification(string identification)
+        {
+            List<DTO_Document> list_dto_documentsOfIdentification = new();
+            if (!string.IsNullOrWhiteSpace(identification))
+            {
+                Person person = _chempedb_context.Person.Include("List_documents.Documents_type").FirstOrDefault(e => e.Identification == identification);
                 if (person != null)
                 {
                     if (person.List_documents != null && person.List_documents.Count > 0)
@@ -60,8 +71,8 @@ namespace Services.Chempe
                                 {
                                     if (document.Documents_type.Name == Service_Global_variables.Documents_type_enum.Person_identity.ToString())
                                     {
-                                        DTO_Document document_aux = Utls.mapper.Map<DTO_Document>(document);
-                                        list_documentsIdentification.Add(document_aux);
+                                        DTO_Document dto_document = Utls.mapper.Map<DTO_Document>(document);
+                                        list_dto_documentsOfIdentification.Add(dto_document);
                                     }
                                 }
                             }
@@ -69,7 +80,7 @@ namespace Services.Chempe
                     }
                 }
             }
-            return list_documentsIdentification;
+            return list_dto_documentsOfIdentification;
         }
 
         #endregion

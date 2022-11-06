@@ -96,13 +96,13 @@ namespace Chempe
         //pattern: "{controller=User_client}/{action=Dashboard}/{id?}");
         //pattern: "{controller=User_client}/{action=New_client}/{id?}");
         //pattern: "{controller=User_client}/{action=New_request}/{id?}");
-        pattern: "{controller=User_client}/{action=client_validation}/{id=1234}"); // Pasar CI (param), levantar usuario y cargarle la CI (foto)
 
-                //endpoints.MapControllerRoute(
-                //   name: "GMaps_inicio",
-                //   pattern: "{controller=Dashboard}/{action=GMaps_inicio}/{id?}");
+        //pattern: "{controller}/{action}/{identification}", new { controller = "User_client", action = "client_validation", identification = "42305298" });
 
-            });
+        pattern: "{controller}/{action}/{identification}", new { controller = "Login_page", action = "Login", identification = "42305298" });
+
+
+        });
 
             app.UseExceptionHandler("/page_404");
             //return System.Threading.Tasks.Task.CompletedTask;

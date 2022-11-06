@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "qkH6arsAcqMcUUuqBLUX8r73I1BtJa0MbZ/wH8Un1M8JCFqso+V+8AbkEkvl89cjDtQ5OKtYKqa0j2yEvkofIQ==",
+  "dgSpecHash": "Npn5VF4SeUlS/ZW0p4iHXhp8Ps/sBWsjc7SKV9aBT08Mx/Ca5oYoIvKGHh7rSvzM3OwIS7ynQjWvEwRvQ32P4w==",
   "success": true,
-  "projectFilePath": "D:\\Documents\\GitHub\\Chempe\\Chempe\\Chempe.csproj",
+  "projectFilePath": "C:\\Users\\Gonzalo\\Documents\\GitHub\\Chempe\\Chempe\\Chempe.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Gonzalo\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
     "C:\\Users\\Gonzalo\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",

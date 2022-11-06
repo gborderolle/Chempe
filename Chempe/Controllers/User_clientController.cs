@@ -24,11 +24,6 @@ namespace Chempe.Controllers
             _service_Person = service_Person;
         }
 
-        public IActionResult Index()
-        {
-            return View();
-        }
-
         #region Pages 
 
         public IActionResult Dashboard()
@@ -47,15 +42,35 @@ namespace Chempe.Controllers
             return View();
         }
 
-        public IActionResult client_validation(string identification)
+        public IActionResult Client_validation1(string identification)
         {
-            List<DTO_Document> list_documents = _service_Person.Get_DTODocumentsIdentificationFromPersonByIdentification(identification);
-            if (list_documents == null)
+            List<DTO_Document> list_documents = new();
+            if (!string.IsNullOrWhiteSpace(identification))
             {
-                list_documents = new();
+                list_documents = _service_Person.Get_DTODocumentsIdentificationFromPersonByIdentification(identification);
+                if (list_documents == null)
+                {
+                    list_documents = new();
+                }
             }
-            //return View(list_documents);
-            return View();
+            return View(list_documents);
+        }
+
+        public IActionResult Client_validation2()
+        {
+            //string sessionUser = HttpContext.Session("SessionUser");
+            //ToDo: Levantar usuario logueado de la session y obtener Documents CI con la Identif
+
+            List<DTO_Document> list_documents = new();
+            if (!string.IsNullOrWhiteSpace(identification))
+            {
+                list_documents = _service_Person.Get_DTODocumentsIdentificationFromPersonByIdentification(identification);
+                if (list_documents == null)
+                {
+                    list_documents = new();
+                }
+            }
+            return View(list_documents);
         }
 
         #endregion

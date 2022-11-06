@@ -1,4 +1,16 @@
-﻿----
+﻿Deployear bd (Code first):
+
+Package Manager Console (seleccionar default project: Domain)
+
+EF Entity framework -> Code first
+1) 
+add-migration initial
+
+2) 
+update-database
+
+
+----
 Terminología:
 
 User_client - Usuario cliente, solicitante del crédito
@@ -25,18 +37,6 @@ Orden del proceso:
 2 Approval
 3 Acceptance
 4 Assignment
-
-----
-Deployear bd (Code first):
-
-Package Manager Console (seleccionar default project: Domain)
-
-EF Entity framework -> Code first
-1) 
-add-migration initial
-
-2) 
-update-database
 
 ----
 Conceptos importantes:
