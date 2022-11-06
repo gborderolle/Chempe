@@ -39,7 +39,7 @@ namespace Chempe
             services.AddTransient<Service_Person>();
             services.AddTransient<Service_Photo>();
             services.AddTransient<Service_Pledge>();
-            services.AddTransient<Service_Pledge_state>();
+            services.AddTransient<Service_Pledge_status>();
             services.AddTransient<Service_Request>();
             services.AddTransient<Service_User_client>();
             services.AddTransient<Service_User_chempe>();
@@ -60,7 +60,6 @@ namespace Chempe
             {
                 services.AddDbContext<Chempedb_context>(e => e.UseSqlServer(_configuration.GetConnectionString("ConnectionString_chempedb_remote")));
             }
-
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -97,7 +96,7 @@ namespace Chempe
         //pattern: "{controller=User_client}/{action=Dashboard}/{id?}");
         //pattern: "{controller=User_client}/{action=New_client}/{id?}");
         //pattern: "{controller=User_client}/{action=New_request}/{id?}");
-        pattern: "{controller=User_client}/{action=client_validation}/{id?}"); // Pasar CI (param), levantar usuario y cargarle la CI (foto)
+        pattern: "{controller=User_client}/{action=client_validation}/{id=1234}"); // Pasar CI (param), levantar usuario y cargarle la CI (foto)
 
                 //endpoints.MapControllerRoute(
                 //   name: "GMaps_inicio",

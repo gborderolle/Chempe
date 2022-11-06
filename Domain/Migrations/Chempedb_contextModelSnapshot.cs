@@ -85,6 +85,46 @@ namespace Domain.Migrations
                     b.ToTable("Assignment");
                 });
 
+            modelBuilder.Entity("Domain.Chempe.Document", b =>
+                {
+                    b.Property<int>("Document_ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int?>("Documents_typeList_documents_type_ID")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("Person_ID")
+                        .HasColumnType("int");
+
+                    b.HasKey("Document_ID");
+
+                    b.HasIndex("Documents_typeList_documents_type_ID");
+
+                    b.HasIndex("Person_ID");
+
+                    b.ToTable("Document");
+                });
+
+            modelBuilder.Entity("Domain.Chempe.List_documents_type", b =>
+                {
+                    b.Property<int>("List_documents_type_ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("List_documents_type_ID");
+
+                    b.ToTable("List_documents_type");
+                });
+
             modelBuilder.Entity("Domain.Chempe.List_goods_type", b =>
                 {
                     b.Property<int>("List_goods_type_ID")
@@ -195,10 +235,15 @@ namespace Domain.Migrations
                     b.Property<DateTime>("Datetime_upload")
                         .HasColumnType("datetime2");
 
+                    b.Property<int?>("Document_ID")
+                        .HasColumnType("int");
+
                     b.Property<string>("URL")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Photo_ID");
+
+                    b.HasIndex("Document_ID");
 
                     b.ToTable("Photo");
                 });
@@ -219,7 +264,7 @@ namespace Domain.Migrations
                     b.Property<int>("Loan_term")
                         .HasColumnType("int");
 
-                    b.Property<int?>("Pledge_state_ID")
+                    b.Property<int?>("Pledge_status_ID")
                         .HasColumnType("int");
 
                     b.Property<int?>("Request_ID")
@@ -234,7 +279,7 @@ namespace Domain.Migrations
 
                     b.HasIndex("Assignment_ID");
 
-                    b.HasIndex("Pledge_state_ID");
+                    b.HasIndex("Pledge_status_ID");
 
                     b.HasIndex("Request_ID");
 
@@ -243,9 +288,9 @@ namespace Domain.Migrations
                     b.ToTable("Pledge");
                 });
 
-            modelBuilder.Entity("Domain.Chempe.Pledge_state", b =>
+            modelBuilder.Entity("Domain.Chempe.Pledge_status", b =>
                 {
-                    b.Property<int>("Pledge_state_ID")
+                    b.Property<int>("Pledge_status_ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -253,9 +298,9 @@ namespace Domain.Migrations
                     b.Property<DateTime>("Datetime_lastUpdate")
                         .HasColumnType("datetime2");
 
-                    b.HasKey("Pledge_state_ID");
+                    b.HasKey("Pledge_status_ID");
 
-                    b.ToTable("Pledge_state");
+                    b.ToTable("Pledge_status");
                 });
 
             modelBuilder.Entity("Domain.Chempe.Request", b =>
@@ -285,12 +330,6 @@ namespace Domain.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Password")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("User_name")
-                        .HasColumnType("nvarchar(max)");
-
                     b.HasKey("User_chempe_ID");
 
                     b.ToTable("User_chempe");
@@ -314,15 +353,6 @@ namespace Domain.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Image_Url")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Password")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("User_name")
-                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("User_investor_ID");
 
@@ -382,6 +412,19 @@ namespace Domain.Migrations
                     b.Navigation("User_assignment");
                 });
 
+            modelBuilder.Entity("Domain.Chempe.Document", b =>
+                {
+                    b.HasOne("Domain.Chempe.List_documents_type", "Documents_type")
+                        .WithMany()
+                        .HasForeignKey("Documents_typeList_documents_type_ID");
+
+                    b.HasOne("Domain.Chempe.Person", null)
+                        .WithMany("List_documents")
+                        .HasForeignKey("Person_ID");
+
+                    b.Navigation("Documents_type");
+                });
+
             modelBuilder.Entity("Domain.Chempe.Logs", b =>
                 {
                     b.HasOne("Domain.Chempe.Person", "Person")
@@ -418,6 +461,13 @@ namespace Domain.Migrations
                     b.Navigation("User_investor");
                 });
 
+            modelBuilder.Entity("Domain.Chempe.Photo", b =>
+                {
+                    b.HasOne("Domain.Chempe.Document", null)
+                        .WithMany("List_photos")
+                        .HasForeignKey("Document_ID");
+                });
+
             modelBuilder.Entity("Domain.Chempe.Pledge", b =>
                 {
                     b.HasOne("Domain.Chempe.Approval", "Approval")
@@ -428,9 +478,9 @@ namespace Domain.Migrations
                         .WithMany()
                         .HasForeignKey("Assignment_ID");
 
-                    b.HasOne("Domain.Chempe.Pledge_state", "Pledge_state")
+                    b.HasOne("Domain.Chempe.Pledge_status", "Pledge_status")
                         .WithMany()
-                        .HasForeignKey("Pledge_state_ID");
+                        .HasForeignKey("Pledge_status_ID");
 
                     b.HasOne("Domain.Chempe.Request", "Request")
                         .WithMany()
@@ -444,7 +494,7 @@ namespace Domain.Migrations
 
                     b.Navigation("Assignment");
 
-                    b.Navigation("Pledge_state");
+                    b.Navigation("Pledge_status");
 
                     b.Navigation("Request");
 
@@ -467,6 +517,16 @@ namespace Domain.Migrations
                         .HasForeignKey("Goods_typeList_goods_type_ID");
 
                     b.Navigation("Goods_type");
+                });
+
+            modelBuilder.Entity("Domain.Chempe.Document", b =>
+                {
+                    b.Navigation("List_photos");
+                });
+
+            modelBuilder.Entity("Domain.Chempe.Person", b =>
+                {
+                    b.Navigation("List_documents");
                 });
 #pragma warning restore 612, 618
         }

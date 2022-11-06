@@ -19,8 +19,8 @@ namespace Domain.Chempe
         public Approval Approval { get; set; }
         [ForeignKey("Assignment_ID")]
         public Assignment Assignment { get; set; }
-        [ForeignKey("Pledge_state_ID")]
-        public Pledge_state Pledge_state { get; set; }
+        [ForeignKey("Pledge_status_ID")]
+        public Pledge_status Pledge_status { get; set; }
         public int Loan_term { get; set; }
 
     }

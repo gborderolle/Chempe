@@ -4,7 +4,7 @@ Terminología:
 User_client - Usuario cliente, solicitante del crédito
 User_investor - Usuario inversor, prestador de capital
 Pledge - Empeño, pignoración
-Pledge_state - Estado del empeño
+Pledge_status - Estado del empeño
 Warrant - Garantía, bien prendedado
 Request - Solicitud del crédito por parte del cliente
 Approval - Aprobación del crédito por parte de un usuario de Chempeño

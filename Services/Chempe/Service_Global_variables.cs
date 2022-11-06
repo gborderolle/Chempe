@@ -18,6 +18,11 @@ namespace Services.Chempe
             _configuration = configuration;
         }
 
+        public enum Documents_type_enum
+        {
+            Person_identity
+        }
+
         public bool IsLocalhost()
         {
             bool contextIsLocal = false;

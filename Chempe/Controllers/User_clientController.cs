@@ -1,7 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
 using Services.Chempe;
+using Services.DTOs;
+using Services.Models;
 using System;
+using System.Collections.Generic;
 using System.Data;
 
 namespace Chempe.Controllers
@@ -11,12 +14,14 @@ namespace Chempe.Controllers
         private readonly Service_Logs _service_logs;
         private readonly Service_Global_variables _service_global_variables;
         private readonly Service_User_client _service_User_client;
+        private readonly Service_Person _service_Person;
 
-        public User_clientController(Service_Logs service_logs, Service_Global_variables service_global_variables, Service_User_client service_User_client)
+        public User_clientController(Service_Logs service_logs, Service_Global_variables service_global_variables, Service_User_client service_User_client, Service_Person service_Person)
         {
             _service_logs = service_logs;
             _service_global_variables = service_global_variables;
             _service_User_client = service_User_client;
+            _service_Person = service_Person;
         }
 
         public IActionResult Index()
@@ -42,11 +47,16 @@ namespace Chempe.Controllers
             return View();
         }
 
-        public IActionResult client_validation()
+        public IActionResult client_validation(string identification)
         {
+            List<DTO_Document> list_documents = _service_Person.Get_DTODocumentsIdentificationFromPersonByIdentification(identification);
+            if (list_documents == null)
+            {
+                list_documents = new();
+            }
+            //return View(list_documents);
             return View();
         }
-
 
         #endregion
 

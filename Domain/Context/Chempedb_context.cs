@@ -11,7 +11,7 @@ namespace Domain.Context
         public virtual DbSet<User_investor> User_investor { get; set; }
         public virtual DbSet<User_chempe> User_chempe { get; set; }
         public virtual DbSet<Pledge> Pledge { get; set; }
-        public virtual DbSet<Pledge_state> Pledge_state { get; set; }
+        public virtual DbSet<Pledge_status> Pledge_status { get; set; }
         public virtual DbSet<Acceptance> Acceptance { get; set; }
         public virtual DbSet<Approval> Approval { get; set; }
         public virtual DbSet<Assignment> Assignment { get; set; }
