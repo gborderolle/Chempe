@@ -39,6 +39,15 @@ Orden del proceso:
 4 Assignment
 
 ----
+Cuando una entidad nueva (clase):
+- Domain
+- Service
+- Startup.cs -> Registrar service
+- Context -> DbSet
+- DTOs
+- Utls -> MapperConfiguration -->  dto_person = Utls.mapper.Map<DTO_Person>(person);
+
+----
 Conceptos importantes:
 
 Primary_coupon_rate: interés del cupón primario, cota máxima de recargo permitido a los inversores (de donde sale la ganancia de Chempe).

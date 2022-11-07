@@ -5,6 +5,7 @@ using Microsoft.Extensions.Configuration;
 using Services.DTOs;
 using Services.Models;
 using Services.Utils;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -27,19 +28,53 @@ namespace Services.Chempe
 
         #region Private methods
 
-        public Person Get_PersonByIdentification(string identification)
+        #endregion
+
+        #region Public methods
+
+        public Person Get_PersonByID(int person_ID)
         {
-            Person person = new();
-            if (!string.IsNullOrWhiteSpace(identification))
-            {
-                person = _chempedb_context.Person.FirstOrDefault(e => e.Identification == identification);
-            }
-            return person;
+            return _chempedb_context.Person.Include("List_documents.List_photos").FirstOrDefault(e => e.Person_ID == person_ID);
         }
 
         #endregion
 
         #region DTO methods
+
+        public DTO_Person Get_DTOPersonByEmail(string email)
+        {
+            DTO_Person dto_person = new();
+            if (!string.IsNullOrWhiteSpace(email))
+            {
+                Person person = _chempedb_context.Person.Include("List_documents.Documents_type").FirstOrDefault(e => e.Email == email);
+                dto_person = Utls.mapper.Map<DTO_Person>(person);
+            }
+            return dto_person;
+        }
+
+        public int Get_CountTotalPhotosByIdentification(string identification)
+        {
+            int result = 0;
+            if (!string.IsNullOrWhiteSpace(identification))
+            {
+                List<Document> list_documentsOfIdentification = new();
+
+                Person person = _chempedb_context.Person.Include("List_documents.Documents_type").FirstOrDefault(e => e.Identification == identification);
+                if (person != null)
+                {
+                    List<Document> list_documents = person.List_documents;
+                    foreach (Document document in list_documents)
+                    {
+                        if (document.List_photos != null)
+                        {
+                            result = +document.List_photos.Count;
+                        }
+                    }// foreach
+                }
+            }
+            return result;
+        }
+
 
         public DTO_Person Get_DTOPersonByIdentification(string identification)
         {
@@ -52,12 +87,24 @@ namespace Services.Chempe
             return dto_person;
         }
 
+        public Person Get_PersonByIdentification(string identification)
+        {
+            Person person = new();
+            if (!string.IsNullOrWhiteSpace(identification))
+            {
+                person = _chempedb_context.Person.Include("List_documents.Documents_type").FirstOrDefault(e => e.Identification == identification);
+            }
+            return person;
+        }
+
+
         public List<DTO_Document> Get_DTODocumentsIdentificationFromPersonByIdentification(string identification)
         {
             List<DTO_Document> list_dto_documentsOfIdentification = new();
             if (!string.IsNullOrWhiteSpace(identification))
             {
-                Person person = _chempedb_context.Person.Include("List_documents.Documents_type").FirstOrDefault(e => e.Identification == identification);
+                Person person = _chempedb_context.Person.Include("List_documents.List_photos").
+                    Include("List_documents.Documents_type").FirstOrDefault(e => e.Identification == identification);
                 if (person != null)
                 {
                     if (person.List_documents != null && person.List_documents.Count > 0)

@@ -1,6 +1,66 @@
 ﻿/*
+DTO_Client_validation
 
-model: List<DTO_Document> list_documents
-
+    model.DTO_Person Person 
+    model.List_DTO_documents_identity
 
 */
+
+$(function () {
+});
+
+function btn_submit() {
+
+    var upload_file = $("#file_document1").get(0);
+    var files = upload_file.files;
+    var file_data = new FormData();
+
+    //image 1:
+    file_data.append('file_data', files[0]);
+
+    //image 2:
+    upload_file = $("#file_document2").get(0);
+    files = upload_file.files;
+    file_data.append('file_data', files[0]);
+
+    //person identification:
+    file_data.append('file_data', model.DTO_Person.Identification);
+
+    // s: https://javascript.info/formdata
+
+    console.log("Ajax call: /UploadFile. Params:");
+    console.log("model.Person, type: " + type(model.Person) + ", value: " + model.Person);
+    console.log("file_data, type: " + type(file_data) + ", value: " + file_data);
+
+    $.ajax({
+        type: "POST",
+        url: "/User_client/UploadFile",
+        data: file_data,
+        //data: {
+        //    dto_person: model.Person,
+        //    file_data: file_data
+        //},
+        processData: false, // new
+        contentType: false, // new
+
+        success: function (response) {
+            if (response !== null && response !== undefined) {
+                if (response) {
+                    console.log("UploadFile: Success");
+                    $("#divInformation").show();
+                    show_alert_success("Confirmado", "Los archivos se subieron correctamente.");
+                } else {
+                    show_alert_error("Ups. Ocurrió un error interno.");
+                }
+            } else {
+                show_alert_error("Ups. Ocurrió un error interno.");
+            }
+        },
+        failure: function (response) {
+            console.log("UploadFile: Error");
+            show_alert_error("Ups. Ocurrió un error interno.");
+        }
+    }); // Ajax
+
+
+}

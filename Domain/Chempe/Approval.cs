@@ -27,5 +27,9 @@ namespace Domain.Chempe
         public User_chempe User_approval { get; set; }
         public int User_chempe_ID { get; set; }
         // FK ------------------
+
+        public Approval()
+        {
+        }
     }
 }

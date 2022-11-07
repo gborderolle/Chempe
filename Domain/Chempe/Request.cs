@@ -22,5 +22,9 @@ namespace Domain.Chempe
         public int Pledge_ID { get; set; }
         // FK ------------------
 
+        public Request()
+        {
+        }
+
     }
 }

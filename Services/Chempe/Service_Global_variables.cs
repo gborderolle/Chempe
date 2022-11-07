@@ -23,6 +23,11 @@ namespace Services.Chempe
             Person_identity
         }
 
+        public enum Nombres_espanol_enum
+        {
+            Documento_de_identidad
+        }
+
         public bool IsLocalhost()
         {
             bool contextIsLocal = false;

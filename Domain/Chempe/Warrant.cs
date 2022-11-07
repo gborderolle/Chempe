@@ -4,7 +4,12 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Domain.Chempe
 {
-    [Table("Warrant")]
+    /// <summary>
+    /// Bienes prendados de garantía para el crédito
+    /// Investigar y listar valores por defecto del mercado, nuevos
+    /// Vida útil promedio y calcular amortizaciones
+    /// </summary>
+    [Table("Warrant")]    
     public class Warrant
     {
         [Key]
@@ -24,8 +29,12 @@ namespace Domain.Chempe
         
         // FK ------------------
         [ForeignKey("List_goods_type_ID")]
-        public List_goods_type Goods_type { get; set; }
+        public List_warrants_type Goods_type { get; set; }
         public int? List_goods_type_ID { get; set; }
         // FK ------------------
+
+        public Warrant()
+        {
+        }
     }
 }

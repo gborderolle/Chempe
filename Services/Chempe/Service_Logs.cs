@@ -1,6 +1,8 @@
 ﻿using Domain.Chempe;
 using Domain.Context;
 using Microsoft.Extensions.Configuration;
+using Services.DTOs;
+using Services.Utils;
 using System;
 using System.IO;
 using System.Runtime.CompilerServices;
@@ -44,12 +46,7 @@ namespace Services.Chempe
             string className = System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name;
             string methodName = stackFrame.GetMethod().Name;
 
-            Logs _logs = new();
-            _logs.Datetime_created = _service_global_variables.GetCurrentTime_Uruguay();
-            _logs.Person = person;
-            _logs.Description = message;
-            _logs.Info = object_ID;
-            _logs.IP_client = IP_client;
+            Logs _logs = new(_service_global_variables.GetCurrentTime_Uruguay(), IP_client, message, object_ID, person);
 
             _chempedb_context.Logs.Add(_logs);
             _chempedb_context.SaveChanges();

@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "QTjt8iU4pS47ngT4jXTCK0fCuJQto42LN0jXb5RHhgRcu18RhsNvd5PT62KxmOp7TuM7b7J0HZYjKBR5u7RAjA==",
+  "dgSpecHash": "Jq9Di9/pjZM4Mexuf6B8qUne6XrF19RKiJtOb4Xwc3DVI0Axar5FjuO3Jck2eF3UweLiF29Xi87LAD+XItjxLg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Gonzalo\\Documents\\GitHub\\Chempe\\Domain\\Domain.csproj",
+  "projectFilePath": "D:\\Documents\\GitHub\\Chempe\\Domain\\Domain.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Gonzalo\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\Gonzalo\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\Gonzalo\\.nuget\\packages\\microsoft.data.sqlclient\\2.0.1\\microsoft.data.sqlclient.2.0.1.nupkg.sha512",
     "C:\\Users\\Gonzalo\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.0.1\\microsoft.data.sqlclient.sni.runtime.2.0.1.nupkg.sha512",
@@ -32,6 +33,7 @@
     "C:\\Users\\Gonzalo\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\Gonzalo\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Users\\Gonzalo\\.nuget\\packages\\newtonsoft.json\\10.0.1\\newtonsoft.json.10.0.1.nupkg.sha512",
+    "C:\\Users\\Gonzalo\\.nuget\\packages\\portable.bouncycastle\\1.9.0\\portable.bouncycastle.1.9.0.nupkg.sha512",
     "C:\\Users\\Gonzalo\\.nuget\\packages\\runtime.native.system\\4.3.0\\runtime.native.system.4.3.0.nupkg.sha512",
     "C:\\Users\\Gonzalo\\.nuget\\packages\\system.collections\\4.3.0\\system.collections.4.3.0.nupkg.sha512",
     "C:\\Users\\Gonzalo\\.nuget\\packages\\system.collections.concurrent\\4.3.0\\system.collections.concurrent.4.3.0.nupkg.sha512",

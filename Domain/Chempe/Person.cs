@@ -48,12 +48,11 @@ namespace Domain.Chempe
         // FK ------------------
 
         // Source: https://learn.microsoft.com/en-us/ef/core/modeling/relationships?tabs=fluent-api%2Cfluent-api-simple-key%2Csimple-key        
-        public virtual List<Document> List_documents { get; set; } // 1 - n 
+        public virtual List<Document> List_documents { get; set; } = new(); // 1 - n 
         // FK ------------------
 
         public Person()
         {
-
         }
 
         public Person(string full_name, string email, string password, string identification, string gender, DateTime date_born, Photo photo, User_client user_client, User_investor user_investor, User_chempe user_chempe, List<Document> list_documents)

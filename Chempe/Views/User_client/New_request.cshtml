@@ -3,6 +3,26 @@
     Layout = "/Views/Shared/_Layout_client.cshtml";
 }
 
+@using Newtonsoft.Json
+@using Services.DTOs
+@model Services.DTOs.DTO_New_request
+
+<script type="text/javascript">
+
+        var model = @Html.Raw(JsonConvert.SerializeObject(Model, Formatting.None,
+new JsonSerializerSettings()
+{
+    ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+}));
+
+</script>
+
+<style>
+    .alert.alert-info {
+        color: #11a5b2;
+    }
+</style>
+
 
 <section id="sec_6" class="hk-section">
     <div class="hk-sec-title">
@@ -26,11 +46,6 @@
 
 
 
-
-
-
-
-
     <div class="hk-example card card-shadow card-wth-tabs">
         <div class="card-header">
             <ul class="nav nav-line nav-tabs nav-sm nav-light card-header-tabs">
@@ -41,8 +56,6 @@
                 </li>
             </ul>
         </div>
-
-
 
 
         <div class="card-body p-0">
@@ -61,8 +74,27 @@
                                             <span class="input-group-text"><i class="fa-solid ri-folder-add-fill"></i></span>
 
                                             <select id="inputState" class="form-select">
-                                                <option selected>Seleccionar...</option>
-                                                <option>...</option>
+                                                <option selected>Seleccione la clasificación</option>
+                                                @{
+                                                    int index = 0;
+                                                    if (Model.List_DTO_List_warrants_type != null)
+                                                    {
+                                                        foreach (DTO_List_warrants_type DTO_List_warrants_type1 in Model.List_DTO_List_warrants_type)
+                                                        {
+
+                                                            if (index == 0)
+                                                            {
+                                                                <option value=@index selected> @DTO_List_warrants_type1.Name</option>
+                                                            }
+                                                            else
+                                                            {
+                                                                <option value=@index> @DTO_List_warrants_type1.Name</option>
+                                                            }
+                                                            index++;
+                                                        }
+                                                    }
+                                                }
+
                                             </select>
 
                                         </div>
@@ -79,6 +111,30 @@
                                     </div>
 
                                 </div>
+
+
+                                <div class="form-group row">
+                                    <div class="input-group col">
+                                        <label class="form-label" for="input_borndate">Fecha de compra</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+                                            <input type="text" class="form-control datepicker" id="input_borndate" placeholder="Fecha de compra">
+                                            &nbsp;
+                                            <span class="form-text text-muted">Como figura en la boleta de compra</span>
+                                        </div>
+                                    </div>
+                                    <div class="input-group col">
+                                        <label class="form-label" for="input_phone">Valor de compra</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text"><i class="fa fa-money-bill"></i></span>
+                                            <input type="text" class="form-control" id="input_phone" placeholder="" data-mask="099 999 999">
+                                            &nbsp;
+                                            <span class="form-text text-muted">Como figura en la boleta de compra</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+
 
 
 
@@ -113,26 +169,6 @@
                             <div class="col">
 
 
-                                <div class="form-group row">
-                                    <div class="input-group col">
-                                        <label class="form-label" for="input_borndate">Fecha de compra</label>
-                                        <div class="input-group">
-                                            <span class="input-group-text"><i class="fa fa-calendar"></i></span>
-                                            <input type="text" class="form-control datepicker" id="input_borndate" placeholder="Fecha de compra">
-                                            &nbsp;
-                                            <span class="form-text text-muted">Como figura en la boleta de compra</span>
-                                        </div>
-                                    </div>
-                                    <div class="input-group col">
-                                        <label class="form-label" for="input_phone">Importe</label>
-                                        <div class="input-group">
-                                            <span class="input-group-text"><i class="fa fa-money-bill"></i></span>
-                                            <input type="text" class="form-control" id="input_phone" placeholder="" data-mask="099 999 999">
-                                            &nbsp;
-                                            <span class="form-text text-muted">Como figura en la boleta de compra</span>
-                                        </div>
-                                    </div>
-                                </div>
 
                                 <div class="form-group row" style="margin-bottom:0;">
                                     <div class="input-group col">

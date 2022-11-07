@@ -17,6 +17,9 @@ namespace Domain.Chempe
         
         public string Description { get; set; }
 
+        public List_documents_type()
+        {
+        }
         public List_documents_type(string name, string description)
         {
             Name = name;

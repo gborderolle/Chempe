@@ -16,5 +16,9 @@ namespace Domain.Chempe
         public User_client User_acceptance { get; set; }
         public int User_client_ID { get; set; }
         // FK ------------------
+        
+        public Acceptance()
+        {
+        }
     }
 }

@@ -2,6 +2,15 @@
   "version": 3,
   "targets": {
     "net5.0": {
+      "BCrypt.Net-Next/4.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/net5.0/BCrypt.Net-Next.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0/BCrypt.Net-Next.dll": {}
+        }
+      },
       "Microsoft.CSharp/4.5.0": {
         "type": "package",
         "compile": {
@@ -426,6 +435,15 @@
         },
         "runtime": {
           "lib/netstandard1.3/Newtonsoft.Json.dll": {}
+        }
+      },
+      "Portable.BouncyCastle/1.9.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/BouncyCastle.Crypto.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/BouncyCastle.Crypto.dll": {}
         }
       },
       "runtime.native.System/4.3.0": {
@@ -1485,6 +1503,37 @@
     }
   },
   "libraries": {
+    "BCrypt.Net-Next/4.0.3": {
+      "sha512": "W+U9WvmZQgi5cX6FS5GDtDoPzUCV4LkBLkywq/kRZhuDwcbavOzcDAr3LXJFqHUi952Yj3LEYoWW0jbEUQChsA==",
+      "type": "package",
+      "path": "bcrypt.net-next/4.0.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "bcrypt.net-next.4.0.3.nupkg.sha512",
+        "bcrypt.net-next.nuspec",
+        "ico.png",
+        "lib/net20/BCrypt.Net-Next.dll",
+        "lib/net20/BCrypt.Net-Next.xml",
+        "lib/net35/BCrypt.Net-Next.dll",
+        "lib/net35/BCrypt.Net-Next.xml",
+        "lib/net462/BCrypt.Net-Next.dll",
+        "lib/net462/BCrypt.Net-Next.xml",
+        "lib/net472/BCrypt.Net-Next.dll",
+        "lib/net472/BCrypt.Net-Next.xml",
+        "lib/net48/BCrypt.Net-Next.dll",
+        "lib/net48/BCrypt.Net-Next.xml",
+        "lib/net5.0/BCrypt.Net-Next.dll",
+        "lib/net5.0/BCrypt.Net-Next.xml",
+        "lib/net6.0/BCrypt.Net-Next.dll",
+        "lib/net6.0/BCrypt.Net-Next.xml",
+        "lib/netstandard2.0/BCrypt.Net-Next.dll",
+        "lib/netstandard2.0/BCrypt.Net-Next.xml",
+        "lib/netstandard2.1/BCrypt.Net-Next.dll",
+        "lib/netstandard2.1/BCrypt.Net-Next.xml",
+        "readme.md"
+      ]
+    },
     "Microsoft.CSharp/4.5.0": {
       "sha512": "kaj6Wb4qoMuH3HySFJhxwQfe8R/sJsNJnANrvv8WdFPMoNbKY5htfNscv+LHCu5ipz+49m2e+WQXpLXr9XYemQ==",
       "type": "package",
@@ -2172,6 +2221,21 @@
         "newtonsoft.json.10.0.1.nupkg.sha512",
         "newtonsoft.json.nuspec",
         "tools/install.ps1"
+      ]
+    },
+    "Portable.BouncyCastle/1.9.0": {
+      "sha512": "eZZBCABzVOek+id9Xy04HhmgykF0wZg9wpByzrWN7q8qEI0Qen9b7tfd7w8VA3dOeesumMG7C5ZPy0jk7PSRHw==",
+      "type": "package",
+      "path": "portable.bouncycastle/1.9.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net40/BouncyCastle.Crypto.dll",
+        "lib/net40/BouncyCastle.Crypto.xml",
+        "lib/netstandard2.0/BouncyCastle.Crypto.dll",
+        "lib/netstandard2.0/BouncyCastle.Crypto.xml",
+        "portable.bouncycastle.1.9.0.nupkg.sha512",
+        "portable.bouncycastle.nuspec"
       ]
     },
     "runtime.native.System/4.3.0": {
@@ -5697,24 +5761,31 @@
   },
   "projectFileDependencyGroups": {
     "net5.0": [
+      "BCrypt.Net-Next >= 4.0.3",
       "Microsoft.EntityFrameworkCore >= 5.0.17",
-      "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.17"
+      "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.17",
+      "Portable.BouncyCastle >= 1.9.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Gonzalo\\.nuget\\packages\\": {}
+    "C:\\Users\\Gonzalo\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Gonzalo\\Documents\\GitHub\\Chempe\\Domain\\Domain.csproj",
+      "projectUniqueName": "D:\\Documents\\GitHub\\Chempe\\Domain\\Domain.csproj",
       "projectName": "Domain",
-      "projectPath": "C:\\Users\\Gonzalo\\Documents\\GitHub\\Chempe\\Domain\\Domain.csproj",
+      "projectPath": "D:\\Documents\\GitHub\\Chempe\\Domain\\Domain.csproj",
       "packagesPath": "C:\\Users\\Gonzalo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Gonzalo\\Documents\\GitHub\\Chempe\\Domain\\obj\\",
+      "outputPath": "D:\\Documents\\GitHub\\Chempe\\Domain\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
         "C:\\Users\\Gonzalo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5740,6 +5811,10 @@
       "net5.0": {
         "targetAlias": "net5.0",
         "dependencies": {
+          "BCrypt.Net-Next": {
+            "target": "Package",
+            "version": "[4.0.3, )"
+          },
           "Microsoft.EntityFrameworkCore": {
             "target": "Package",
             "version": "[5.0.17, )"
@@ -5747,6 +5822,10 @@
           "Microsoft.EntityFrameworkCore.SqlServer": {
             "target": "Package",
             "version": "[5.0.17, )"
+          },
+          "Portable.BouncyCastle": {
+            "target": "Package",
+            "version": "[1.9.0, )"
           }
         },
         "imports": [
@@ -5764,7 +5843,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.214\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -1,21 +1,27 @@
 ﻿@{
-    ViewData["Title"] = "Nuevo usuario";
+    ViewData["Title"] = "Validación de usuario";
     Layout = "/Views/Shared/_Layout_client.cshtml";
 }
 
 @using Newtonsoft.Json
-@model List<Services.DTOs.DTO_Document>
+@using Services.DTOs
+@model Services.DTOs.DTO_Client_validation
 
 <script type="text/javascript">
 
         var model = @Html.Raw(JsonConvert.SerializeObject(Model, Formatting.None,
-     new JsonSerializerSettings()
-     {
-         ReferenceLoopHandling = ReferenceLoopHandling.Ignore
-     }));
+new JsonSerializerSettings()
+{
+    ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+}));
 
 </script>
 
+<style>
+    .alert.alert-success {
+        color: #06995d;
+    }
+</style>
 
 <section id="sec_6" class="hk-section">
     <div class="hk-sec-title">
@@ -43,51 +49,120 @@
                             <div class="col">
 
 
-                                <div class="form-group">
-                                    <label class="form-label" for="input_name">Nombre completo</label>
-                                    <div class="input-group">
-                                        <span class="input-group-text"><i class="fa fa-user"></i></span>
-                                        <input type="text" class="form-control" id="input_name" disabled>
-                                        &nbsp;
-                                        <span class="form-text text-muted">Como figura en su Cédula de identidad</span>
-                                    </div>
-                                </div>
+                                <form action="/User_client/UploadFile" method="post">
 
-                                <div class="form-group">
-                                    <div class="input-group row">
-                                        <div class="col">
-                                            <label class="form-label" for="input_name">Cédula de identidad (frente)</label>
-                                            <input type="file" class="form-control" aria-label="file example" placeholder="Foto del frente" required>
-                                            <div class="invalid-feedback">Example invalid form file feedback</div>
+                                    <div class="form-group">
+                                        <label class="form-label" for="input_name">Nombre completo</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            <input type="text" class="form-control" id="input_name" value="@Model.DTO_Person.Full_name" disabled>
+
+                                            @*@Html.TextBoxFor(m => m.Person.Full_name, new { @class = "form-control", @id = "input_name" })*@
+                                            @* //s: https://www.tutorialsteacher.com/mvc/htmlhelper-textbox-textboxfor : Razor with @model *@
+
+                                            &nbsp;
+                                            <span class="form-text text-muted">Como figura en su Cédula de identidad</span>
                                         </div>
-                                        <div class="col">
-                                            <label class="form-label" for="input_name">Cédula de identidad (dorso)</label>
-                                            <input type="file" class="form-control" aria-label="file example" placeholder="Foto del dorso" required>
-                                            <div class="invalid-feedback">Example invalid form file feedback</div>
+                                    </div>
+
+                                    @{
+                                        if (Model.List_DTO_documents_identity != null && Model.List_DTO_documents_identity.Count > 0 && Model.List_DTO_documents_identity[0].List_photos != null && Model.List_DTO_documents_identity[0].List_photos.Count > 1)
+                                        {
+                                            // Tiene documentos
+
+                                            <div class="form-group">
+                                                <div class="input-group row">
+                                                    <div class="col">
+                                                        <label class="form-label" for="input_name">Cédula de identidad (frente)</label>
+
+                                                        <input type="text" class="form-control" id="txtfile_document1" value="@Model.List_DTO_documents_identity[0].List_photos[0].Filename" disabled>
+                                                        <div class="invalid-feedback">Example invalid form file feedback</div>
+                                                    </div>
+                                                    <div class="col">
+                                                        <label class="form-label" for="input_name">Cédula de identidad (dorso)</label>
+
+                                                        <input type="text" class="form-control" id="txtfile_document2" value="@Model.List_DTO_documents_identity[0].List_photos[1].Filename" disabled>
+                                                        <div class="invalid-feedback">Example invalid form file feedback</div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+
+                                        }
+                                        else
+                                        {
+                                            // NO Tiene documentos
+
+                                            <div class="form-group">
+                                                <div class="input-group row">
+                                                    <div class="col">
+                                                        <label class="form-label" for="input_name">Cédula de identidad (frente)</label>
+
+
+
+                                                        <input type="file" accept="images/*" class="form-control" aria-label="file example" placeholder="Foto del frente" id="file_document1">
+                                                        <div class="invalid-feedback">Example invalid form file feedback</div>
+                                                    </div>
+                                                    <div class="col">
+                                                        <label class="form-label" for="input_name">Cédula de identidad (dorso)</label>
+                                                        <input type="file" accept="images/*" class="form-control" aria-label="file example" placeholder="Foto del dorso" id="file_document2">
+                                                        <div class="invalid-feedback">Example invalid form file feedback</div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+
+                                        }
+                                    }
+
+
+
+
+                                    <div class="form-group">
+                                        <div class="form-check">
+                                            <input class="form-check-input pointer" id="input_checkTerms" type="checkbox">
+                                            <label class="form-check-label pointer" for="input_checkTerms">La Cédula de identidad está vigente.</label>
                                         </div>
+                                    </div>
 
+                                    <br />
+                                    <hr style="border-bottom: 1px solid rgb(64 62 62)" />
+
+                                    <div class="form-group">
+                                        <div class="form-check">
+                                            <input class="form-check-input pointer" id="input_checkTerms" type="checkbox">
+                                            <label class="form-check-label pointer" for="input_checkTerms">He leído y acepto los términos y condiciones de uso.</label>
+                                        </div>
+                                    </div>
+                                    <input type="button" class="btn btn-primary me-1" onclick="btn_submit()" value="Validar">
+                                    @*<input type="submit" class="btn btn-primary me-1" onclick="btn_submit()" value="Validar">*@
+                                    <input type="button" class="btn btn-light" value="Cancelar">
+
+
+
+                                </form>
+
+
+                                <div id="divInformation" class="py-3" style="display: none;">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="alert alert-success" role="alert">
+                                                <h4 class="alert-heading mb-2">¡Excelente!</h4>
+                                                <p>La Cédula de identidad quedó correctamente cargada.</p>
+                                                <p>Un analista validará tu identidad para comenzar a operar en la plataforma. Te notificaremos a la brevedad con el resultado.</p>
+
+
+                                                <div class="card-footer justify-content-between border-0" style="padding: 0;">
+                                                    <span class="d-flex align-items-center fs-8"><i class="ri-information-fill fs-7 me-2"></i>Aviso</span>
+                                                    <a href="/User_client/Dashboard" class="btn btn-sm btn-outline-secondary">Volver</a>
+                                                </div>
+
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-
-                                <div class="form-group">
-                                    <div class="form-check">
-                                        <input class="form-check-input pointer" id="input_checkTerms" type="checkbox">
-                                        <label class="form-check-label pointer" for="input_checkTerms">La Cédula de identidad está vigente.</label>
-                                    </div>
-                                </div>
-
-                                <br />
-                                <hr style="border-bottom: 1px solid rgb(64 62 62)" />
-
-                                <div class="form-group">
-                                    <div class="form-check">
-                                        <input class="form-check-input pointer" id="input_checkTerms" type="checkbox">
-                                        <label class="form-check-label pointer" for="input_checkTerms">He leído y acepto los términos y condiciones de uso.</label>
-                                    </div>
-                                </div>
-                                <input type="button" class="btn btn-primary me-1" onclick="btn_submit()" value="Validar">
-                                <input type="button" class="btn btn-light" value="Cancelar">
-
 
 
 

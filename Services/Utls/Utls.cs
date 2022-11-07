@@ -15,6 +15,20 @@ namespace Services.Utils
     {
         private static MapperConfiguration configuration = new(config =>
         {
+            /* ------------ STATIC ENTITIES ------------ */
+            config.CreateMap<DTO_List_warrants_type, List_warrants_type>();
+            config.CreateMap<List_warrants_type, DTO_List_warrants_type>();
+
+            config.CreateMap<DTO_List_TV_brands, List_TV_brands>();
+            config.CreateMap<List_TV_brands, DTO_List_TV_brands>();
+
+            config.CreateMap<DTO_List_TV_brand_models, List_TV_brand_models>();
+            config.CreateMap<List_TV_brand_models, DTO_List_TV_brand_models>();
+
+            config.CreateMap<DTO_List_TV_technologies, List_TV_technologies>();
+            config.CreateMap<List_TV_technologies, DTO_List_TV_technologies>();
+
+            /* ------------ DYNAMIC ENTITIES ------------ */
             config.CreateMap<DTO_Acceptance, Acceptance>();
             config.CreateMap<Acceptance, DTO_Acceptance>();
 
@@ -30,8 +44,8 @@ namespace Services.Utils
             config.CreateMap<DTO_List_documents_type, List_documents_type>();
             config.CreateMap<List_documents_type, DTO_List_documents_type>();
 
-            config.CreateMap<DTO_List_goods_type, List_goods_type>();
-            config.CreateMap<List_goods_type, DTO_List_goods_type>();
+            config.CreateMap<DTO_List_warrants_type, List_warrants_type>();
+            config.CreateMap<List_warrants_type, DTO_List_warrants_type>();
 
             config.CreateMap<DTO_Person, Person>();
             config.CreateMap<Person, DTO_Person>();
@@ -61,7 +75,6 @@ namespace Services.Utils
             config.CreateMap<Warrant, DTO_Warrant>();
 
         });
-
         public static Mapper mapper { get; set; } = new(configuration);
 
         #region Helpers
@@ -110,9 +123,8 @@ namespace Services.Utils
                 oSmtpClient.Dispose();
                 return true;
             }
-            catch (System.Exception ex)
+            catch (Exception ex)
             {
-                //loguear el error
                 return false;
             }
         }
