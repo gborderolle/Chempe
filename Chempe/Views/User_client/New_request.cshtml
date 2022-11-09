@@ -73,7 +73,7 @@ new JsonSerializerSettings()
                                         <div class="input-group">
                                             <span class="input-group-text"><i class="fa-solid ri-folder-add-fill"></i></span>
 
-                                            <select id="inputState" class="form-select">
+                                            <select id="ddl_warrant_type" class="form-select" onchange="ddl_warrant_type_onChange()">
                                                 <option selected>Seleccione la clasificación</option>
                                                 @{
                                                     int index = 0;
@@ -151,7 +151,7 @@ new JsonSerializerSettings()
         </div>
 
 
-        <div class="card-header">
+        <div class="card-header panel_tv" style="display:none">
             <ul class="nav nav-line nav-tabs nav-sm nav-light card-header-tabs">
                 <li class="nav-item">
                     <a class="nav-link active" data-bs-toggle="tab" href="#prev_tab_5">
@@ -161,7 +161,7 @@ new JsonSerializerSettings()
             </ul>
         </div>
 
-        <div class="card-body p-0">
+        <div class="card-body p-0 panel_tv" style="display:none">
             <div class="tab-content m-0">
                 <div class="tab-pane fade show active" id="prev_tab_5">
                     <div class="container py-3">
@@ -215,6 +215,12 @@ new JsonSerializerSettings()
                 </div>
             </div>
         </div>
+
+
+
+
+
+
 
 
 
