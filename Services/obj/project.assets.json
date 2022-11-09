@@ -6712,6 +6712,7 @@
       "AutoMapper >= 12.0.0",
       "BCrypt.Net-Next >= 4.0.3",
       "Domain >= 1.0.0",
+      "Microsoft.AspNetCore.Authentication >= 2.2.0",
       "Microsoft.AspNetCore.Authentication.Cookies >= 2.2.0",
       "Microsoft.AspNetCore.Http >= 2.2.2",
       "Microsoft.AspNetCore.Http.Abstractions >= 2.2.0",
@@ -6722,24 +6723,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Gonzalo\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\Gonzalo\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Documents\\GitHub\\Chempe\\Services\\Services.csproj",
+      "projectUniqueName": "C:\\Users\\Gonzalo\\Documents\\GitHub\\Chempe\\Services\\Services.csproj",
       "projectName": "Services",
-      "projectPath": "D:\\Documents\\GitHub\\Chempe\\Services\\Services.csproj",
+      "projectPath": "C:\\Users\\Gonzalo\\Documents\\GitHub\\Chempe\\Services\\Services.csproj",
       "packagesPath": "C:\\Users\\Gonzalo\\.nuget\\packages\\",
-      "outputPath": "D:\\Documents\\GitHub\\Chempe\\Services\\obj\\",
+      "outputPath": "C:\\Users\\Gonzalo\\Documents\\GitHub\\Chempe\\Services\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
         "C:\\Users\\Gonzalo\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -6753,8 +6749,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "D:\\Documents\\GitHub\\Chempe\\Domain\\Domain.csproj": {
-              "projectPath": "D:\\Documents\\GitHub\\Chempe\\Domain\\Domain.csproj"
+            "C:\\Users\\Gonzalo\\Documents\\GitHub\\Chempe\\Domain\\Domain.csproj": {
+              "projectPath": "C:\\Users\\Gonzalo\\Documents\\GitHub\\Chempe\\Domain\\Domain.csproj"
             }
           }
         }
@@ -6776,6 +6772,10 @@
           "BCrypt.Net-Next": {
             "target": "Package",
             "version": "[4.0.3, )"
+          },
+          "Microsoft.AspNetCore.Authentication": {
+            "target": "Package",
+            "version": "[2.2.0, )"
           },
           "Microsoft.AspNetCore.Authentication.Cookies": {
             "target": "Package",
@@ -6821,7 +6821,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.214\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }

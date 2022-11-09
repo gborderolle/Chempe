@@ -175,3 +175,5 @@ D:\Documents\GitHub\Chempe\Chempe\obj\Debug\net5.0\Chempe.dll
 D:\Documents\GitHub\Chempe\Chempe\obj\Debug\net5.0\ref\Chempe.dll
 D:\Documents\GitHub\Chempe\Chempe\obj\Debug\net5.0\Chempe.pdb
 D:\Documents\GitHub\Chempe\Chempe\obj\Debug\net5.0\Chempe.genruntimeconfig.cache
+C:\Users\Gonzalo\Documents\GitHub\Chempe\Chempe\bin\Debug\net5.0\BCrypt.Net-Next.dll
+C:\Users\Gonzalo\Documents\GitHub\Chempe\Chempe\bin\Debug\net5.0\BouncyCastle.Crypto.dll
