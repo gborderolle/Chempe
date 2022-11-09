@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Documents\\GitHub\\Chempe\\Services\\Services.csproj": {}
+    "C:\\Users\\Gonzalo\\Documents\\GitHub\\Chempe\\Services\\Services.csproj": {}
   },
   "projects": {
-    "D:\\Documents\\GitHub\\Chempe\\Domain\\Domain.csproj": {
+    "C:\\Users\\Gonzalo\\Documents\\GitHub\\Chempe\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Documents\\GitHub\\Chempe\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\Gonzalo\\Documents\\GitHub\\Chempe\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "D:\\Documents\\GitHub\\Chempe\\Domain\\Domain.csproj",
+        "projectPath": "C:\\Users\\Gonzalo\\Documents\\GitHub\\Chempe\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\Gonzalo\\.nuget\\packages\\",
-        "outputPath": "D:\\Documents\\GitHub\\Chempe\\Domain\\obj\\",
+        "outputPath": "C:\\Users\\Gonzalo\\Documents\\GitHub\\Chempe\\Domain\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
           "C:\\Users\\Gonzalo\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -76,25 +72,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.214\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Documents\\GitHub\\Chempe\\Services\\Services.csproj": {
+    "C:\\Users\\Gonzalo\\Documents\\GitHub\\Chempe\\Services\\Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Documents\\GitHub\\Chempe\\Services\\Services.csproj",
+        "projectUniqueName": "C:\\Users\\Gonzalo\\Documents\\GitHub\\Chempe\\Services\\Services.csproj",
         "projectName": "Services",
-        "projectPath": "D:\\Documents\\GitHub\\Chempe\\Services\\Services.csproj",
+        "projectPath": "C:\\Users\\Gonzalo\\Documents\\GitHub\\Chempe\\Services\\Services.csproj",
         "packagesPath": "C:\\Users\\Gonzalo\\.nuget\\packages\\",
-        "outputPath": "D:\\Documents\\GitHub\\Chempe\\Services\\obj\\",
+        "outputPath": "C:\\Users\\Gonzalo\\Documents\\GitHub\\Chempe\\Services\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
           "C:\\Users\\Gonzalo\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -108,8 +100,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "D:\\Documents\\GitHub\\Chempe\\Domain\\Domain.csproj": {
-                "projectPath": "D:\\Documents\\GitHub\\Chempe\\Domain\\Domain.csproj"
+              "C:\\Users\\Gonzalo\\Documents\\GitHub\\Chempe\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\Gonzalo\\Documents\\GitHub\\Chempe\\Domain\\Domain.csproj"
               }
             }
           }
@@ -131,6 +123,10 @@
             "BCrypt.Net-Next": {
               "target": "Package",
               "version": "[4.0.3, )"
+            },
+            "Microsoft.AspNetCore.Authentication": {
+              "target": "Package",
+              "version": "[2.2.0, )"
             },
             "Microsoft.AspNetCore.Authentication.Cookies": {
               "target": "Package",
@@ -176,7 +172,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.214\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }
