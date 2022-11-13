@@ -21,3 +21,4 @@ D:\Documents\GitHub\Chempe\Domain\obj\Debug\net5.0\Domain.csproj.CoreCompileInpu
 D:\Documents\GitHub\Chempe\Domain\obj\Debug\net5.0\Domain.dll
 D:\Documents\GitHub\Chempe\Domain\obj\Debug\net5.0\ref\Domain.dll
 D:\Documents\GitHub\Chempe\Domain\obj\Debug\net5.0\Domain.pdb
+D:\Documents\GitHub\Chempe\Domain\obj\Debug\net5.0\Domain.csprojAssemblyReference.cache

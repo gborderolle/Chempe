@@ -1,4 +1,15 @@
-﻿Deployear bd (Code first):
+﻿Ejemplos:
+
+Hipotecalo (¡investigar!)
+https://www.hipotecalo.com/
+
+--
+
+MiCheque
+
+
+----
+Deployear bd (Code first):
 
 Package Manager Console (seleccionar default project: Domain)
 
