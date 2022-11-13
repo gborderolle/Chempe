@@ -3,3 +3,5 @@
 *.v2
 .vs/Chempe/v16/.suo
 .Chempe/bin
+Chempe/bin
+Chempe/obj
