@@ -93,7 +93,11 @@
             <td>
                 @Html.ActionLink("Modificar", "Edit", new { id = item.Person_ID })|
                 @Html.ActionLink("Detalles", "Details", new { id = item.Person_ID })|
-                @Html.ActionLink("Borrar", "Delete", new { id = item.Person_ID })
+                @using (Html.BeginForm("Delete", "Person", new { id = item.Person_ID }))
+                {
+                    <input type="submit" class="btn btn-primary me-1" value="Borrar">
+                }
+
             </td>
         </tr>
     }

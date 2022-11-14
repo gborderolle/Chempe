@@ -54,35 +54,7 @@ namespace Chempe.Controllers
             return View();
         }
 
-        [HttpGet]
-        [ActionName("Edit")]
-        public ActionResult Edit_Get(int id)
-        {
-            if (id > 0)
-            {
-                DTO_Person dto_person = _service_person.Get_DTOPersonByID(id);
-                if (dto_person != null)
-                {
-                    return View(dto_person);
-                }
-            }
-            return View();
-        }
-
-        [HttpPost]
-        [ActionName("Edit")]
-        public ActionResult Edit_Post()
-        {
-            if (ModelState.IsValid)
-            {
-                DTO_Person dto_person = new();
-                TryUpdateModelAsync(dto_person);
-
-                _service_person.Update_person(dto_person);
-                return RedirectToAction("Index");
-            }
-            return View();
-        }
+        /* ------------ CRUD methods ------------ */
 
         [HttpGet]
         [ActionName("Create")]
@@ -105,5 +77,53 @@ namespace Chempe.Controllers
             }
             return View();
         }
+
+        [HttpGet]
+        [ActionName("Edit")]
+        public ActionResult Edit_Get(int id)
+        {
+            if (id > 0)
+            {
+                DTO_Person dto_person = _service_person.Get_DTOPersonByID(id);
+                if (dto_person != null)
+                {
+                    return View(dto_person);
+                }
+            }
+            return View();
+        }
+
+        [HttpPost]
+        [ActionName("Edit")]
+        public ActionResult Edit_Post(int id)
+        {
+            if (id > 0)
+            {
+                DTO_Person dto_person = _service_person.Get_DTOPersonByID(id);
+                if (dto_person != null)
+                {
+                    TryUpdateModelAsync<IDTO_Person>(dto_person); // La interfaz protege los campos read-only del form (medida de Seguridad)
+                    if (ModelState.IsValid)
+                    {
+                        _service_person.Update_person(dto_person);
+                        return RedirectToAction("Index");
+                    }
+                }
+            }
+            return View();
+        }
+
+        [HttpPost]
+        [ActionName("Delete")]
+        public ActionResult Delete(int id)
+        {
+            if (id > 0)
+            {
+                _service_person.Delete_person(id);
+                return RedirectToAction("Index");
+            }
+            return View();
+        }
+
     }
 }

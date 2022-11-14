@@ -53,7 +53,7 @@ namespace Services.Chempe
             DTO_Person dto_person = new();
             if (id > 0)
             {
-                Person person = _chempedb_context.Person.FirstOrDefault(e => e.Person_ID == id);
+                Person person = _chempedb_context.Person.Single(e => e.Person_ID == id);
                 dto_person = Utls.mapper.Map<DTO_Person>(person);
             }
             return dto_person;
@@ -149,6 +149,10 @@ namespace Services.Chempe
             return list_dto_documentsOfIdentification;
         }
 
+        #endregion
+
+        #region CRUD methods
+
         public void Create_person(DTO_Person dto_person)
         {
             if (dto_person != null)
@@ -164,8 +168,28 @@ namespace Services.Chempe
             if (dto_person != null)
             {
                 Person person = Utls.mapper.Map<Person>(dto_person);
-                _chempedb_context.Person.Update(person);
-                _chempedb_context.SaveChanges();
+                if (person != null)
+                {
+                    _chempedb_context.Person.Update(person);
+                    _chempedb_context.SaveChanges();
+                }
+            }
+        }
+
+        public void Delete_person(int id)
+        {
+            if (id > 0)
+            {
+                DTO_Person dto_person = Get_DTOPersonByID(id);
+                if (dto_person != null)
+                {
+                    Person person = Utls.mapper.Map<Person>(dto_person);
+                    if (person != null)
+                    {
+                        _chempedb_context.Person.Remove(person);
+                        _chempedb_context.SaveChanges();
+                    }
+                }
             }
         }
 
