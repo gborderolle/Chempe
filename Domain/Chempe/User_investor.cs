@@ -11,6 +11,7 @@ namespace Domain.Chempe
         public int User_investor_ID { get; set; }
         
         // FK ------------------ recibe (sin FK)
+        //[ForeignKey("Person_ID")]
         public Person Person { get; set; } // 1 - 1*
         public int Person_ID { get; set; } // 1 - 1*
         // FK ------------------

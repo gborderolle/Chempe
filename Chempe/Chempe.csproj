@@ -17,9 +17,12 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Views\Login_page\" />
+    <Folder Include="Views\User_chempe\" />
     <Folder Include="wwwroot\content\" />
     <Folder Include="wwwroot\fonts\fontawesome\" />
     <Folder Include="wwwroot\uploads\user_client\" />

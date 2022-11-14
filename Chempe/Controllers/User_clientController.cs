@@ -1,10 +1,8 @@
 ﻿using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Data.SqlClient;
 using Services.Chempe;
 using Services.DTOs;
-using Services.Models;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -20,7 +18,7 @@ namespace Chempe.Controllers
             /* ------------ DYNAMIC ENTITIES ------------ */
         private readonly Service_Logs _service_logs;
         private readonly Service_Global_variables _service_global_variables;
-        private readonly Service_User_client _service_User_client;
+        private readonly Service_User_client _service_user_client;
         private readonly Service_Person _service_Person;
         private readonly Service_Document _service_Document;
         private readonly Service_Photo _service_Photo;
@@ -38,7 +36,7 @@ namespace Chempe.Controllers
             _webHostEnvironment = webHostEnvironment;
             _service_logs = service_logs;
             _service_global_variables = service_global_variables;
-            _service_User_client = service_User_client;
+            _service_user_client = service_User_client;
             _service_Person = service_person;
             _service_Document = service_document;
             _service_Photo = service_photo;
@@ -50,6 +48,26 @@ namespace Chempe.Controllers
         }
 
         #region Pages 
+
+        public IActionResult Index()
+        {
+            List<DTO_User_client> list_dto_user_client = _service_user_client.Get_ListDTOUser_clients();
+            if (list_dto_user_client != null)
+            {
+                return View(list_dto_user_client);
+            }
+            return View();
+        }
+
+        public IActionResult Details(int id)
+        {
+            DTO_User_client dto_user_client= _service_user_client.Get_DTOUser_clientByID(id);
+            if (dto_user_client != null)
+            {
+                return View(dto_user_client);
+            }
+            return View();
+        }
 
         public IActionResult Dashboard()
         {
@@ -126,7 +144,7 @@ namespace Chempe.Controllers
                 !string.IsNullOrWhiteSpace(input_borndate) && !string.IsNullOrWhiteSpace(input_email) &&
                 !string.IsNullOrWhiteSpace(input_password1) && !string.IsNullOrWhiteSpace(input_identity))
             {
-                result = _service_User_client.New_user_client(input_name, input_phone, input_borndate, input_email, input_password1, input_identity);
+                result = _service_user_client.New_user_client(input_name, input_phone, input_borndate, input_email, input_password1, input_identity);
 
             }
             return result;

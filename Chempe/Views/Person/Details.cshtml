@@ -1,0 +1,22 @@
+﻿@{
+    ViewData["Title"] = "Detalle de la persona";
+    Layout = "/Views/Shared/_Layout_chempe.cshtml";
+}
+
+@using Newtonsoft.Json
+@using Services.DTOs
+@model Services.DTOs.DTO_Person
+
+<h2>Detalle de la persona</h2>
+
+    <table>
+        <tr>
+            <td>Solicitud ID:</td>
+            <td>@Model.Person_ID</td>
+        </tr>
+        <tr>
+            <td>Nombre completo:</td>
+            <td>@Model.Full_name</td>
+        </tr>
+    </table>
+@Html.ActionLink("Volver", "Index")

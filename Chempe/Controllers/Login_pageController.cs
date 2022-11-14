@@ -62,9 +62,16 @@ namespace Chempe.Controllers
 
                         _service_logs.Log_AgregarAccion("OK: Acceso al sistema correcto. Email: '" + dto_login.Email + "'. Passoword: '" + dto_login.Password + ".", string.Empty, person, GetIPAddress());
 
+                        //***********************************
+                        
                         // Temporal **** Pruebas particulares:
+
+
+
+
                         //login_result = RedirectToAction("Client_validation", "User_client");
-                        login_result = RedirectToAction("New_request", "User_client");
+                        //login_result = RedirectToAction("New_request", "User_client");
+                        login_result = RedirectToAction("Index", "Person");
                     }
                     catch (Exception e)
                     {

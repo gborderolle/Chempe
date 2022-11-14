@@ -1,0 +1,45 @@
+﻿@{
+    ViewData["Title"] = "Crear una persona";
+    Layout = "/Views/Shared/_Layout_chempe.cshtml";
+}
+@model Services.DTOs.DTO_Person
+
+<h2>Crear una persona</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Persona</legend>
+        <div class="editor-label">
+            @Html.EditorFor(model => model.Full_name)
+        </div>
+        <div class="editor-label">
+            @Html.EditorFor(model => model.Identification)
+        </div>
+        <div class="editor-label">
+            @Html.EditorFor(model => model.Email)
+        </div>
+        <div class="editor-label">
+            @Html.EditorFor(model => model.Password)
+        </div>
+        <div class="editor-label">
+            @Html.DropDownList("Género", new List<SelectListItem>
+       {
+           new SelectListItem{ Text="Hombre",Value="Hombre" },
+           new SelectListItem{ Text="Mujer",Value="Mujer" }
+       }, "Seleccione el género"
+           )
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Date_born)
+        </div>
+
+        <p>
+            <input type="submit" value="Crear" />
+        </p>
+
+    </fieldset>
+
+}

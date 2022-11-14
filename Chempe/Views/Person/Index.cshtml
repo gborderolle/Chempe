@@ -1,0 +1,100 @@
+﻿@{
+    ViewData["Title"] = "Listado de personas";
+    Layout = "/Views/Shared/_Layout_chempe.cshtml";
+}
+
+@using Newtonsoft.Json
+@using Services.DTOs
+@model IEnumerable<Services.DTOs.DTO_Person>
+
+<h2>Listado de personas</h2>
+
+<p>@Html.ActionLink("Crear nuevo", "Create")</p>
+
+<table border="1">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Person_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Identification)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Full_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Password)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Gender)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Date_born)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Photo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.User_client)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.User_investor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.User_chempe)
+        </th>
+        <th>Acciones</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.ActionLink(item.Person_ID.ToString(), "Details", new { id = item.Person_ID })|
+                @*@Html.DisplayFor(modelItem => item.Person_ID)*@
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Identification)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Full_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Password)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gender)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date_born)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Photo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.User_client)
+                @*@Html.ActionLink(item.User_client.ToString(), "Details", "User_client", new { id = item.Person_ID })|*@
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.User_investor)
+                @*@Html.ActionLink(item.User_investor.ToString(), "Details", "User_investor", new { id = item.Person_ID })|*@
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.User_chempe)
+                @*@Html.ActionLink(item.User_chempe.ToString(), "Details", "User_chempe", new { id = item.Person_ID })|*@
+            </td>
+
+            <td>
+                @Html.ActionLink("Modificar", "Edit", new { id = item.Person_ID })|
+                @Html.ActionLink("Detalles", "Details", new { id = item.Person_ID })|
+                @Html.ActionLink("Borrar", "Delete", new { id = item.Person_ID })
+            </td>
+        </tr>
+    }
+</table>

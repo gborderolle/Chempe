@@ -1,4 +1,13 @@
-﻿Ejemplos:
+﻿Proyecto:
+.NET 5 (multiplataforma: mac os, linux, iOS, Android, etc.)
+.NET 5 (multiplataforma: desktop, web, mobile, etc.)
+
+Versiones:
+Framework: .NET 5
+EF: 5.0.17
+
+
+Ejemplos:
 
 Hipotecalo (¡investigar!)
 https://www.hipotecalo.com/

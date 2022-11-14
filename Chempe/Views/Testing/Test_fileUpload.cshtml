@@ -1,0 +1,14 @@
+﻿@page
+@model Chempe.Views.Test_fileUploadModel
+@{
+
+    <div>@Model.Message1</div>
+
+}
+
+<form method="post" enctype="multipart/form-data">
+    <input type="file" asp-for="Upload" />
+    <input type="submit" />
+    <input type="button" value="Reset" onclick="@Model.Clicked()" />
+
+</form>

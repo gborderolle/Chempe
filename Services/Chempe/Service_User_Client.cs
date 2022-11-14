@@ -1,6 +1,7 @@
 ﻿using Domain.Chempe;
 using Domain.Context;
 using Microsoft.Extensions.Configuration;
+using Services.DTOs;
 using Services.Utils;
 using System;
 using System.Collections.Generic;
@@ -60,18 +61,38 @@ namespace Services.Chempe
             return result;
         }
 
+        public List<DTO_User_client> Get_ListDTOUser_clients()
+        {
+            List<DTO_User_client> list_dto_user_client = new();
+            List<User_client> list_user_client = _chempedb_context.User_client.ToList();
+            if (list_user_client != null && list_user_client.Count > 0)
+            {
+                foreach (User_client user_client in list_user_client)
+                {
+                    DTO_User_client dto_user_client = Utls.mapper.Map<DTO_User_client>(user_client);
+                    list_dto_user_client.Add(dto_user_client);
+                }
+            }
+            return list_dto_user_client;
+        }
+
         #region Authorization User
 
         public User_client GetUserByExternalProvider(string provider, string nameIdentifier)
         {
-            var appUser = _chempedb_context.User_client.Where(a => a.Provider == provider).Where(a => a.NameIdentifier == nameIdentifier).FirstOrDefault();
-            return appUser;
+            //var appUser = _chempedb_context.User_client.Where(a => a.Provider == provider).Where(a => a.NameIdentifier == nameIdentifier).FirstOrDefault();
+            return null;
         }
 
         public User_client GetUserById(int id)
         {
             var appUser = _chempedb_context.User_client.Find(id);
             return appUser;
+        }
+
+        public DTO_User_client Get_DTOUser_clientByID(int id)
+        {
+            throw new NotImplementedException();
         }
 
         public User_client GetUserByEmail(string Email)

@@ -18,6 +18,7 @@ namespace Domain.Chempe
         public int User_client_ID { get; set; }
         
         // FK ------------------ recibe (sin FK)
+        //[ForeignKey("Pledge_ID")]
         public Pledge Pledge { get; set; }
         public int Pledge_ID { get; set; }
         // FK ------------------

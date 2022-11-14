@@ -22,3 +22,6 @@ D:\Documents\GitHub\Chempe\Domain\obj\Debug\net5.0\Domain.dll
 D:\Documents\GitHub\Chempe\Domain\obj\Debug\net5.0\ref\Domain.dll
 D:\Documents\GitHub\Chempe\Domain\obj\Debug\net5.0\Domain.pdb
 D:\Documents\GitHub\Chempe\Domain\obj\Debug\net5.0\Domain.csprojAssemblyReference.cache
+D:\Documents\GitHub\Chempe\Domain\bin\Debug\net5.0\Domain.runtimeconfig.json
+D:\Documents\GitHub\Chempe\Domain\bin\Debug\net5.0\Domain.runtimeconfig.dev.json
+D:\Documents\GitHub\Chempe\Domain\obj\Debug\net5.0\Domain.genruntimeconfig.cache

@@ -175,6 +175,9 @@ namespace Chempe
         //pattern: "{controller}/{action}/{identification}", new { controller = "User_client", action = "client_validation", identification = "42305298" });
         //pattern: "{controller}/{action}/{identification}", new { controller = "Login_page", action = "Login", identification = "42305298" });
         pattern: "{controller}/{action}/{identification}", new { controller = "Login_page", action = "Login", identification = "42305298" });
+        
+        
+        //pattern: "{controller}/{action}/{identification}", new { controller = "Testing", action = "Test_fileUpload", identification = "42305298" });
 
 
         });

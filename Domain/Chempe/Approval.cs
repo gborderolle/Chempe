@@ -19,6 +19,7 @@ namespace Domain.Chempe
         public decimal Primary_coupon_rate { get; set; }
         
         // FK ------------------ recibe (sin FK)
+        //[ForeignKey("Pledge_ID")]
         public Pledge Pledge { get; set; }
         public int Pledge_ID { get; set; }
         

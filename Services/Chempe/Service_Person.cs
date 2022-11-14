@@ -37,10 +37,6 @@ namespace Services.Chempe
             return _chempedb_context.Person.Include("List_documents.List_photos").FirstOrDefault(e => e.Person_ID == person_ID);
         }
 
-        #endregion
-
-        #region DTO methods
-
         public DTO_Person Get_DTOPersonByEmail(string email)
         {
             DTO_Person dto_person = new();
@@ -52,13 +48,38 @@ namespace Services.Chempe
             return dto_person;
         }
 
+        public DTO_Person Get_DTOPersonByID(int id)
+        {
+            DTO_Person dto_person = new();
+            if (id > 0)
+            {
+                Person person = _chempedb_context.Person.FirstOrDefault(e => e.Person_ID == id);
+                dto_person = Utls.mapper.Map<DTO_Person>(person);
+            }
+            return dto_person;
+        }
+
+        public List<DTO_Person> Get_ListDTOPersons()
+        {
+            List<DTO_Person> list_dto_person = new();
+            List<Person> list_person = _chempedb_context.Person.ToList();
+            if (list_person != null && list_person.Count > 0)
+            {
+                foreach (Person person in list_person)
+                {
+                    DTO_Person dto_person = Utls.mapper.Map<DTO_Person>(person);
+                    list_dto_person.Add(dto_person);
+                }
+            }
+            return list_dto_person;
+        }
+
         public int Get_CountTotalPhotosByIdentification(string identification)
         {
             int result = 0;
             if (!string.IsNullOrWhiteSpace(identification))
             {
                 List<Document> list_documentsOfIdentification = new();
-
                 Person person = _chempedb_context.Person.Include("List_documents.Documents_type").FirstOrDefault(e => e.Identification == identification);
                 if (person != null)
                 {
@@ -74,7 +95,6 @@ namespace Services.Chempe
             }
             return result;
         }
-
 
         public DTO_Person Get_DTOPersonByIdentification(string identification)
         {
@@ -96,7 +116,6 @@ namespace Services.Chempe
             }
             return person;
         }
-
 
         public List<DTO_Document> Get_DTODocumentsIdentificationFromPersonByIdentification(string identification)
         {
@@ -128,6 +147,16 @@ namespace Services.Chempe
                 }
             }
             return list_dto_documentsOfIdentification;
+        }
+
+        public void Create_person(DTO_Person dto_person)
+        {
+            if (dto_person != null)
+            {
+                Person person = Utls.mapper.Map<Person>(dto_person);
+                _chempedb_context.Person.Add(person);
+                _chempedb_context.SaveChanges();
+            }
         }
 
         #endregion

@@ -7,6 +7,8 @@ namespace Services.DTOs
         public int Request_ID { get; set; }
         public DTO_User_client User_request { get; set; }
         public DateTime Datetime_request { get; set; }
+        public DTO_Request Request { get; set; }
+        public DTO_Pledge Pledge { get; set; }
 
     }
 }

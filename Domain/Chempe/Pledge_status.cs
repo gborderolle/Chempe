@@ -13,6 +13,7 @@ namespace Domain.Chempe
         public DateTime Datetime_lastUpdate { get; set; }
         
         // FK ------------------ recibe (sin FK)
+        //[ForeignKey("Pledge_ID")]
         public Pledge Pledge { get; set; }
         public int Pledge_ID { get; set; }
         // FK ------------------
