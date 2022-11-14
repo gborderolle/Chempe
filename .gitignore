@@ -6,3 +6,4 @@
 Chempe/bin
 Chempe/obj
 *.csproj
+*.csproj.user
