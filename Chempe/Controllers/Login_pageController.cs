@@ -71,7 +71,9 @@ namespace Chempe.Controllers
 
                         //login_result = RedirectToAction("Client_validation", "User_client");
                         //login_result = RedirectToAction("New_request", "User_client");
+                        //login_result = RedirectToAction("New_client", "User_client");
                         login_result = RedirectToAction("Index", "Person");
+                        //login_result = RedirectToAction("Create", "Person");
                     }
                     catch (Exception e)
                     {

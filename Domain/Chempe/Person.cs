@@ -15,6 +15,9 @@ namespace Domain.Chempe
         public string Identification { get; set; }
         
         public string Full_name { get; set; }
+
+        public string Phone { get; set; }
+
         [MaxLength(30)]
         [EmailAddress]
         public string Email { get; set; }

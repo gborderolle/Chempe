@@ -18,6 +18,9 @@ MiCheque
 
 
 ----
+Guía YT espectacular: https://www.youtube.com/watch?v=uXwmyuvrn1E&list=PL6n9fhu94yhVm6S8I2xd6nYz2ZORd7X2v&index=15&ab_channel=kudvenkat
+
+----
 Deployear bd (Code first):
 
 Package Manager Console (seleccionar default project: Domain)

@@ -159,6 +159,16 @@ namespace Services.Chempe
             }
         }
 
+        public void Update_person(DTO_Person dto_person)
+        {
+            if (dto_person != null)
+            {
+                Person person = Utls.mapper.Map<Person>(dto_person);
+                _chempedb_context.Person.Update(person);
+                _chempedb_context.SaveChanges();
+            }
+        }
+
         #endregion
 
         #region JSM methods

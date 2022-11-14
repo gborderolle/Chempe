@@ -8,6 +8,7 @@ namespace Services.DTOs
         public int Person_ID { get; set; }
         public string Identification { get; set; }
         public string Full_name { get; set; }
+        public string Phone { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
         public string Gender { get; set; }
