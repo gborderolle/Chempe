@@ -43,38 +43,87 @@ namespace Chempe.Controllers
 
         public IActionResult Details(int id)
         {
-            DTO_Person dto_person = _service_person.Get_DTOPersonByID(id);
-            if (dto_person != null)
+            if (id > 0)
             {
-                return View(dto_person);
+                DTO_Person dto_person = _service_person.Get_DTOPersonByID(id);
+                if (dto_person != null)
+                {
+                    return View(dto_person);
+                }
             }
             return View();
         }
 
+        /* ------------ CRUD methods ------------ */
+
         [HttpGet]
-        public ActionResult Create()
+        [ActionName("Create")]
+        public ActionResult Create_Get()
         {
             return View();
         }
 
         [HttpPost]
-        public ActionResult Create(IFormCollection formCollection)
+        [ActionName("Create")]
+        public ActionResult Create_Post()
         {
-            DTO_Person dto_person = new();
-            dto_person.Identification = formCollection["Identification"];
-            dto_person.Full_name = formCollection["Full_name"];
-            dto_person.Email = formCollection["Email"];
-            dto_person.Password = formCollection["Password"];
-            dto_person.Gender = formCollection["Gender"];
-
-            DateTime date_born_out = DateTime.MinValue;
-            if (!DateTime.TryParseExact(formCollection["Date_born"], "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out date_born_out))
+            if (ModelState.IsValid)
             {
-                date_born_out = DateTime.MinValue;
+                DTO_Person dto_person = new();
+                TryUpdateModelAsync(dto_person);
+
+                _service_person.Create_person(dto_person);
+                return RedirectToAction("Index");
             }
-            dto_person.Date_born = date_born_out;
-            _service_person.Create_person(dto_person);
-            return RedirectToAction("Index");
+            return View();
         }
+
+        [HttpGet]
+        [ActionName("Edit")]
+        public ActionResult Edit_Get(int id)
+        {
+            if (id > 0)
+            {
+                DTO_Person dto_person = _service_person.Get_DTOPersonByID(id);
+                if (dto_person != null)
+                {
+                    return View(dto_person);
+                }
+            }
+            return View();
+        }
+
+        [HttpPost]
+        [ActionName("Edit")]
+        public ActionResult Edit_Post(int id)
+        {
+            if (id > 0)
+            {
+                DTO_Person dto_person = _service_person.Get_DTOPersonByID(id);
+                if (dto_person != null)
+                {
+                    TryUpdateModelAsync<IDTO_Person>(dto_person); // La interfaz protege los campos read-only del form (medida de Seguridad)
+                    if (ModelState.IsValid)
+                    {
+                        _service_person.Update_person(dto_person);
+                        return RedirectToAction("Index");
+                    }
+                }
+            }
+            return View();
+        }
+
+        [HttpPost]
+        [ActionName("Delete")]
+        public ActionResult Delete(int id)
+        {
+            if (id > 0)
+            {
+                _service_person.Delete_person(id);
+                return RedirectToAction("Index");
+            }
+            return View();
+        }
+
     }
 }

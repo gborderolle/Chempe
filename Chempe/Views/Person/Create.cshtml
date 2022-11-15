@@ -4,42 +4,143 @@
 }
 @model Services.DTOs.DTO_Person
 
-<h2>Crear una persona</h2>
-
 @using (Html.BeginForm())
 {
     @Html.ValidationSummary(true)
-
     <fieldset>
-        <legend>Persona</legend>
-        <div class="editor-label">
-            @Html.EditorFor(model => model.Full_name)
-        </div>
-        <div class="editor-label">
-            @Html.EditorFor(model => model.Identification)
-        </div>
-        <div class="editor-label">
-            @Html.EditorFor(model => model.Email)
-        </div>
-        <div class="editor-label">
-            @Html.EditorFor(model => model.Password)
-        </div>
-        <div class="editor-label">
-            @Html.DropDownList("Género", new List<SelectListItem>
-       {
-           new SelectListItem{ Text="Hombre",Value="Hombre" },
-           new SelectListItem{ Text="Mujer",Value="Mujer" }
-       }, "Seleccione el género"
-           )
-        </div>
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Date_born)
-        </div>
 
-        <p>
-            <input type="submit" value="Crear" />
-        </p>
+
+
+        <section id="sec_6" class="hk-section">
+            <div class="hk-sec-title">
+                <h5>Registro de usuario</h5>
+                <p>Ingrese sus datos básicos, por favor. Más adelante se le pedirá validar su identidad para mantener la seguridad del servicio.</p>
+            </div>
+            <div class="hk-example card card-shadow card-wth-tabs">
+                <div class="card-header">
+                    <ul class="nav nav-line nav-tabs nav-sm nav-light card-header-tabs">
+                        <li class="nav-item">
+                            <a class="nav-link active" data-bs-toggle="tab" href="#prev_tab_5">
+                                <span class="nav-link-text">Información</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+
+
+
+                <div class="card-body p-0">
+                    <div class="tab-content m-0">
+                        <div class="tab-pane fade show active" id="prev_tab_5">
+                            <div class="container py-3">
+                                <div class="row">
+                                    <div class="col">
+
+
+                                        @* // Fila nueva *@
+                                        <div class="form-group">
+                                            <label class="form-label" for="input_name">Nombre completo</label>
+                                            <div class="input-group">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                                <input type="text" class="form-control" id="input_name" placeholder="Nombre completo" name="full_name">
+                                                &nbsp;
+                                                <span class="form-text text-muted">Como figura en su Cédula de identidad</span>
+                                            </div>
+                                        </div>
+
+                                        @* // Fila nueva *@
+                                        <div class="form-group row">
+                                            <div class="input-group col">
+                                                <label class="form-label" for="input_email">Cédula de identidad</label>
+                                                <div class="input-group">
+                                                    <span class="input-group-text"><i class="fa fa-id-card"></i></span>
+                                                    <input type="text" class="form-control" id="input_email" placeholder="" data-mask="9.999.999-9" name="identification">
+                                                    &nbsp;
+                                                    <span class="form-text text-muted">Ejemplo "1.234.567-8"</span>
+
+                                                </div>
+                                            </div>
+
+                                            <div class="input-group col">
+                                                <label class="form-label" for="input_phone">Fecha de nacimiento</label>
+                                                <div class="input-group">
+                                                    <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+                                                    <input type="text" class="form-control datepicker" id="input_borndate" placeholder="Fecha de nacimiento" name="date_born">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        @* // Fila nueva *@
+                                        <div class="form-group row">
+                                            <div class="input-group col">
+                                                <label class="form-label" for="input_email">Correo electrónico</label>
+                                                <div class="input-group">
+                                                    <span class="input-group-text"><i class="fa fa-inbox"></i></span>
+                                                    <input type="email" class="form-control" id="input_email" placeholder="Correo electrónico" name="email">
+                                                </div>
+                                            </div>
+
+                                            <div class="input-group col">
+                                                <label class="form-label" for="input_phone">Teléfono móvil</label>
+                                                <div class="input-group">
+                                                    <span class="input-group-text"><i class="fa fa-phone"></i></span>
+                                                    <input type="text" class="form-control" id="input_phone" placeholder="" data-mask="099 999 999" name="phone">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        @* // Fila nueva *@
+                                        <div class="form-group row">
+                                            <div class="form-group col">
+                                                <label class="form-label" for="input_password1">Contraseña</label>
+                                                <div class="input-group">
+                                                    <span class="input-group-text"><i class="fa fa-lock"></i></span>
+                                                    <input type="password" class="form-control" id="input_password1" placeholder="Contraseña" name="password">
+                                                </div>
+                                            </div>
+                                            <div class="form-group col">
+                                                <label class="form-label" for="input_password2">Confirmar contraseña</label>
+                                                <div class="input-group">
+                                                    <span class="input-group-text"><i class="fa fa-lock"></i></span>
+                                                    <input type="password" class="form-control" id="input_password2" placeholder="Confirmar contraseña">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="form-check">
+                                                <input class="form-check-input pointer" id="input_checkTerms" type="checkbox">
+                                                <label class="form-check-label pointer" for="input_checkTerms">He leído y acepto los términos y condiciones de uso.</label>
+                                            </div>
+                                        </div>
+
+                                        @* // Acciones *@
+                                        <input type="submit" class="btn btn-primary me-1" onclick="btn_submit()" value="Registrarme">
+                                        @Html.ActionLink("Volver", "Index", new { role = "button" }, new { @class = "btn btn-light" })
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </section>
 
     </fieldset>
-
 }
+
+@section scripts{
+    <!-- Jasny-bootstrap JS -->
+    <script src="~/vendors/jasny-bootstrap/dist/js/jasny-bootstrap.min.js"></script>
+
+    <!-- Page JS -->
+    <script src="~/js/pages/create_person.js"></script>
+}
+
+

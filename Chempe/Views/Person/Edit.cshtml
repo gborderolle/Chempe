@@ -1,0 +1,111 @@
+﻿@{
+    ViewData["Title"] = "Modificar usuario";
+    Layout = "/Views/Shared/_Layout_chempe.cshtml";
+}
+@model Services.DTOs.DTO_Person
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <fieldset>
+
+
+        <section id="sec_6" class="hk-section">
+            <div class="hk-sec-title">
+                <h5>Detalles de usuario</h5>
+            </div>
+            <div class="hk-example card card-shadow card-wth-tabs">
+                <div class="card-header">
+                    <ul class="nav nav-line nav-tabs nav-sm nav-light card-header-tabs">
+                        <li class="nav-item">
+                            <a class="nav-link active" data-bs-toggle="tab" href="#prev_tab_5">
+                                <span class="nav-link-text">Información</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+
+                <div class="card-body p-0">
+                    <div class="tab-content m-0">
+                        <div class="tab-pane fade show active" id="prev_tab_5">
+                            <div class="container py-3">
+                                <div class="row">
+                                    <div class="col">
+
+
+                                        @* // Fila nueva *@
+                                        <div class="form-group">
+                                            <label class="form-label" for="input_name">Nombre completo</label>
+                                            <div class="input-group">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                                <input type="text" class="form-control" id="input_name" placeholder="Nombre completo" name="full_name" value="@Model.Full_name">
+                                            </div>
+                                        </div>
+
+                                        @* // Fila nueva *@
+                                        <div class="form-group row">
+                                            <div class="input-group col">
+                                                <label class="form-label" for="input_email">Cédula de identidad</label>
+                                                <div class="input-group">
+                                                    <span class="input-group-text"><i class="fa fa-id-card"></i></span>
+                                                    <input type="text" class="form-control" id="input_email" placeholder="" data-mask="9.999.999-9" name="identification" value="@Model.Identification">
+                                                </div>
+                                            </div>
+
+                                            <div class="input-group col">
+                                                <label class="form-label" for="input_phone">Fecha de nacimiento</label>
+                                                <div class="input-group">
+                                                    <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+                                                    <input type="text" class="form-control datepicker" id="input_borndate" placeholder="Fecha de nacimiento" name="date_born" value="@Model.Date_born+">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        @* // Fila nueva *@
+                                        <div class="form-group row">
+                                            <div class="input-group col">
+                                                <label class="form-label" for="input_email">Correo electrónico</label>
+                                                <div class="input-group">
+                                                    <span class="input-group-text"><i class="fa fa-inbox"></i></span>
+                                                    <input type="email" class="form-control" id="input_email" placeholder="Correo electrónico" name="email" value="@Model.Email">
+                                                </div>
+                                            </div>
+
+                                            <div class="input-group col">
+                                                <label class="form-label" for="input_phone">Teléfono móvil</label>
+                                                <div class="input-group">
+                                                    <span class="input-group-text"><i class="fa fa-phone"></i></span>
+                                                    <input type="text" class="form-control" id="input_phone" placeholder="" data-mask="099 999 999" name="phone" value="@Model.Phone">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        @Html.HiddenFor(m => m.Person_ID)
+
+                                        @* // Acciones *@
+                                        <input type="submit" class="btn btn-primary me-1" onclick="btn_submit()" value="Modificar">
+                                        @Html.ActionLink("Volver", "Index", new { role = "button" }, new { @class = "btn btn-light" })
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+        </section>
+
+    </fieldset>
+}
+
+
+@section scripts{
+    <!-- Jasny-bootstrap JS -->
+    <script src="~/vendors/jasny-bootstrap/dist/js/jasny-bootstrap.min.js"></script>
+
+    <!-- Page JS -->
+    <script src="~/js/pages/edit_person.js"></script>
+}
