@@ -91,11 +91,12 @@
             </td>
 
             <td>
-                @using (Html.BeginForm("Edit", "Person", new { id = item.Person_ID }))
-                {
-                    <input type="submit" class="btn btn-sm btn-outline-dark me-1" value="Modificar" onclick="return confirm('Está seguro que desea modificar a @item.Full_name?')">
-                }
-                @Html.ActionLink("Detalles", "Details", new { id = item.Person_ID })|
+                @*@using (Html.BeginForm("Edit", "Person", new { id = item.Person_ID }))
+        {
+            <input type="submit" class="btn btn-sm btn-outline-dark me-1" value="Modificar" onclick="return confirm('Está seguro que desea modificar a @item.Full_name?')">
+        }*@
+                @Html.ActionLink("Modificar", "Edit", new { id = item.Person_ID })
+                @Html.ActionLink("Detalles", "Details", new { id = item.Person_ID })
                 @using (Html.BeginForm("Delete", "Person", new { id = item.Person_ID }))
                 {
                     <input type="submit" class="btn btn-sm btn-outline-dark me-1" value="Borrar" onclick="return confirm('Está seguro que desea borrar a @item.Full_name?')">
