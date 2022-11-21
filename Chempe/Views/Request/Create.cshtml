@@ -70,7 +70,9 @@
                                                 <div class="input-group">
                                                     <span class="input-group-text"><i class="fa-solid ri-folder-add-fill"></i></span>
 
-                                                    <select id="ddl_warrant_type" class="form-select" onchange="ddl_warrant_type_onChange()" name="Warrant_type">
+                                                    @Html.DropDownList("List_DTO_List_warrants_type", "-- Seleccione la clasificación --")
+
+                                                    @*<select id="ddl_warrant_type" class="form-select" onchange="ddl_warrant_type_onChange()" name="Warrant_type">
                                                         <option selected>Seleccione la clasificación</option>
                                                         @{
                                                             int index = 0;
@@ -91,8 +93,7 @@
                                                                 }
                                                             }
                                                         }
-
-                                                    </select>
+                                                    </select>*@
 
                                                 </div>
                                             </div>
@@ -176,7 +177,9 @@
                                                 <div class="input-group">
                                                     <span class="input-group-text"><i class="fa-solid ri-folder-add-fill"></i></span>
 
-                                                    <select id="ddl_warrant_brand" class="form-select" onchange="ddl_warrant_brand_onChange()" name="Brand">
+                                                    @Html.DropDownList("List_DTO_List_TV_brands", "-- Seleccione la marca --")
+
+                                                    @*<select id="ddl_warrant_brand" class="form-select" onchange="ddl_warrant_brand_onChange()" name="Brand">
                                                         <option selected>Seleccione la marca</option>
                                                         @{
                                                             index = 0;
@@ -198,7 +201,7 @@
                                                             }
                                                         }
 
-                                                    </select>
+                                                    </select>*@
                                                 </div>
                                             </div>
 
@@ -209,7 +212,9 @@
                                                 <div class="input-group">
                                                     <span class="input-group-text"><i class="fa-solid ri-folder-add-fill"></i></span>
 
-                                                    <select id="ddl_warrant_model" class="form-select" onchange="ddl_warrant_brand_model_onChange()" name="Model">
+                                                    @Html.DropDownList("List_DTO_List_TV_brand_models", "-- Seleccione el modelo --")
+
+                                                    @*<select id="ddl_warrant_model" class="form-select" onchange="ddl_warrant_brand_model_onChange()" name="Model">
                                                         <option selected>Seleccione el modelo</option>
                                                         @{
                                                             index = 0;
@@ -231,7 +236,7 @@
                                                             }
                                                         }
 
-                                                    </select>
+                                                    </select>*@
                                                 </div>
                                             </div>
 
@@ -253,7 +258,13 @@
                                                 <div class="input-group">
                                                     <span class="input-group-text"><i class="fa-solid ri-folder-add-fill"></i></span>
 
-                                                    <select id="ddl_warrant_technology" class="form-select" onchange="ddl_warrant_technology_onChange()" name="Technology">
+                                                    @Html.DropDownList("List_DTO_List_TV_technologies", "-- Seleccione la tecnología --")
+
+                                                    @*<select asp-for="Model.Technology" class="form-select" asp-items="Model.List_DTO_List_TV_technologies">
+                                                        <option value="">-- Seleccione la tecnología --</option>
+                                                    </select>*@
+
+                                                    @*<select id="ddl_warrant_technology" class="form-select" onchange="ddl_warrant_technology_onChange()" name="Technology">
                                                         <option selected>Seleccione la tecnología</option>
                                                         @{
                                                             index = 0;
@@ -261,7 +272,6 @@
                                                             {
                                                                 foreach (DTO_List_TV_technologies DTO_List_TV_technologies1 in Model.List_DTO_List_TV_technologies)
                                                                 {
-
                                                                     if (index == 0)
                                                                     {
                                                                         <option value=@index selected> @DTO_List_TV_technologies1.Name</option>
@@ -275,7 +285,7 @@
                                                             }
                                                         }
 
-                                                    </select>
+                                                    </select>*@
                                                 </div>
                                             </div>
 
@@ -285,6 +295,9 @@
                                             @* // Ítem 2: Smart *@
                                             <div class="input-group col">
                                                 <div class="form-check">
+                                                    @*@Html.CheckBoxFor(x => x.IsSmart)*@
+                                                    @*@Html.DisplayFor("¿Es smart TV?")*@
+
                                                     <input class="form-check-input pointer" id="input_checkIsSmart" type="checkbox" name="IsSmart">
                                                     <label class="form-check-label pointer" for="input_checkIsSmart">¿Es smart TV?</label>
                                                 </div>

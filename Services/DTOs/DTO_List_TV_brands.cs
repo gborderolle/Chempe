@@ -22,5 +22,11 @@ namespace Services.DTOs
         public List<List_TV_brand_models> List_TV_brand_models { get; set; } = new(); // 1 - n 
 
         */
+
+        public override string ToString()
+        {
+            return Name;
+        }
+
     }
 }

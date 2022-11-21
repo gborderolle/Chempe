@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Services.Chempe;
 using Services.DTOs;
 using System;
@@ -83,10 +84,11 @@ namespace Chempe.Controllers
                     DTO_Request_create dto_request_create = new();
                     dto_request_create.DTO_Person = dto_person;
 
-                    dto_request_create.List_DTO_List_warrants_type = _service_List_warrants_type.Get_DTO_List_warrants_type();
-                    dto_request_create.List_DTO_List_TV_brands = _service_List_TV_brands.Get_DTO_List_TV_brands();
-                    dto_request_create.List_DTO_List_TV_brand_models = _service_List_TV_brand_models.Get_DTO_List_TV_brand_models();
-                    dto_request_create.List_DTO_List_TV_technologies = _service_List_TV_technologies.Get_DTO_List_TV_technologies();
+                    // s: https://www.youtube.com/watch?v=ZUjOgrb4oHQ&list=PL6n9fhu94yhVm6S8I2xd6nYz2ZORd7X2v&index=37&ab_channel=kudvenkat
+                    ViewBag.List_DTO_List_warrants_type = new SelectList(_service_List_warrants_type.Get_DTO_List_warrants_type(), "DTO_List_warrants_type_ID");
+                    ViewBag.List_DTO_List_TV_brands = new SelectList(_service_List_TV_brands.Get_DTO_List_TV_brands());
+                    ViewBag.List_DTO_List_TV_brand_models = new SelectList(_service_List_TV_brand_models.Get_DTO_List_TV_brand_models());
+                    ViewBag.List_DTO_List_TV_technologies = new SelectList(_service_List_TV_technologies.Get_DTO_List_TV_technologies());
 
                     return View(dto_request_create);
                 }
@@ -104,25 +106,33 @@ namespace Chempe.Controllers
                 TryUpdateModelAsync(dto_Request_create);
                 //_service_Warrant.Create_warrant(dto_Warrant);
 
-                /*
-                if (dto_Warrant.Warrant_type != null)
+                // warrant_tv
+
+
+                // request
+
+
+
+
+                if (dto_Request_create.Warrant_type != null)
                 {
-                    if (dto_Warrant.Warrant_type.Name == Service_Global_variables.Warrants_type_enum.Televisor.ToString())
+                    //if (dto_Request_create.List_DTO_List_warrants_type == Service_Global_variables.Warrants_type_enum.Televisor.ToString())
                     {
-                        DTO_Warrant_TV dto_Warrant_tv = new();
-                        TryUpdateModelAsync(dto_Warrant_tv);
-                        _service_Warrant_TV.Create_warrant_TV(dto_Warrant_tv);
+                        //DTO_Warrant_TV dto_Warrant_tv = new();
+                        //TryUpdateModelAsync(dto_Warrant_tv);
+                        _service_Warrant_TV.Create_warrant_TV(dto_Request_create);
                     }
-                    else
+                    //else
                     {
-                        _service_Warrant.Create_warrant(dto_Warrant);
+                        //DTO_Warrant dto_Warrant = new();
+                        //TryUpdateModelAsync(dto_Warrant);
+                        _service_Warrant.Create_warrant(dto_Request_create);
                     }
                 }
 
-                DTO_Request dto_request = new();
-                TryUpdateModelAsync(dto_request);
-                _service_request.Create_request(dto_request);
-                */
+                //DTO_Request dto_request = new();
+                //TryUpdateModelAsync(dto_request);
+                _service_request.Create_request(dto_Request_create);
 
                 return RedirectToAction("Index");
             }

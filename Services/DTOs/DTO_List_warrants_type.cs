@@ -9,5 +9,10 @@ namespace Services.DTOs
         public string Description { get; set; }
         public bool IsEnabled { get; set; } = true;
 
+        public override string ToString()
+        {
+            return Name;
+        }
+
     }
 }

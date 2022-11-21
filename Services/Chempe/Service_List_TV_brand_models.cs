@@ -32,5 +32,10 @@ namespace Services.Chempe
             }
             return List_DTO_List_TV_brand_models;
         }
+
+        internal List_TV_brand_models GetModelByID(string model)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

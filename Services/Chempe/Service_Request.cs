@@ -94,7 +94,12 @@ namespace Services.Chempe
             }
         }
 
-        
+        public void Create_request(DTO_Request_create dto_Request_create)
+        {
+            throw new NotImplementedException();
+        }
+
+
         #endregion
 
     }

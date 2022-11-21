@@ -20,8 +20,8 @@ namespace Services.Chempe
 
         public Service_Person(Chempedb_context chempedb_context, IConfiguration configuration, Service_Global_variables service_Global_variables)
         {
-            _chempedb_context = chempedb_context;
             _configuration = configuration;
+            _chempedb_context = chempedb_context;
             _service_Global_variables = service_Global_variables;
         }
 

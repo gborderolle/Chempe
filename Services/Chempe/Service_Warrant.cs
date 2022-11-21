@@ -29,5 +29,10 @@ namespace Services.Chempe
                 _chempedb_context.SaveChanges();
             }
         }
+
+        public void Create_warrant(DTO_Request_create dto_Request_create)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -24,7 +24,12 @@ namespace Services.DTOs
         public List_TV_brands List_TV_brands { get; set; } // n - 1
         public int List_TV_brands_ID { get; set; } // n - 1
 
-
         */
+
+        public override string ToString()
+        {
+            return Name;
+        }
+
     }
 }
