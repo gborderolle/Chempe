@@ -16,8 +16,8 @@ namespace Chempe.Controllers
         /* ------------ DYNAMIC ENTITIES ------------ */
         private readonly Service_Logs _service_logs;
         private readonly Service_Global_variables _service_global_variables;
-        private readonly Service_User_client _service_User_client;
         private readonly Service_Person _service_person;
+        private readonly Service_User_client _service_User_client;
 
         /* ------------ STATIC ENTITIES ------------ */
 
@@ -54,7 +54,7 @@ namespace Chempe.Controllers
             return View();
         }
 
-        /* ------------ CRUD methods ------------ */
+        #region CRUD methods
 
         [HttpGet]
         [ActionName("Create")]
@@ -124,6 +124,9 @@ namespace Chempe.Controllers
             }
             return View();
         }
+
+        #endregion CRUD methods
+
 
     }
 }

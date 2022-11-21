@@ -14,6 +14,11 @@ var TYPES = {
 },
  TOSTRING = Object.prototype.toString;
 
+
+$(function () {
+    $(".datepicker").datepicker({ dateFormat: 'dd/mm/yy' });
+});
+
 // Get variable object type
 function type(o) {
     return TYPES[typeof o] || TYPES[TOSTRING.call(o)] || (o ? 'object' : 'null');

@@ -11,7 +11,7 @@
 
 <p>@Html.ActionLink("Crear nuevo", "Create")</p>
 
-<table>
+<table border="1">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Request_ID)
@@ -25,32 +25,32 @@
         <th>
             @Html.DisplayNameFor(model => model.Pledge)
         </th>
-       
+
         <th></th>
     </tr>
 
     @foreach (var item in Model)
     {
-<tr>
-    <td>
-        @Html.ActionLink(item.Request_ID.ToString(), "Details", new { id = item.Request_ID })|
-        @*@Html.DisplayFor(modelItem => item.Request_ID)*@
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Datetime_request)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.User_request)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Pledge)
-        @*@Html.ActionLink(item.Pledge.ToString(), "Details", "Pledge", new { id = item.Request_ID })|*@
-    </td>
-    <td>
-        @Html.ActionLink("Edit", "Edit", new { id = item.Request_ID })|
-        @Html.ActionLink("Details", "Details", new { id = item.Request_ID })|
-        @Html.ActionLink("Delete", "Delete", new { id = item.Request_ID })
-    </td>
-</tr>
+        <tr>
+            <td>
+                @Html.ActionLink(item.Request_ID.ToString(), "Details", new { id = item.Request_ID })|
+                @*@Html.DisplayFor(modelItem => item.Request_ID)*@
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Datetime_request)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.User_request)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pledge)
+                @*@Html.ActionLink(item.Pledge.ToString(), "Details", "Pledge", new { id = item.Request_ID })|*@
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Request_ID })|
+                @Html.ActionLink("Details", "Details", new { id = item.Request_ID })|
+                @Html.ActionLink("Delete", "Delete", new { id = item.Request_ID })
+            </td>
+        </tr>
     }
 </table>

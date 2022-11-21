@@ -23,6 +23,10 @@ namespace Domain.Chempe
         [Column(TypeName = "decimal(18,2)")]
         public decimal Current_fair_value { get; set; }
 
+        [MaxLength(200)]
+        public string Comments { get; set; }
+
+
         // FK ------------------ recibe (sin FK)
         //[ForeignKey("Pledge_ID")]
         public Pledge Pledge { get; set; }
@@ -30,8 +34,8 @@ namespace Domain.Chempe
         
         // FK ------------------
         [ForeignKey("List_goods_type_ID")]
-        public List_warrants_type Goods_type { get; set; }
-        public int? List_goods_type_ID { get; set; }
+        public List_warrants_type Warrant_type { get; set; }
+        public int? List_warrant_type_ID { get; set; }
         // FK ------------------
 
         public Warrant()

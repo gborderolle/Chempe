@@ -8,6 +8,8 @@ namespace Domain.Chempe
     {
         public string Brand { get; set; }
 
+        public string Model { get; set; }
+
         public string Technology { get; set; }
 
         public int Inches { get; set; }

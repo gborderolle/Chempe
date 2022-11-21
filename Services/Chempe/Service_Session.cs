@@ -7,7 +7,6 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
 using Services.DTOs;
-using Services.Models;
 
 namespace Services.Chempe
 {

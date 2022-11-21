@@ -5,9 +5,6 @@ DTO_New_request
 
 */
 
-$(function () {
-});
-
 function ddl_warrant_type_onChange() {
     var ddl_warrant_type = $("#ddl_warrant_type :selected").text();
     if (ddl_warrant_type !== null && ddl_warrant_type !== undefined) {
@@ -26,7 +23,6 @@ function ddl_warrant_type_onChange() {
         }
         */
     }
-
 }
 
 function btn_submit() {

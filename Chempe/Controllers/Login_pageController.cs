@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Services.Chempe;
 using Services.DTOs;
-using Services.Models;
 using Services.Utils;
 using System;
 using System.Collections.Generic;
@@ -13,10 +12,13 @@ namespace Chempe.Controllers
 {
     public class Login_pageController : Controller
     {
+        /* ------------ DYNAMIC ENTITIES ------------ */
         private readonly Service_Logs _service_logs;
         private readonly Service_Global_variables _service_global_variables;
         private readonly Service_Person _service_person;
         private readonly Service_Session _service_session;
+
+        /* ------------ STATIC ENTITIES ------------ */
 
         public Login_pageController(Service_Logs service_logs, Service_Global_variables service_global_variables, Service_Person service_person, Service_Session service_session)
         {
@@ -63,7 +65,7 @@ namespace Chempe.Controllers
                         _service_logs.Log_AgregarAccion("OK: Acceso al sistema correcto. Email: '" + dto_login.Email + "'. Passoword: '" + dto_login.Password + ".", string.Empty, person, GetIPAddress());
 
                         //***********************************
-                        
+
                         // Temporal **** Pruebas particulares:
 
 
@@ -72,8 +74,10 @@ namespace Chempe.Controllers
                         //login_result = RedirectToAction("Client_validation", "User_client");
                         //login_result = RedirectToAction("New_request", "User_client");
                         //login_result = RedirectToAction("New_client", "User_client");
-                        login_result = RedirectToAction("Index", "Person");
                         //login_result = RedirectToAction("Create", "Person");
+
+                        //login_result = RedirectToAction("Index", "Person");
+                        login_result = RedirectToAction("Index", "Request");
                     }
                     catch (Exception e)
                     {

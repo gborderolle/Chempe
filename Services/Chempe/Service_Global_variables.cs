@@ -23,6 +23,12 @@ namespace Services.Chempe
             Person_identity
         }
 
+        public enum Warrants_type_enum
+        {
+            Televisor
+        }
+
+
         public enum Nombres_espanol_enum
         {
             Documento_de_identidad

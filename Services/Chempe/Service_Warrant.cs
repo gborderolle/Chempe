@@ -1,5 +1,9 @@
-﻿using Domain.Context;
+﻿using Domain.Chempe;
+using Domain.Context;
 using Microsoft.Extensions.Configuration;
+using Services.DTOs;
+using Services.Utils;
+using System;
 
 namespace Services.Chempe
 {
@@ -14,6 +18,16 @@ namespace Services.Chempe
         {
             _chempedb_context = chempedb_context;
             _configuration = configuration;
+        }
+
+        public void Create_warrant(DTO_Warrant dto_Warrant)
+        {
+            if (dto_Warrant != null)
+            {
+                Warrant request = Utls.mapper.Map<Warrant>(dto_Warrant);
+                _chempedb_context.Warrant.Add(request);
+                _chempedb_context.SaveChanges();
+            }
         }
     }
 }

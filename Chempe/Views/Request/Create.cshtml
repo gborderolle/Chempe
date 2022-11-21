@@ -1,0 +1,407 @@
+﻿@{
+    ViewData["Title"] = "Nueva solicitud de crédito";
+    Layout = "/Views/Shared/_Layout_client.cshtml";
+}
+
+@using Newtonsoft.Json
+@using Services.DTOs
+@model Services.DTOs.DTO_Request_create
+
+<style>
+    .alert.alert-info {
+        color: #11a5b2;
+    }
+</style>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <fieldset>
+
+
+        <section id="sec_6" class="hk-section">
+            <div class="hk-sec-title">
+                <h5>Inicio de nueva solicitud de crédito</h5>
+                <p>Ingrese sus datos básicos, por favor. Más adelante se le pedirá validar su identidad para mantener la seguridad del servicio.</p>
+            </div>
+
+
+            <div class="col-12">
+                <div class="alert alert-info card card-border card-int mb-4" role="alert">
+                    <h4 class="alert-heading mb-2">Metodología</h4>
+                    <p>Asegurarse de tener la documentación requerida para dar garantía al crédito, la plataforma y el sustento de la operativa.</p>
+                    <div class="card-footer justify-content-between border-0" style="padding: 0;">
+                        <span class="d-flex align-items-center fs-8"><i class="ri-information-fill fs-7 me-2"></i>Importante</span>
+                        <a href="#" class="btn btn-sm btn-outline-secondary">Entendido</a>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="hk-example card card-shadow card-wth-tabs">
+
+                @* // Sección 1: Información general  *@
+                <div class="card-header">
+                    <ul class="nav nav-line nav-tabs nav-sm nav-light card-header-tabs">
+                        <li class="nav-item">
+                            <a class="nav-link active" data-bs-toggle="tab" href="#prev_tab_5">
+                                <span class="nav-link-text">Información general</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+
+                <div class="card-body p-0">
+                    <div class="tab-content m-0">
+                        <div class="tab-pane fade show active" id="prev_tab_5">
+                            <div class="container py-3">
+                                <div class="row">
+                                    <div class="col">
+
+                                        @* // Fila 1: Clasificación + Comprobante  *@
+
+                                        <div class="form-group row">
+
+                                            @* // Ítem 1: Clasificación *@
+                                            <div class="input-group col">
+                                                <label class="form-label" for="input_phone">Clasificación</label>
+                                                <div class="input-group">
+                                                    <span class="input-group-text"><i class="fa-solid ri-folder-add-fill"></i></span>
+
+                                                    <select id="ddl_warrant_type" class="form-select" onchange="ddl_warrant_type_onChange()" name="Warrant_type">
+                                                        <option selected>Seleccione la clasificación</option>
+                                                        @{
+                                                            int index = 0;
+                                                            if (Model.List_DTO_List_warrants_type != null)
+                                                            {
+                                                                foreach (DTO_List_warrants_type DTO_List_warrants_type1 in Model.List_DTO_List_warrants_type)
+                                                                {
+
+                                                                    if (index == 0)
+                                                                    {
+                                                                        <option value=@index selected> @DTO_List_warrants_type1.Name</option>
+                                                                    }
+                                                                    else
+                                                                    {
+                                                                        <option value=@index> @DTO_List_warrants_type1.Name</option>
+                                                                    }
+                                                                    index++;
+                                                                }
+                                                            }
+                                                        }
+
+                                                    </select>
+
+                                                </div>
+                                            </div>
+
+                                            @* // Ítem 2: Comprobante *@
+                                            <div class="input-group col">
+                                                <label class="form-label" for="input_phone">Comprobante de compra</label>
+                                                <div class="input-group">
+                                                    <input type="file" accept="images/*" class="form-control" aria-label="file example" placeholder="Foto del frente" id="file_document1" name="full_name">
+                                                    <div class="invalid-feedback">Example invalid form file feedback</div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                        @* // Fila 2: Fecha compra + Valor compra  *@
+
+                                        <div class="form-group row">
+
+                                            @* // Ítem 1: Fecha compra *@
+                                            <div class="input-group col">
+                                                <label class="form-label" for="input_borndate">Fecha de compra</label>
+                                                <div class="input-group">
+                                                    <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+                                                    <input type="text" class="form-control datepicker" id="input_borndate" placeholder="Fecha de compra" name="Datetime_purchase">
+                                                </div>
+                                            </div>
+
+                                            @* // Ítem 2: Valor compra *@
+                                            <div class="input-group col">
+                                                <label class="form-label" for="input_phone">Precio de compra</label>
+                                                <div class="input-group">
+                                                    <span class="input-group-text"><i class="fa fa-money-bill"></i></span>
+                                                    <input type="number" class="form-control" id="input_price" placeholder="" name="Purchase_import">
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+
+                                        <div class="alert alert-warning card card-border card-int mb-4" role="alert">
+                                            <div class="card-footer justify-content-between border-0" style="padding: 0;">
+                                                <span class="d-flex align-items-center fs-8"><i class="ri-information-fill fs-7 me-2"></i>Como figura en la boleta de compra.</span>
+                                            </div>
+                                        </div>
+
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                @* // Sección 2: Información específica *@
+                <div class="card-header panel_tv" style="display:none">
+                    <ul class="nav nav-line nav-tabs nav-sm nav-light card-header-tabs">
+                        <li class="nav-item">
+                            <a class="nav-link active" data-bs-toggle="tab" href="#prev_tab_5">
+                                <span class="nav-link-text">Información específica</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="card-body p-0 panel_tv" style="display:none">
+                    <div class="tab-content m-0">
+                        <div class="tab-pane fade show active" id="prev_tab_5">
+                            <div class="container py-3">
+                                <div class="row">
+                                    <div class="col">
+
+
+                                        @* // Fila 1: Marca + Modelo *@
+                                        <div class="form-group row">
+
+                                            @* // Ítem 1: Marca *@
+                                            <div class="input-group col">
+                                                <label class="form-label" for="input_phone">Marca</label>
+                                                <div class="input-group">
+                                                    <span class="input-group-text"><i class="fa-solid ri-folder-add-fill"></i></span>
+
+                                                    <select id="ddl_warrant_brand" class="form-select" onchange="ddl_warrant_brand_onChange()" name="Brand">
+                                                        <option selected>Seleccione la marca</option>
+                                                        @{
+                                                            index = 0;
+                                                            if (Model.List_DTO_List_TV_brands != null)
+                                                            {
+                                                                foreach (DTO_List_TV_brands DTO_List_TV_brands1 in Model.List_DTO_List_TV_brands)
+                                                                {
+
+                                                                    if (index == 0)
+                                                                    {
+                                                                        <option value=@index selected> @DTO_List_TV_brands1.Name</option>
+                                                                    }
+                                                                    else
+                                                                    {
+                                                                        <option value=@index> @DTO_List_TV_brands1.Name</option>
+                                                                    }
+                                                                    index++;
+                                                                }
+                                                            }
+                                                        }
+
+                                                    </select>
+                                                </div>
+                                            </div>
+
+
+                                            @* // Ítem 2: Modelo *@
+                                            <div class="input-group col">
+                                                <label class="form-label" for="input_phone">Modelo</label>
+                                                <div class="input-group">
+                                                    <span class="input-group-text"><i class="fa-solid ri-folder-add-fill"></i></span>
+
+                                                    <select id="ddl_warrant_model" class="form-select" onchange="ddl_warrant_brand_model_onChange()" name="Model">
+                                                        <option selected>Seleccione el modelo</option>
+                                                        @{
+                                                            index = 0;
+                                                            if (Model.List_DTO_List_TV_brand_models != null)
+                                                            {
+                                                                foreach (DTO_List_TV_brand_models DTO_List_TV_brand_models1 in Model.List_DTO_List_TV_brand_models)
+                                                                {
+
+                                                                    if (index == 0)
+                                                                    {
+                                                                        <option value=@index selected> @DTO_List_TV_brand_models1.Name</option>
+                                                                    }
+                                                                    else
+                                                                    {
+                                                                        <option value=@index> @DTO_List_TV_brand_models1.Name</option>
+                                                                    }
+                                                                    index++;
+                                                                }
+                                                            }
+                                                        }
+
+                                                    </select>
+                                                </div>
+                                            </div>
+
+
+
+
+
+                                        </div>
+
+
+
+
+                                        @* // Fila 2: Tecnología + Smart *@
+                                        <div class="form-group row" style="margin-bottom:0;">
+
+                                            @* // Ítem 1: Tecnología *@
+                                            <div class="input-group col">
+                                                <label class="form-label" for="input_phone">Tecnología</label>
+                                                <div class="input-group">
+                                                    <span class="input-group-text"><i class="fa-solid ri-folder-add-fill"></i></span>
+
+                                                    <select id="ddl_warrant_technology" class="form-select" onchange="ddl_warrant_technology_onChange()" name="Technology">
+                                                        <option selected>Seleccione la tecnología</option>
+                                                        @{
+                                                            index = 0;
+                                                            if (Model.List_DTO_List_TV_technologies != null)
+                                                            {
+                                                                foreach (DTO_List_TV_technologies DTO_List_TV_technologies1 in Model.List_DTO_List_TV_technologies)
+                                                                {
+
+                                                                    if (index == 0)
+                                                                    {
+                                                                        <option value=@index selected> @DTO_List_TV_technologies1.Name</option>
+                                                                    }
+                                                                    else
+                                                                    {
+                                                                        <option value=@index> @DTO_List_TV_technologies1.Name</option>
+                                                                    }
+                                                                    index++;
+                                                                }
+                                                            }
+                                                        }
+
+                                                    </select>
+                                                </div>
+                                            </div>
+
+
+
+
+                                            @* // Ítem 2: Smart *@
+                                            <div class="input-group col">
+                                                <div class="form-check">
+                                                    <input class="form-check-input pointer" id="input_checkIsSmart" type="checkbox" name="IsSmart">
+                                                    <label class="form-check-label pointer" for="input_checkIsSmart">¿Es smart TV?</label>
+                                                </div>
+                                            </div>
+
+
+
+
+
+
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+                <div class="card-header">
+                    <ul class="nav nav-line nav-tabs nav-sm nav-light card-header-tabs">
+                        <li class="nav-item">
+                            <a class="nav-link active" data-bs-toggle="tab" href="#prev_tab_5">
+                                <span class="nav-link-text">Estado del bien</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="card-body p-0">
+                    <div class="tab-content m-0">
+                        <div class="tab-pane fade show active" id="prev_tab_5">
+                            <div class="container py-3">
+                                <div class="row">
+                                    <div class="col">
+
+
+                                        <div class="input-group">
+                                            <label class="form-label" for="input_phone">Fotos del bien</label>
+                                            <div class="input-group">
+                                                <input type="file" accept="images/*" class="form-control" aria-label="file example" placeholder="Foto del bien" id="file_document1">
+                                                <div class="invalid-feedback">Example invalid form file feedback</div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="form-label" for="input_name">Comentarios</label>
+                                            <div class="input-group">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                                <textarea class="form-control" id="input_name" placeholder="Comentarios que quiera incluir" name="Comments"></textarea>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="form-group row-short" style="display: flex;">
+                                            <div class="form-check col">
+                                                <input class="form-check-input pointer" id="input_checkTerms" type="checkbox">
+                                                <label class="form-check-label pointer" for="input_checkTerms">El bien declarado funciona 100%</label>
+                                            </div>
+                                            <div class="form-check col">
+                                                <input class="form-check-input pointer" id="input_checkTerms" type="checkbox">
+                                                <label class="form-check-label pointer" for="input_checkTerms">Los valores declarados corresponden a la realidad del bien.</label>
+                                            </div>
+                                        </div>
+
+
+                                        <hr style="border-bottom: 1px solid rgb(64 62 62)" />
+
+                                        <div class="form-group">
+                                            <div class="form-check">
+                                                <input class="form-check-input pointer" id="input_checkTerms" type="checkbox">
+                                                <label class="form-check-label pointer" for="input_checkTerms">He leído y acepto los términos y condiciones de uso.</label>
+                                            </div>
+                                        </div>
+                                        @*<input type="button" class="btn btn-primary me-1" onclick="btn_submit()" value="Iniciar solicitud">*@
+                                        @*<button type="submit" class="btn btn-light">Cancel</button>*@
+
+
+                                        @Html.HiddenFor(m => m.DTO_Person.Person_ID)
+
+
+                                        @* // Acciones *@
+                                        <input type="submit" class="btn btn-primary me-1" onclick="btn_submit()" value="Iniciar solicitud">
+                                        @Html.ActionLink("Volver", "Index", new { role = "button" }, new { @class = "btn btn-light" })
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </section>
+
+    </fieldset>
+}
+
+
+@section scripts{
+    <!-- Jasny-bootstrap JS -->
+    <script src="~/vendors/jasny-bootstrap/dist/js/jasny-bootstrap.min.js"></script>
+
+    <!-- Page JS -->
+    <script src="~/js/pages/request/create.js"></script>
+    <script src="~/js/auxiliar_functions.js"></script>
+}
