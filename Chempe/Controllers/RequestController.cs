@@ -85,10 +85,63 @@ namespace Chempe.Controllers
                     dto_request_create.DTO_Person = dto_person;
 
                     // s: https://www.youtube.com/watch?v=ZUjOgrb4oHQ&list=PL6n9fhu94yhVm6S8I2xd6nYz2ZORd7X2v&index=37&ab_channel=kudvenkat
-                    ViewBag.List_DTO_List_warrants_type = new SelectList(_service_List_warrants_type.Get_DTO_List_warrants_type(), "DTO_List_warrants_type_ID");
-                    ViewBag.List_DTO_List_TV_brands = new SelectList(_service_List_TV_brands.Get_DTO_List_TV_brands());
-                    ViewBag.List_DTO_List_TV_brand_models = new SelectList(_service_List_TV_brand_models.Get_DTO_List_TV_brand_models());
-                    ViewBag.List_DTO_List_TV_technologies = new SelectList(_service_List_TV_technologies.Get_DTO_List_TV_technologies());
+                    //ViewBag.List_DTO_List_warrants_type = new SelectList(_service_List_warrants_type.Get_DTO_List_warrants_type(), "DTO_List_warrants_type_ID");
+                    //ViewBag.List_DTO_List_TV_brands = new SelectList(_service_List_TV_brands.Get_DTO_List_TV_brands());
+                    //ViewBag.List_DTO_List_TV_brand_models = new SelectList(_service_List_TV_brand_models.Get_DTO_List_TV_brand_models());
+
+
+                    // Warrant type
+                    List<DTO_List_warrants_type> DTO_List_warrants_type = _service_List_warrants_type.Get_DTO_List_warrants_type();
+                    var selectList = new List<SelectListItem>();
+                    foreach (var element in DTO_List_warrants_type)
+                    {
+                        selectList.Add(new SelectListItem
+                        {
+                            Value = element.DTO_List_warrants_type_ID.ToString(),
+                            Text = element.Name
+                        });
+                    }
+                    ViewBag.List_DTO_List_warrants_type = selectList;
+
+                    // Brand
+                    List<DTO_List_TV_brands> DTO_List_TV_brands = _service_List_TV_brands.Get_DTO_List_TV_brands();
+                    selectList = new List<SelectListItem>();
+                    foreach (var element in DTO_List_TV_brands)
+                    {
+                        selectList.Add(new SelectListItem
+                        {
+                            Value = element.List_TV_brands_ID.ToString(),
+                            Text = element.Name
+                        });
+                    }
+                    ViewBag.List_DTO_List_TV_brands = selectList;
+
+                    // Model
+                    List<DTO_List_TV_brand_models> DTO_List_TV_brand_models = _service_List_TV_brand_models.Get_DTO_List_TV_brand_models();
+                    selectList = new List<SelectListItem>();
+                    foreach (var element in DTO_List_TV_brand_models)
+                    {
+                        selectList.Add(new SelectListItem
+                        {
+                            Value = element.List_TV_brand_models_ID.ToString(),
+                            Text = element.Name
+                        });
+                    }
+                    ViewBag.List_DTO_List_TV_brand_models = selectList;
+
+                    // Technology
+                    List<DTO_List_TV_technologies> DTO_List_TV_technologies = _service_List_TV_technologies.Get_DTO_List_TV_technologies();
+                    selectList = new List<SelectListItem>();
+                    foreach (var element in DTO_List_TV_technologies)
+                    {
+                        selectList.Add(new SelectListItem
+                        {
+                            Value = element.List_TV_technologies_ID.ToString(),
+                            Text = element.Name
+                        });
+                    }
+                    ViewBag.List_DTO_List_TV_technologies = selectList;
+
 
                     return View(dto_request_create);
                 }

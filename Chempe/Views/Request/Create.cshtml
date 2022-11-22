@@ -258,35 +258,50 @@
                                                 <div class="input-group">
                                                     <span class="input-group-text"><i class="fa-solid ri-folder-add-fill"></i></span>
 
-                                                    @Html.DropDownList("List_DTO_List_TV_technologies", "-- Seleccione la tecnología --")
+                                                    @*@Html.DropDownList("List_DTO_List_TV_technologies", "-- Seleccione la tecnología --")*@
 
-                                                    @*<select asp-for="Model.Technology" class="form-select" asp-items="Model.List_DTO_List_TV_technologies">
-                                                        <option value="">-- Seleccione la tecnología --</option>
-                                                    </select>*@
+                                                    Dictionary<string, string>
+    List_DTO_List_TV_technologies = (Dictionary<string, string>
+        )ViewBag.List_DTO_List_TV_technologies;
 
-                                                    @*<select id="ddl_warrant_technology" class="form-select" onchange="ddl_warrant_technology_onChange()" name="Technology">
-                                                        <option selected>Seleccione la tecnología</option>
-                                                        @{
-                                                            index = 0;
-                                                            if (Model.List_DTO_List_TV_technologies != null)
-                                                            {
-                                                                foreach (DTO_List_TV_technologies DTO_List_TV_technologies1 in Model.List_DTO_List_TV_technologies)
-                                                                {
-                                                                    if (index == 0)
-                                                                    {
-                                                                        <option value=@index selected> @DTO_List_TV_technologies1.Name</option>
-                                                                    }
-                                                                    else
-                                                                    {
-                                                                        <option value=@index> @DTO_List_TV_technologies1.Name</option>
-                                                                    }
-                                                                    index++;
-                                                                }
-                                                            }
-                                                        }
+        @Html.DropDownListFor(x => x.Technology, new SelectList(List_DTO_List_TV_technologies, "Value", "Key"))
 
-                                                    </select>*@
-                                                </div>
+
+
+        @*@Html.DropDownList("List_DTO_List_TV_technologies", "-- Seleccione la tecnología --")*@
+
+        @*@Html.DropDownList("List_DTO_List_TV_technologies", new SelectListItem[] { new SelectListItem() { Text = "Newest to Oldest", Value = "0" }, new SelectListItem() { Text = "Oldest to Newest", Value = "1" } },
+            new { onchange = "ddl_warrant_technology_onChange(this.options[this.selectedIndex].value);" })*@
+
+
+
+        @*<select asp-for="Model.Technology" class="form-select" asp-items="Model.List_DTO_List_TV_technologies">
+                <option value="">-- Seleccione la tecnología --</option>
+            </select>*@
+
+        @*<select id="ddl_warrant_technology" class="form-select" onchange="ddl_warrant_technology_onChange()" name="Technology">
+                <option selected>Seleccione la tecnología</option>
+                @{
+                    index = 0;
+                    if (Model.List_DTO_List_TV_technologies != null)
+                    {
+                        foreach (DTO_List_TV_technologies DTO_List_TV_technologies1 in Model.List_DTO_List_TV_technologies)
+                        {
+                            if (index == 0)
+                            {
+                                <option value=@index selected> @DTO_List_TV_technologies1.Name</option>
+                            }
+                            else
+                            {
+                                <option value=@index> @DTO_List_TV_technologies1.Name</option>
+                            }
+                            index++;
+                        }
+                    }
+                }
+
+            </select>*@
+</div>
                                             </div>
 
 
