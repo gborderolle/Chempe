@@ -16,11 +16,11 @@ namespace Services.Chempe
         private readonly IConfiguration _configuration;
 
         /* ------------ DYNAMIC ENTITIES ------------ */
-        private readonly Service_User_client _service_User_client;
+        private readonly Service_Person_client _service_User_client;
 
         Configurations _configurations = new();
 
-        public Service_Request(Chempedb_context chempedb_context, IConfiguration configuration, Service_User_client service_User_client)
+        public Service_Request(Chempedb_context chempedb_context, IConfiguration configuration, Service_Person_client service_User_client)
         {
             _chempedb_context = chempedb_context;
             _configuration = configuration;
@@ -105,7 +105,7 @@ namespace Services.Chempe
             Request request = new();
             request.Datetime_request = DateTime.UtcNow;
 
-            User_client user_client = _service_User_client.GetUserById(vm_Request_create.User_client_ID);
+            Person_client user_client = _service_User_client.GetUserById(vm_Request_create.User_client_ID);
             if (user_client != null)
             {
                 request.User_request = user_client;

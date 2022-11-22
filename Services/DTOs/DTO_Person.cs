@@ -17,9 +17,9 @@ namespace Services.DTOs
         public string Gender { get; set; }
         public DateTime? Date_born { get; set; }
         public DTO_Photo Photo { get; set; }
-        public DTO_User_client User_client { get; set; }
-        public DTO_User_investor User_investor { get; set; }
-        public DTO_User_chempe User_chempe { get; set; }
+        public DTO_Person_client Person_client { get; set; }
+        public DTO_Person_investor Person_investor { get; set; }
+        public DTO_Person_user Person_chempe { get; set; }
         public List<DTO_Document> List_documents { get; set; }
     }
 
@@ -34,9 +34,9 @@ namespace Services.DTOs
         public string Gender { get; set; }
         public DateTime? Date_born { get; set; }
         public DTO_Photo Photo { get; set; }
-        public DTO_User_client User_client { get; set; }
-        public DTO_User_investor User_investor { get; set; }
-        public DTO_User_chempe User_chempe { get; set; }
+        public DTO_Person_client Person_client { get; set; }
+        public DTO_Person_investor Person_investor { get; set; }
+        public DTO_Person_user Person_chempe { get; set; }
         public List<DTO_Document> List_documents { get; set; }
     }
 }

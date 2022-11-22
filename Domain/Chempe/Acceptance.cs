@@ -11,11 +11,10 @@ namespace Domain.Chempe
         public int Acceptance_ID { get; set; }
         
         public DateTime Datetime_acceptance { get; set; }
-        
+
         // FK ------------------ recibe (sin FK)
-        //[ForeignKey("User_client_ID")]
-        public User_client User_acceptance { get; set; }
-        public int User_client_ID { get; set; }
+        [ForeignKey("User_client_ID")]
+        public Person_client User_acceptance { get; set; }
         // FK ------------------
         
         public Acceptance()

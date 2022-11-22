@@ -26,13 +26,17 @@ namespace Domain.Chempe
         // FK ------------------
         [ForeignKey("Person_ID")]
         public Person Person { get; set; } // n - 1
-        public int Person_ID { get; set; } // n - 1
         // FK ------------------
 
         public Document()
         {
+            IsDeleted = false;
         }
-
+        public Document(string name)
+        {
+            Name = name;
+            IsDeleted = false;
+        }
         public Document(string name, List_documents_type documents_type, List<Photo> list_photos, string description)
         {
             Name = name;

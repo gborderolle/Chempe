@@ -17,15 +17,14 @@ namespace Domain.Chempe
         
         [Column(TypeName = "decimal(18,2)")]
         public decimal Primary_coupon_rate { get; set; }
-        
+
         // FK ------------------ recibe (sin FK)
-        //[ForeignKey("Pledge_ID")]
+        [ForeignKey("Pledge_ID")]
         public Pledge Pledge { get; set; }
-        public int Pledge_ID { get; set; }
         
         // FK ------------------
         [ForeignKey("User_chempe_ID")]
-        public User_chempe User_approval { get; set; }
+        public Person_user User_approval { get; set; }
         public int User_chempe_ID { get; set; }
         // FK ------------------
 

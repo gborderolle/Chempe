@@ -4,21 +4,19 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Domain.Chempe
 {
-    [Table("User_investor")]
-    public class User_investor
+    [Table("Person_client")]
+    public class Person_client
     {
         [Key]
-        public int User_investor_ID { get; set; }
-        
+        public int Person_client_ID { get; set; }
+
         // FK ------------------ recibe (sin FK)
-        //[ForeignKey("Person_ID")]
+        [ForeignKey("Person_ID")]
         public Person Person { get; set; } // 1 - 1*
-        public int Person_ID { get; set; } // 1 - 1*
         // FK ------------------
 
-        public User_investor()
+        public Person_client()
         {
         }
-
     }
 }

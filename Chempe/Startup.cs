@@ -53,9 +53,9 @@ namespace Chempe
             services.AddTransient<Service_Pledge>();
             services.AddTransient<Service_Pledge_status>();
             services.AddTransient<Service_Request>();
-            services.AddTransient<Service_User_client>();
-            services.AddTransient<Service_User_chempe>();
-            services.AddTransient<Service_User_investor>();
+            services.AddTransient<Service_Person_client>();
+            services.AddTransient<Service_Person_user>();
+            services.AddTransient<Service_Person_investor>();
             services.AddTransient<Service_Warrant>();
             services.AddTransient<Service_Warrant_TV>();
             services.AddTransient<Service_Session>();
@@ -108,7 +108,7 @@ namespace Chempe
                         }
                         else
                         {
-                            var user_service = context.HttpContext.RequestServices.GetRequiredService(typeof(Service_User_client)) as Service_User_client; // ToDo, cuidado con todos los tipos de usuario. Hacer de Person mejor?
+                            var user_service = context.HttpContext.RequestServices.GetRequiredService(typeof(Service_Person_client)) as Service_Person_client; // ToDo, cuidado con todos los tipos de usuario. Hacer de Person mejor?
                             var nameIdentifier = claimsIdentity.Claims.FirstOrDefault(m => m.Type == ClaimTypes.NameIdentifier)?.Value;
                             if (user_service != null && nameIdentifier != null)
                             {

@@ -19,6 +19,10 @@ namespace Domain.Chempe
 
         public List<List_TV_brand_models> List_TV_brand_models { get; set; } = new(); // 1 - n 
 
+        // FK ------------------ recibe (sin FK)
+        [ForeignKey("Warrant_ID")]
+        public Warrant_TV Warrant_TV { get; set; }
+
         public List_TV_brands()
         {
         }

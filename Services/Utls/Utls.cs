@@ -62,14 +62,14 @@ namespace Services.Utils
             config.CreateMap<DTO_Request, Request>();
             config.CreateMap<Request, DTO_Request>();
 
-            config.CreateMap<DTO_User_chempe, User_chempe>();
-            config.CreateMap<User_chempe, DTO_User_chempe>();
+            config.CreateMap<DTO_Person_user, Person_user>();
+            config.CreateMap<Person_user, DTO_Person_user>();
 
-            config.CreateMap<DTO_User_client, User_client>();
-            config.CreateMap<User_client, DTO_User_client>();
+            config.CreateMap<DTO_Person_client, Person_client>();
+            config.CreateMap<Person_client, DTO_Person_client>();
 
-            config.CreateMap<DTO_User_investor, User_investor>();
-            config.CreateMap<User_investor, DTO_User_investor>();
+            config.CreateMap<DTO_Person_investor, Person_investor>();
+            config.CreateMap<Person_investor, DTO_Person_investor>();
 
             config.CreateMap<DTO_Warrant, Warrant>();
             config.CreateMap<Warrant, DTO_Warrant>();

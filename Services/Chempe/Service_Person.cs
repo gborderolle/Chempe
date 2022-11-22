@@ -41,10 +41,34 @@ namespace Services.Chempe
             DTO_Person dto_person = new();
             if (!string.IsNullOrWhiteSpace(email))
             {
-                Person person = _chempedb_context.Person.Include("List_documents.Documents_type").FirstOrDefault(e => e.Email == email);
+                //.Include("Person_client")
+
+                Person person = _chempedb_context.Person.Include("Person_client").Include("List_documents.Documents_type").FirstOrDefault(e => e.Email == email); 
                 dto_person = Utls.mapper.Map<DTO_Person>(person);
             }
             return dto_person;
+        }
+
+        internal int Get_CountTotalPhotosByPersonID(int person_ID)
+        {
+            int result = 0;
+            if (person_ID > 0)
+            {
+                List<Document> list_documentsOfIdentification = new();
+                Person person = _chempedb_context.Person.Include("List_documents.Documents_type").FirstOrDefault(e => e.Person_ID == person_ID);
+                if (person != null)
+                {
+                    List<Document> list_documents = person.List_documents;
+                    foreach (Document document in list_documents)
+                    {
+                        if (document.List_photos != null)
+                        {
+                            result = +document.List_photos.Count;
+                        }
+                    }// foreach
+                }
+            }
+            return result;
         }
 
         public DTO_Person Get_DTOPersonByID(int id)

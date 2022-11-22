@@ -14,13 +14,12 @@ namespace Domain.Chempe
         
         // FK ------------------
         [ForeignKey("User_client_ID")]
-        public User_client User_request { get; set; }
+        public Person_client User_request { get; set; }
         public int User_client_ID { get; set; }
-        
+
         // FK ------------------ recibe (sin FK)
-        //[ForeignKey("Pledge_ID")]
+        [ForeignKey("Pledge_ID")]
         public Pledge Pledge { get; set; }
-        public int Pledge_ID { get; set; }
         // FK ------------------
 
         public Request()

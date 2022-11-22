@@ -38,13 +38,13 @@
             @Html.DisplayNameFor(model => model.Photo)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.User_client)
+            @Html.DisplayNameFor(model => model.Person_client)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.User_investor)
+            @Html.DisplayNameFor(model => model.Person_investor)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.User_chempe)
+            @Html.DisplayNameFor(model => model.Person_chempe)
         </th>
         <th>Acciones</th>
     </tr>
@@ -78,15 +78,15 @@
                 @Html.DisplayFor(modelItem => item.Photo)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.User_client)
+                @Html.DisplayFor(modelItem => item.Person_client)
                 @*@Html.ActionLink(item.User_client.ToString(), "Details", "User_client", new { id = item.Person_ID })|*@
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.User_investor)
+                @Html.DisplayFor(modelItem => item.Person_investor)
                 @*@Html.ActionLink(item.User_investor.ToString(), "Details", "User_investor", new { id = item.Person_ID })|*@
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.User_chempe)
+                @Html.DisplayFor(modelItem => item.Person_chempe)
                 @*@Html.ActionLink(item.User_chempe.ToString(), "Details", "User_chempe", new { id = item.Person_ID })|*@
             </td>
 

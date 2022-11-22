@@ -28,9 +28,8 @@ namespace Domain.Chempe
 
 
         // FK ------------------ recibe (sin FK)
-        //[ForeignKey("Pledge_ID")]
+        [ForeignKey("Pledge_ID")]
         public Pledge Pledge { get; set; }
-        public int Pledge_ID { get; set; }
         
         // FK ------------------
         [ForeignKey("List_goods_type_ID")]

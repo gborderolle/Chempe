@@ -18,7 +18,7 @@ namespace Chempe.Controllers
             /* ------------ DYNAMIC ENTITIES ------------ */
         private readonly Service_Logs _service_logs;
         private readonly Service_Global_variables _service_global_variables;
-        private readonly Service_User_client _service_user_client;
+        private readonly Service_Person_client _service_user_client;
         private readonly Service_Person _service_Person;
         private readonly Service_Document _service_Document;
         private readonly Service_Photo _service_Photo;
@@ -30,7 +30,7 @@ namespace Chempe.Controllers
         private readonly Service_List_warrants_type _service_List_warrants_type;
 
         public User_clientController(IWebHostEnvironment webHostEnvironment, Service_Logs service_logs, Service_Global_variables service_global_variables, 
-            Service_User_client service_User_client, Service_Person service_person, Service_Document service_document, Service_Photo service_photo,
+            Service_Person_client service_User_client, Service_Person service_person, Service_Document service_document, Service_Photo service_photo,
             Service_List_TV_brands service_List_TV_brands, Service_List_TV_brand_models service_List_TV_brand_models, Service_List_TV_technologies service_List_TV_technologies, Service_List_warrants_type service_List_warrants_type)
         {
             _webHostEnvironment = webHostEnvironment;
@@ -51,20 +51,20 @@ namespace Chempe.Controllers
 
         public IActionResult Index()
         {
-            List<DTO_User_client> list_dto_user_client = _service_user_client.Get_ListDTOUser_clients();
-            if (list_dto_user_client != null)
+            List<DTO_Person_client> list_dto_person_client = _service_user_client.Get_ListDTOUser_clients();
+            if (list_dto_person_client != null)
             {
-                return View(list_dto_user_client);
+                return View(list_dto_person_client);
             }
             return View();
         }
 
         public IActionResult Details(int id)
         {
-            DTO_User_client dto_user_client= _service_user_client.Get_DTOUser_clientByID(id);
-            if (dto_user_client != null)
+            DTO_Person_client dto_person_client= _service_user_client.Get_DTOUser_clientByID(id);
+            if (dto_person_client != null)
             {
-                return View(dto_user_client);
+                return View(dto_person_client);
             }
             return View();
         }
@@ -179,7 +179,8 @@ namespace Chempe.Controllers
                         string photo_description = photo_number == 1 ? Service_Global_variables.Nombres_espanol_enum.Documento_de_identidad + " frente" : Service_Global_variables.Nombres_espanol_enum.Documento_de_identidad + " dorso";
 
                         // Creación de la imagen bd
-                        DTO_Photo dto_photo = _service_Photo.UploadNewPhoto(person_identification, photo_description);
+                        // Pasar person_ID
+                        DTO_Photo dto_photo = _service_Photo.UploadNewPhoto(1, photo_description); //person_identification ?? El Cliente_ID no cumple ya esa función?
                         if (dto_photo != null)
                         {
                             if (!string.IsNullOrWhiteSpace(dto_photo.Filename))

@@ -84,11 +84,11 @@ namespace Chempe.Controllers
                 DTO_Person dto_person = _service_person.Get_DTOPersonByEmail(session_user);
                 if (dto_person != null)
                 {
-                    DTO_User_client dto_user_client = dto_person.User_client;
-                    if (dto_user_client != null)
+                    DTO_Person_client dto_person_client = dto_person.Person_client;
+                    if (dto_person_client != null)
                     {
                         VM_Request_create vm_Request_create = new();
-                        vm_Request_create.User_client_ID = dto_user_client.User_client_ID; //ToDo: resolver ID. User_client hereda de Person? o un Person tiene uno de cada tipo?
+                        vm_Request_create.User_client_ID = dto_person_client.DTO_Person_client_ID; //ToDo: resolver ID. User_client hereda de Person? o un Person tiene uno de cada tipo?
 
                         // Warrant type
                         List<DTO_List_warrants_type> DTO_List_warrants_type = _service_List_warrants_type.Get_DTO_List_warrants_type();

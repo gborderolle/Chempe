@@ -36,8 +36,9 @@ update-database
 ----
 Terminología:
 
-User_client - Usuario cliente, solicitante del crédito
-User_investor - Usuario inversor, prestador de capital
+Person_client - Usuario cliente, solicitante del crédito
+Person_investor - Usuario inversor, prestador de capital
+Person_user - Usuario de Chempe, administrativo
 Pledge - Empeño, pignoración
 Pledge_status - Estado del empeño
 Warrant - Garantía, bien prendedado

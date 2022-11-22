@@ -3,14 +3,14 @@ using Microsoft.Extensions.Configuration;
 
 namespace Services.Chempe
 {
-    public class Service_User_investor
+    public class Service_Person_investor
     {
         private readonly Chempedb_context _chempedb_context;
         private readonly IConfiguration _configuration;
 
         Configurations _configurations = new();
 
-        public Service_User_investor(Chempedb_context chempedb_context, IConfiguration configuration)
+        public Service_Person_investor(Chempedb_context chempedb_context, IConfiguration configuration)
         {
             _chempedb_context = chempedb_context;
             _configuration = configuration;

@@ -18,13 +18,12 @@ namespace Services.Chempe
         private readonly Service_Person _service_person;
         private readonly Service_Warrant _service_warrant;
         private readonly Service_Warrant_TV _service_warrant_TV;
-        private readonly Service_Pledge _service_pledge;
 
 
         Configurations _configurations = new();
 
         public Service_Pledge(Chempedb_context chempedb_context, IConfiguration configuration, Service_Logs service_logs, Service_Global_variables service_global_variables,
-            Service_Request service_request, Service_Person service_person, Service_Warrant service_Warrant, Service_Warrant_TV service_Warrant_TV, Service_Pledge service_pledge)
+            Service_Request service_request, Service_Person service_person, Service_Warrant service_Warrant, Service_Warrant_TV service_Warrant_TV)
         {
             _chempedb_context = chempedb_context;
             _configuration = configuration;
@@ -35,7 +34,6 @@ namespace Services.Chempe
             _service_person = service_person;
             _service_warrant = service_Warrant;
             _service_warrant_TV = service_Warrant_TV;
-            _service_pledge = service_pledge;
 
         }
 

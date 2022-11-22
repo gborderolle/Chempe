@@ -58,29 +58,35 @@ namespace Domain.Context
 
                 /* ------------ DATOS DINÁMICOS ------------ */
                 /* ------------ Photo ------------ */
-                //Photo Photo1 = new("", DateTime.UtcNow, "Foto de perfil");
-                //Photo Photo2 = new("", DateTime.Now, "CI frente");
-                //Photo Photo3 = new("", DateTime.Now, "CI dorso");
+                Photo person_photo1 = new("", "Foto de perfil");
+                Photo document_photo1 = new("", "CI frente");
+                Photo document_photo2 = new("", "CI dorso");
                 //_chempedb_context.Photo.Add(Photo1);
                 //_chempedb_context.Photo.Add(Photo2);
                 //_chempedb_context.Photo.Add(Photo3);
 
                 /* ------------ Document ------------ */
-                //List<Photo> ListPhoto1 = new();
-                //ListPhoto1.Add(Photo2);
-                //ListPhoto1.Add(Photo3);
-                //Document Document1 = new("CI", List_documents_type1, ListPhoto1, "");
+                Document Document1 = new("Cédula de identidad"); ;
+                Document1.List_photos.Add(document_photo1);
+                Document1.List_photos.Add(document_photo2);
                 //_chempedb_context.Document.Add(Document1);
 
                 /* ------------ User_client ------------ */
-                User_client User_client1 = new();
-                _chempedb_context.User_client.Add(User_client1);
+                //User_client User_client1 = new();
+                //_chempedb_context.User_client.Add(User_client1);
 
                 /* ------------ Person ------------ */
-                //List<Document> ListDocument1 = new();
-                //ListDocument1.Add(Document1);
-                Person Person1 = new("Gonzalo Borderolle", "gborderolle@gmail.com", "154060gb", "42305298", "M", DateTime.Now, null, User_client1, null, null, null);
-                //Document1.Person = Person1;
+                Person Person1 = new();
+                Person1.Identification= "42305298";
+                Person1.Full_name = "Gonzalo Borderolle";
+                Person1.Phone = "099415831";
+                Person1.Email = "gborderolle@gmail.com";
+                Person1.Password= "1234";
+                Person1.Gender= "M";
+                Person1.Date_born = DateTime.Now;
+                Person1.Photo = person_photo1;
+                Person1.User_client = new();
+                Person1.List_documents.Add(Document1);
 
                 _chempedb_context.Person.Add(Person1);
 

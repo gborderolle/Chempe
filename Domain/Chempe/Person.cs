@@ -30,24 +30,16 @@ namespace Domain.Chempe
         public DateTime? Date_born { get; set; }
         
         // FK ------------------
-        [ForeignKey("Photo_ID")]
         public Photo Photo { get; set; } // 1* - 1
-        public int? Photo_ID { get; set; } // 1 - 1*
         
         // FK ------------------
-        [ForeignKey("User_client_ID")]
-        public User_client User_client { get; set; } // 1* - 1
-        public int? User_client_ID { get; set; } // 1 - 1*
+        public Person_client User_client { get; set; } // 1* - 1
         
         // FK ------------------
-        [ForeignKey("User_investor_ID")]
-        public User_investor User_investor { get; set; } // 1* - 1
-        public int? User_investor_ID { get; set; } // 1 - 1*
+        public Person_investor User_investor { get; set; } // 1* - 1
         
         // FK ------------------
-        [ForeignKey("User_chempe_ID")]
-        public User_chempe User_chempe { get; set; } // 1* - 1
-        public int? User_chempe_ID { get; set; } // 1 - 1*
+        public Person_user User_chempe { get; set; } // 1* - 1
         // FK ------------------
 
         // Source: https://learn.microsoft.com/en-us/ef/core/modeling/relationships?tabs=fluent-api%2Cfluent-api-simple-key%2Csimple-key        
@@ -56,9 +48,10 @@ namespace Domain.Chempe
 
         public Person()
         {
+            List_documents = new List<Document>();
         }
 
-        public Person(string full_name, string email, string password, string identification, string gender, DateTime date_born, Photo photo, User_client user_client, User_investor user_investor, User_chempe user_chempe, List<Document> list_documents)
+        public Person(string full_name, string email, string password, string identification, string gender, DateTime date_born, Photo photo, Person_client user_client, Person_investor user_investor, Person_user user_chempe, List<Document> list_documents)
         {
             Full_name = full_name;
             Email = email;

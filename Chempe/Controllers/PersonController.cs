@@ -17,12 +17,12 @@ namespace Chempe.Controllers
         private readonly Service_Logs _service_logs;
         private readonly Service_Global_variables _service_global_variables;
         private readonly Service_Person _service_person;
-        private readonly Service_User_client _service_User_client;
+        private readonly Service_Person_client _service_User_client;
 
         /* ------------ STATIC ENTITIES ------------ */
 
         public PersonController(IWebHostEnvironment webHostEnvironment, Service_Logs service_logs, Service_Global_variables service_global_variables,
-            Service_User_client service_User_client, Service_Person service_person)
+            Service_Person_client service_User_client, Service_Person service_person)
         {
             _webHostEnvironment = webHostEnvironment;
             _service_logs = service_logs;

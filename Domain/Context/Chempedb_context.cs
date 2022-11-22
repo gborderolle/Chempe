@@ -24,9 +24,9 @@ namespace Domain.Context
         public virtual DbSet<Pledge> Pledge { get; set; }
         public virtual DbSet<Pledge_status> Pledge_status { get; set; }
         public virtual DbSet<Request> Request { get; set; }
-        public virtual DbSet<User_chempe> User_chempe { get; set; }
-        public virtual DbSet<User_client> User_client { get; set; }
-        public virtual DbSet<User_investor> User_investor { get; set; }
+        public virtual DbSet<Person_user> User_chempe { get; set; }
+        public virtual DbSet<Person_client> User_client { get; set; }
+        public virtual DbSet<Person_investor> User_investor { get; set; }
         public virtual DbSet<User_Session> User_Session { get; set; }
         public virtual DbSet<Warrant> Warrant { get; set; }
         public virtual DbSet<Warrant_TV> Warrant_TV { get; set; }

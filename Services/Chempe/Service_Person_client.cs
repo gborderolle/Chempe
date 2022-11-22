@@ -11,12 +11,12 @@ using System.Security.Claims;
 
 namespace Services.Chempe
 {
-    public class Service_User_client
+    public class Service_Person_client
     {
         private readonly Chempedb_context _chempedb_context;
         private readonly IConfiguration _configuration;
 
-        public Service_User_client(Chempedb_context chempedb_context, IConfiguration configuration)
+        public Service_Person_client(Chempedb_context chempedb_context, IConfiguration configuration)
         {
             _chempedb_context = chempedb_context;
             _configuration = configuration;
@@ -41,7 +41,7 @@ namespace Services.Chempe
                     input_borndate_out = DateTime.MinValue;
                 }
 
-                User_client user_client = new();
+                Person_client user_client = new();
 
                 _chempedb_context.User_client.Add(user_client);
                 _chempedb_context.SaveChanges();
@@ -61,41 +61,41 @@ namespace Services.Chempe
             return result;
         }
 
-        public List<DTO_User_client> Get_ListDTOUser_clients()
+        public List<DTO_Person_client> Get_ListDTOUser_clients()
         {
-            List<DTO_User_client> list_dto_user_client = new();
-            List<User_client> list_user_client = _chempedb_context.User_client.ToList();
+            List<DTO_Person_client> list_dto_person_client = new();
+            List<Person_client> list_user_client = _chempedb_context.User_client.ToList();
             if (list_user_client != null && list_user_client.Count > 0)
             {
-                foreach (User_client user_client in list_user_client)
+                foreach (Person_client user_client in list_user_client)
                 {
-                    DTO_User_client dto_user_client = Utls.mapper.Map<DTO_User_client>(user_client);
-                    list_dto_user_client.Add(dto_user_client);
+                    DTO_Person_client dto_person_client = Utls.mapper.Map<DTO_Person_client>(user_client);
+                    list_dto_person_client.Add(dto_person_client);
                 }
             }
-            return list_dto_user_client;
+            return list_dto_person_client;
         }
 
         #region Authorization User
 
-        public User_client GetUserByExternalProvider(string provider, string nameIdentifier)
+        public Person_client GetUserByExternalProvider(string provider, string nameIdentifier)
         {
             //var appUser = _chempedb_context.User_client.Where(a => a.Provider == provider).Where(a => a.NameIdentifier == nameIdentifier).FirstOrDefault();
             return null;
         }
 
-        public User_client GetUserById(int id)
+        public Person_client GetUserById(int id)
         {
             var appUser = _chempedb_context.User_client.Find(id);
             return appUser;
         }
 
-        public DTO_User_client Get_DTOUser_clientByID(int id)
+        public DTO_Person_client Get_DTOUser_clientByID(int id)
         {
             throw new NotImplementedException();
         }
 
-        public User_client GetUserByEmail(string Email)
+        public Person_client GetUserByEmail(string Email)
         {
             if (!Email.Equals(""))
             {
@@ -134,9 +134,9 @@ namespace Services.Chempe
         }
 
         //Esto se tiene que hacer en lo que ya estaba por usaurio, cargar todo y ver lo de los claims, seguramente lo metemos como parte del objeto usuario al asignar un proveedor externo.
-        public User_client AddNewUser(string provider, List<Claim> claims)
+        public Person_client AddNewUser(string provider, List<Claim> claims)
         {
-            User_client appUser = new();
+            Person_client appUser = new();
             /*
             appUser.Provider = provider;
             appUser.NameIdentifier = claims.GetClaim(ClaimTypes.NameIdentifier);

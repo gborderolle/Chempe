@@ -26,9 +26,8 @@ namespace Domain.Chempe
         public bool IsDeleted { get; set; } = false;
 
         // FK ------------------ recibe (sin FK)
-        //[ForeignKey("Person_ID")]
+        [ForeignKey("Person_ID")]
         public Person Person { get; set; } // 1 - 1*
-        public int Person_ID { get; set; } // 1 - 1*
 
         // FK ------------------
         [ForeignKey("Document_ID")]
@@ -41,9 +40,9 @@ namespace Domain.Chempe
         {
             IsDeleted = false;
         }
-        public Photo(string description, string person_identification = "", string uRL = "", int photo_count_byPerson = 0)
+        public Photo(string description, string url = "")
         {
-            URL = uRL;
+            URL = url;
             Datetime_upload = DateTime.UtcNow;
             Description = description;
             Filename = DateTime.UtcNow.ToString("yyyy/MM/dd HH:mm:ss.fff").Replace("/", "").Replace(":", "").Replace(".", "").Replace(" ", "");

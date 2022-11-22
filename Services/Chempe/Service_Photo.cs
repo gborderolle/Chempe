@@ -23,14 +23,16 @@ namespace Services.Chempe
             _service_Person = service_Person;
         }
 
-        public DTO_Photo UploadNewPhoto(string identification, string photo_description)
+        public DTO_Photo UploadNewPhoto(int person_ID, string photo_description)
         {
             Photo photo1 = null;
-            if (!string.IsNullOrWhiteSpace(identification) && !string.IsNullOrWhiteSpace(photo_description))
+            if (!string.IsNullOrWhiteSpace(photo_description))
             {
-                int count_photos = _service_Person.Get_CountTotalPhotosByIdentification(identification);
+                //int count_photos = _service_Person.Get_CountTotalPhotosByIdentification(photo_description); // ToDo: Investigar "identification", creo que es para chequear el frente y dorso de la CI.
+                int count_photos = _service_Person.Get_CountTotalPhotosByPersonID(person_ID);
 
-                photo1 = new(photo_description, identification, null, count_photos);
+                //photo1 = new(photo_description, identification, null, count_photos);
+                photo1 = new();
                 //_chempedb_context.Photo.Add(photo1);
             }
             return Utls.mapper.Map<DTO_Photo>(photo1);
