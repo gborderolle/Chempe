@@ -41,6 +41,8 @@ namespace Services.Chempe
 
         public void Create_Pledge(VM_Request_create vm_Request_create)
         {
+            //vm_Request_create.Warrant_type
+
             Warrant_TV warrant_TV = _service_warrant_TV.Create_warrant_TV(vm_Request_create);
             //Warrant warrant = _service_warrant.Create_warrant(vm_Request_create);
             Request request = _service_request.Create_request(vm_Request_create);
@@ -49,6 +51,10 @@ namespace Services.Chempe
             Pledge pledge = new();
             pledge.Warrant = warrant_TV;
             pledge.Request = request;
+
+            _chempedb_context.Pledge.Add(pledge);
+            _chempedb_context.SaveChanges();
+
         }
     }
 }

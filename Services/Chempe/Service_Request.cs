@@ -15,12 +15,17 @@ namespace Services.Chempe
         private readonly Chempedb_context _chempedb_context;
         private readonly IConfiguration _configuration;
 
+        /* ------------ DYNAMIC ENTITIES ------------ */
+        private readonly Service_User_client _service_User_client;
+
         Configurations _configurations = new();
 
-        public Service_Request(Chempedb_context chempedb_context, IConfiguration configuration)
+        public Service_Request(Chempedb_context chempedb_context, IConfiguration configuration, Service_User_client service_User_client)
         {
             _chempedb_context = chempedb_context;
             _configuration = configuration;
+
+            _service_User_client = service_User_client;
         }
 
         #region public methods
@@ -98,18 +103,16 @@ namespace Services.Chempe
         public Request Create_request(VM_Request_create vm_Request_create)
         {
             Request request = new();
-            request.Inches = vm_Request_create.Inches;
-            request.IsSmart = vm_Request_create.IsSmart;
+            request.Datetime_request = DateTime.UtcNow;
 
+            User_client user_client = _service_User_client.GetUserById(vm_Request_create.User_client_ID);
+            if (user_client != null)
+            {
+                request.User_request = user_client;
 
-            request.TV_Brand = _service_List_TV_brands.GetBrandByID(vm_Request_create.Brand_ID);
-            request.TV_brand_model = _service_List_TV_brand_models.GetModelByID(vm_Request_create.Model_ID);
-            request.TV_technology = _service_List_TV_technologies.GetTechnologyByID(vm_Request_create.Technology_ID);
-
-
-            _chempedb_context.Request.Add(request);
-            _chempedb_context.SaveChanges();
-
+                _chempedb_context.Request.Add(request);
+                _chempedb_context.SaveChanges();
+            }
             return request;
         }
 

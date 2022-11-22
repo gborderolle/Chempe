@@ -158,7 +158,6 @@ namespace Chempe.Controllers
                 VM_Request_create vm_Request_create = new();
                 TryUpdateModelAsync(vm_Request_create);
 
-
                 _service_pledge.Create_Pledge(vm_Request_create);
 
                 return RedirectToAction("Index");

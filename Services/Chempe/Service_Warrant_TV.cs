@@ -36,11 +36,9 @@ namespace Services.Chempe
             warrant_tv.Inches = vm_Request_create.Inches;
             warrant_tv.IsSmart = vm_Request_create.IsSmart;
 
-
             warrant_tv.TV_Brand = _service_List_TV_brands.GetBrandByID(vm_Request_create.Brand_ID);
             warrant_tv.TV_brand_model = _service_List_TV_brand_models.GetModelByID(vm_Request_create.Model_ID);
             warrant_tv.TV_technology = _service_List_TV_technologies.GetTechnologyByID(vm_Request_create.Technology_ID);
-
 
             _chempedb_context.Warrant_TV.Add(warrant_tv);
             _chempedb_context.SaveChanges();
