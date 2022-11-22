@@ -11,8 +11,10 @@ namespace Domain.Chempe
         [Key]
         public int List_TV_brands_ID { get; set; }
 
+        [MaxLength(30)]
         public string Name { get; set; }
 
+        [MaxLength(100)]
         public string Description { get; set; }
 
         public List<List_TV_brand_models> List_TV_brand_models { get; set; } = new(); // 1 - n 

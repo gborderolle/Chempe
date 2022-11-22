@@ -3,6 +3,7 @@ using Domain.Context;
 using Microsoft.Extensions.Configuration;
 using Services.DTOs;
 using Services.Utils;
+using Services.ViewModels;
 using System;
 
 namespace Services.Chempe
@@ -30,7 +31,7 @@ namespace Services.Chempe
             }
         }
 
-        public void Create_warrant(DTO_Request_create dto_Request_create)
+        public void Create_warrant(VM_Request_create vm_Request_create)
         {
             throw new NotImplementedException();
         }

@@ -3,9 +3,7 @@
     Layout = "/Views/Shared/_Layout_client.cshtml";
 }
 
-@using Newtonsoft.Json
-@using Services.DTOs
-@model Services.DTOs.DTO_Request_create
+@model Services.ViewModels.VM_Request_create
 
 <style>
     .alert.alert-info {
@@ -260,48 +258,45 @@
 
                                                     @*@Html.DropDownList("List_DTO_List_TV_technologies", "-- Seleccione la tecnología --")*@
 
-                                                    Dictionary<string, string>
-    List_DTO_List_TV_technologies = (Dictionary<string, string>
-        )ViewBag.List_DTO_List_TV_technologies;
-
-        @Html.DropDownListFor(x => x.Technology, new SelectList(List_DTO_List_TV_technologies, "Value", "Key"))
+                                                    @*@Html.DropDownListFor(x => x.Technology, new SelectList(ViewBag.List_DTO_List_TV_technologies, "Value", "Key"))*@
+                                                    @Html.DropDownList("Technology", new SelectList(ViewBag.List_DTO_List_TV_technologies, "Value", "Text"), "-- Seleccione la tecnología --")
 
 
 
-        @*@Html.DropDownList("List_DTO_List_TV_technologies", "-- Seleccione la tecnología --")*@
+                                                    @*@Html.DropDownList("List_DTO_List_TV_technologies", "-- Seleccione la tecnología --")*@
 
-        @*@Html.DropDownList("List_DTO_List_TV_technologies", new SelectListItem[] { new SelectListItem() { Text = "Newest to Oldest", Value = "0" }, new SelectListItem() { Text = "Oldest to Newest", Value = "1" } },
-            new { onchange = "ddl_warrant_technology_onChange(this.options[this.selectedIndex].value);" })*@
+                                                    @*@Html.DropDownList("List_DTO_List_TV_technologies", new SelectListItem[] { new SelectListItem() { Text = "Newest to Oldest", Value = "0" }, new SelectListItem() { Text = "Oldest to Newest", Value = "1" } },
+        new { onchange = "ddl_warrant_technology_onChange(this.options[this.selectedIndex].value);" })*@
 
 
 
-        @*<select asp-for="Model.Technology" class="form-select" asp-items="Model.List_DTO_List_TV_technologies">
-                <option value="">-- Seleccione la tecnología --</option>
-            </select>*@
+                                                    @*<select asp-for="Model.Technology" class="form-select" asp-items="Model.List_DTO_List_TV_technologies">
+            <option value="">-- Seleccione la tecnología --</option>
+        </select>*@
 
-        @*<select id="ddl_warrant_technology" class="form-select" onchange="ddl_warrant_technology_onChange()" name="Technology">
-                <option selected>Seleccione la tecnología</option>
-                @{
-                    index = 0;
-                    if (Model.List_DTO_List_TV_technologies != null)
+                                                    @*<select id="ddl_warrant_technology" class="form-select" onchange="ddl_warrant_technology_onChange()" name="Technology">
+            <option selected>Seleccione la tecnología</option>
+            @{
+                index = 0;
+                if (Model.List_DTO_List_TV_technologies != null)
+                {
+                    foreach (DTO_List_TV_technologies DTO_List_TV_technologies1 in Model.List_DTO_List_TV_technologies)
                     {
-                        foreach (DTO_List_TV_technologies DTO_List_TV_technologies1 in Model.List_DTO_List_TV_technologies)
+                        if (index == 0)
                         {
-                            if (index == 0)
-                            {
-                                <option value=@index selected> @DTO_List_TV_technologies1.Name</option>
-                            }
-                            else
-                            {
-                                <option value=@index> @DTO_List_TV_technologies1.Name</option>
-                            }
-                            index++;
+                            <option value=@index selected> @DTO_List_TV_technologies1.Name</option>
                         }
+                        else
+                        {
+                            <option value=@index> @DTO_List_TV_technologies1.Name</option>
+                        }
+                        index++;
                     }
                 }
+            }
 
-            </select>*@
-</div>
+        </select>*@
+                                                </div>
                                             </div>
 
 
@@ -401,7 +396,7 @@
                                         @*<button type="submit" class="btn btn-light">Cancel</button>*@
 
 
-                                        @Html.HiddenFor(m => m.DTO_Person.Person_ID)
+                                        @Html.HiddenFor(m => m.User_client_ID)
 
 
                                         @* // Acciones *@

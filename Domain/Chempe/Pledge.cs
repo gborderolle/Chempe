@@ -31,6 +31,11 @@ namespace Domain.Chempe
         public int? Approval_ID { get; set; }
 
         // FK ------------------
+        [ForeignKey("Acceptance_ID")]
+        public Acceptance Acceptance { get; set; }
+        public int? Acceptance_ID { get; set; }
+
+        // FK ------------------
         [ForeignKey("Assignment_ID")]
         public Assignment Assignment { get; set; }
         public int? Assignment_ID { get; set; }

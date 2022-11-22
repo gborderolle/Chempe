@@ -13,8 +13,10 @@ namespace Domain.Chempe
         [Key]
         public int List_warrants_type_ID { get; set; }
         
+        [MaxLength(30)]
         public string Name { get; set; }
 
+        [MaxLength(100)]
         public string Description { get; set; }
 
         public bool IsEnabled { get; set; } = true;

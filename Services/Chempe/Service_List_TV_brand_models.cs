@@ -33,7 +33,7 @@ namespace Services.Chempe
             return List_DTO_List_TV_brand_models;
         }
 
-        internal List_TV_brand_models GetModelByID(string model)
+        internal List_TV_brand_models GetModelByID(int model)
         {
             throw new NotImplementedException();
         }

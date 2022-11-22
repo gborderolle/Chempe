@@ -33,7 +33,7 @@ namespace Services.Chempe
             return List_DTO_List_TV_technologies;
         }
 
-        internal List_TV_technologies GetTechnologyByID(string technology)
+        internal List_TV_technologies GetTechnologyByID(int technology)
         {
             throw new NotImplementedException();
         }

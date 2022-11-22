@@ -3,6 +3,7 @@ using Domain.Context;
 using Microsoft.Extensions.Configuration;
 using Services.DTOs;
 using Services.Utils;
+using Services.ViewModels;
 using System;
 
 namespace Services.Chempe
@@ -28,29 +29,23 @@ namespace Services.Chempe
             _service_List_TV_technologies = service_List_TV_technologies;
         }
 
-        public void Create_warrant_TV(DTO_Warrant_TV dto_Warrant_tv)
-        {
-            if (dto_Warrant_tv != null)
-            {
-                Warrant_TV request = Utls.mapper.Map<Warrant_TV>(dto_Warrant_tv);
-                _chempedb_context.Warrant_TV.Add(request);
-                _chempedb_context.SaveChanges();
-            }
-        }
 
-        public void Create_warrant_TV(DTO_Request_create dto_Request_create)
+        public Warrant_TV Create_warrant_TV(VM_Request_create vm_Request_create)
         {
             Warrant_TV warrant_tv = new();
-            warrant_tv.Inches = dto_Request_create.Inches;
-            warrant_tv.IsSmart = dto_Request_create.IsSmart;
+            warrant_tv.Inches = vm_Request_create.Inches;
+            warrant_tv.IsSmart = vm_Request_create.IsSmart;
 
 
-            warrant_tv.TV_Brand = _service_List_TV_brands.GetBrandByID(dto_Request_create.Brand);
-            warrant_tv.TV_brand_model = _service_List_TV_brand_models.GetModelByID(dto_Request_create.Model);
-            warrant_tv.TV_technology = _service_List_TV_technologies.GetTechnologyByID(dto_Request_create.Technology);
+            warrant_tv.TV_Brand = _service_List_TV_brands.GetBrandByID(vm_Request_create.Brand_ID);
+            warrant_tv.TV_brand_model = _service_List_TV_brand_models.GetModelByID(vm_Request_create.Model_ID);
+            warrant_tv.TV_technology = _service_List_TV_technologies.GetTechnologyByID(vm_Request_create.Technology_ID);
 
 
+            _chempedb_context.Warrant_TV.Add(warrant_tv);
+            _chempedb_context.SaveChanges();
 
+            return warrant_tv;
         }
     }
 }

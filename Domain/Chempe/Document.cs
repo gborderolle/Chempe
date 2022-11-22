@@ -11,12 +11,14 @@ namespace Domain.Chempe
         [Key]
         public int Document_ID { get; set; }
         
+        [MaxLength(30)]
         public string Name { get; set; }
-        
+
         public List_documents_type Documents_type { get; set; }
 
         public virtual List<Photo> List_photos { get; set; } = new(); // 1 - n
         
+        [MaxLength(100)]
         public string Description { get; set; }
 
         public bool IsDeleted { get; set; } = false;

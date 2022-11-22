@@ -20,6 +20,7 @@ namespace Domain.Chempe
 
         public DateTime Datetime_upload { get; set; }
 
+        [MaxLength(100)]
         public string Description { get; set; }
 
         public bool IsDeleted { get; set; } = false;

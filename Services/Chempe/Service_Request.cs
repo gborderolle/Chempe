@@ -3,6 +3,7 @@ using Domain.Context;
 using Microsoft.Extensions.Configuration;
 using Services.DTOs;
 using Services.Utils;
+using Services.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -94,9 +95,22 @@ namespace Services.Chempe
             }
         }
 
-        public void Create_request(DTO_Request_create dto_Request_create)
+        public Request Create_request(VM_Request_create vm_Request_create)
         {
-            throw new NotImplementedException();
+            Request request = new();
+            request.Inches = vm_Request_create.Inches;
+            request.IsSmart = vm_Request_create.IsSmart;
+
+
+            request.TV_Brand = _service_List_TV_brands.GetBrandByID(vm_Request_create.Brand_ID);
+            request.TV_brand_model = _service_List_TV_brand_models.GetModelByID(vm_Request_create.Model_ID);
+            request.TV_technology = _service_List_TV_technologies.GetTechnologyByID(vm_Request_create.Technology_ID);
+
+
+            _chempedb_context.Request.Add(request);
+            _chempedb_context.SaveChanges();
+
+            return request;
         }
 
 
