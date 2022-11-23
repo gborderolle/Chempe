@@ -48,7 +48,7 @@
                                     <span class="badge badge-sm badge-light ms-1" id="">240</span>
                                 </h6>
                                 <div class="card-action-wrap">
-                                    <button class="btn btn-sm btn-primary ms-3"><span><span class="icon"><span class="feather-icon"><i data-feather="plus"></i></span></span><span class="btn-text">Nuevo</span></span></button>
+                                    <a class="btn btn-sm btn-primary ms-3" href="@Url.Action("Create", "Request")"><span><span class="icon"><span class="feather-icon"><i data-feather="plus"></i></span></span><span class="btn-text">Nuevo</span></span></a>
                                 </div>
                             </div>
                             <div class="card-body" id="accordion1">
@@ -68,7 +68,7 @@
                                                     @Html.DisplayNameFor(model => model.Request_ID)
                                                 </th>
                                                 <th>
-                                                    Progreso de solicitud
+                                                    Progreso de la solicitud
                                                 </th>
                                                 <th>
                                                     @Html.DisplayNameFor(model => model.Datetime_request)
@@ -126,51 +126,30 @@
 
 
                                                             @*@Html.ActionLink("Edit", "Edit", new { id = item.Request_ID })|
-                                                            @Html.ActionLink("Details", "Details", new { id = item.Request_ID })|
-                                                            @Html.ActionLink("Delete", "Delete", new { id = item.Request_ID })*@
+        @Html.ActionLink("Details", "Details", new { id = item.Request_ID })|
+        @Html.ActionLink("Delete", "Delete", new { id = item.Request_ID })*@
 
-
-                                                            <a class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover" data-bs-toggle="tooltip" data-placement="top" title="" data-bs-original-title="Edit" href="#"><span class="icon"><span class="feather-icon"><i data-feather="edit-2">@Html.ActionLink("", "Edit", new { id = item.Request_ID })</i></span></span></a>
-                                                            <a class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover del-button" data-bs-toggle="tooltip" data-placement="top" title="" data-bs-original-title="Delete" href="#"><span class="icon"><span class="feather-icon"><i data-feather="trash">@Html.ActionLink("", "Delete", new { id = item.Request_ID })</i></span></span></a>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                    </td>
-                                                    <td>
-                                                        <div class="media align-items-center">
-                                                            <div class="media-head me-2">
-                                                                <div class="avatar avatar-xs avatar-rounded">
-                                                                    <img src="~/img/logo-avatar-5.png" alt="user" class="avatar-img">
-                                                                </div>
-                                                            </div>
-                                                            <div class="media-body">
-                                                                <div class="text-high-em">PCD</div>
-                                                                <div class="fs-7"><a href="#" class="table-link-text link-medium-em">pcdeals.com</a></div>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="progress-lb-wrap">
-                                                            <div class="d-flex align-items-center">
-                                                                <div class="progress progress-bar-rounded progress-bar-xs flex-1">
-                                                                    <div class="progress-bar bg-grey w-30" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
-                                                                </div>
-                                                                <div class="fs-8 ms-3">30%</div>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>13 July, 2022</td>
-                                                    <td>
-                                                        <span class="badge badge-soft-secondary my-1  me-2">Portal</span>
-                                                        <span class="badge badge-soft-secondary  my-1  me-2">admin</span>
-                                                        <span class="badge badge-soft-secondary  my-1  me-2">+3</span>
-                                                    </td>
-                                                    <td>
-                                                        <div class="d-flex align-items-center">
-                                                            <a class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover" data-bs-toggle="tooltip" data-placement="top" title="" data-bs-original-title="Edit" href="#"><span class="icon"><span class="feather-icon"><i data-feather="edit-2"></i></span></span></a>
-                                                            <a class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover del-button" data-bs-toggle="tooltip" data-placement="top" title="" data-bs-original-title="Delete" href="#"><span class="icon"><span class="feather-icon"><i data-feather="trash"></i></span></span></a>
+                                                            <a class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover" data-bs-toggle="tooltip" data-placement="top" title="" data-bs-original-title="Detalles" href="@Url.Action("Details", "Details", new { id = item.Request_ID })">
+                                                                <span class="icon">
+                                                                    <span class="feather-icon">
+                                                                        <i data-feather="edit-2"></i>
+                                                                    </span>
+                                                                </span>
+                                                            </a>
+                                                            <a class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover" data-bs-toggle="tooltip" data-placement="top" title="" data-bs-original-title="Modificar" href="@Url.Action("Edit", "Request", new { id = item.Request_ID })">
+                                                                <span class="icon">
+                                                                    <span class="feather-icon">
+                                                                        <i data-feather="edit-2"></i>
+                                                                    </span>
+                                                                </span>
+                                                            </a>
+                                                            <a class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover del-button" data-bs-toggle="tooltip" data-placement="top" title="" data-bs-original-title="Borrar" href="@Url.Action("Delete", "Delete", new { id = item.Request_ID })">
+                                                                <span class="icon">
+                                                                    <span class="feather-icon">
+                                                                        <i data-feather="trash"></i>
+                                                                    </span>
+                                                                </span>
+                                                            </a>
                                                         </div>
                                                     </td>
                                                 </tr>
@@ -278,8 +257,10 @@
                                     Solicitudes de créditos en proceso de aprobación
                                     <span class="badge badge-sm badge-light ms-1" id="">240</span>
                                 </h6>
+
                                 <div class="card-action-wrap">
                                     <button class="btn btn-sm btn-primary ms-3"><span><span class="icon"><span class="feather-icon"><i data-feather="plus"></i></span></span><span class="btn-text">Nuevo</span></span></button>
+                                    @*<a class="btn btn-sm btn-primary ms-3" href="@Url.Action("Create", "Request")"><span><span class="icon"><span class="feather-icon"><i data-feather="plus"></i></span></span><span class="btn-text">Nuevo</span></span></a>*@
                                 </div>
                             </div>
                             <div class="card-body" id="accordion1">
