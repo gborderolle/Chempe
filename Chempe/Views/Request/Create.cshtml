@@ -68,30 +68,34 @@
                                                 <div class="input-group">
                                                     <span class="input-group-text"><i class="fa-solid ri-folder-add-fill"></i></span>
 
-                                                    @Html.DropDownList("List_DTO_List_warrants_type", "-- Seleccione la clasificación --")
+                                                    @Html.DropDownList("Warrant_type_ID", ViewBag.List_DTO_List_warrants_type, "-- Seleccione la clasificación --", new
+                                               {
+                                                   @onchange = "ddl_warrant_type_onChange(this.value)",
+                                                   @class = "form-select"
+                                               })
 
                                                     @*<select id="ddl_warrant_type" class="form-select" onchange="ddl_warrant_type_onChange()" name="Warrant_type">
-                                                        <option selected>Seleccione la clasificación</option>
-                                                        @{
-                                                            int index = 0;
-                                                            if (Model.List_DTO_List_warrants_type != null)
+                                                    <option selected>Seleccione la clasificación</option>
+                                                    @{
+                                                        int index = 0;
+                                                        if (Model.List_DTO_List_warrants_type != null)
+                                                        {
+                                                            foreach (DTO_List_warrants_type DTO_List_warrants_type1 in Model.List_DTO_List_warrants_type)
                                                             {
-                                                                foreach (DTO_List_warrants_type DTO_List_warrants_type1 in Model.List_DTO_List_warrants_type)
-                                                                {
 
-                                                                    if (index == 0)
-                                                                    {
-                                                                        <option value=@index selected> @DTO_List_warrants_type1.Name</option>
-                                                                    }
-                                                                    else
-                                                                    {
-                                                                        <option value=@index> @DTO_List_warrants_type1.Name</option>
-                                                                    }
-                                                                    index++;
+                                                                if (index == 0)
+                                                                {
+                                                                    <option value=@index selected> @DTO_List_warrants_type1.Name</option>
                                                                 }
+                                                                else
+                                                                {
+                                                                    <option value=@index> @DTO_List_warrants_type1.Name</option>
+                                                                }
+                                                                index++;
                                                             }
                                                         }
-                                                    </select>*@
+                                                    }
+                                                </select>*@
 
                                                 </div>
                                             </div>
@@ -175,31 +179,36 @@
                                                 <div class="input-group">
                                                     <span class="input-group-text"><i class="fa-solid ri-folder-add-fill"></i></span>
 
-                                                    @Html.DropDownList("List_DTO_List_TV_brands", "-- Seleccione la marca --")
+                                                    @Html.DropDownList("Brand_ID", ViewBag.List_DTO_List_TV_brands, "-- Seleccione la marca --", new
+{
+@onchange = "ddl_warrant_brand_onChange(this.value)",
+@class = "form-select"
+})
+
 
                                                     @*<select id="ddl_warrant_brand" class="form-select" onchange="ddl_warrant_brand_onChange()" name="Brand">
-                                                        <option selected>Seleccione la marca</option>
-                                                        @{
-                                                            index = 0;
-                                                            if (Model.List_DTO_List_TV_brands != null)
+                                                    <option selected>Seleccione la marca</option>
+                                                    @{
+                                                        index = 0;
+                                                        if (Model.List_DTO_List_TV_brands != null)
+                                                        {
+                                                            foreach (DTO_List_TV_brands DTO_List_TV_brands1 in Model.List_DTO_List_TV_brands)
                                                             {
-                                                                foreach (DTO_List_TV_brands DTO_List_TV_brands1 in Model.List_DTO_List_TV_brands)
-                                                                {
 
-                                                                    if (index == 0)
-                                                                    {
-                                                                        <option value=@index selected> @DTO_List_TV_brands1.Name</option>
-                                                                    }
-                                                                    else
-                                                                    {
-                                                                        <option value=@index> @DTO_List_TV_brands1.Name</option>
-                                                                    }
-                                                                    index++;
+                                                                if (index == 0)
+                                                                {
+                                                                    <option value=@index selected> @DTO_List_TV_brands1.Name</option>
                                                                 }
+                                                                else
+                                                                {
+                                                                    <option value=@index> @DTO_List_TV_brands1.Name</option>
+                                                                }
+                                                                index++;
                                                             }
                                                         }
+                                                    }
 
-                                                    </select>*@
+                                                </select>*@
                                                 </div>
                                             </div>
 
@@ -210,31 +219,36 @@
                                                 <div class="input-group">
                                                     <span class="input-group-text"><i class="fa-solid ri-folder-add-fill"></i></span>
 
-                                                    @Html.DropDownList("List_DTO_List_TV_brand_models", "-- Seleccione el modelo --")
+                                                    @Html.DropDownList("Model_ID", ViewBag.List_DTO_List_TV_brand_models, "-- Seleccione el modelo --", new
+                                               {
+                                                   @onchange = "ddl_warrant_brand_model_onChange(this.value)",
+                                                   @class = "form-select"
+                                               })
+
 
                                                     @*<select id="ddl_warrant_model" class="form-select" onchange="ddl_warrant_brand_model_onChange()" name="Model">
-                                                        <option selected>Seleccione el modelo</option>
-                                                        @{
-                                                            index = 0;
-                                                            if (Model.List_DTO_List_TV_brand_models != null)
+                                                    <option selected>Seleccione el modelo</option>
+                                                    @{
+                                                        index = 0;
+                                                        if (Model.List_DTO_List_TV_brand_models != null)
+                                                        {
+                                                            foreach (DTO_List_TV_brand_models DTO_List_TV_brand_models1 in Model.List_DTO_List_TV_brand_models)
                                                             {
-                                                                foreach (DTO_List_TV_brand_models DTO_List_TV_brand_models1 in Model.List_DTO_List_TV_brand_models)
-                                                                {
 
-                                                                    if (index == 0)
-                                                                    {
-                                                                        <option value=@index selected> @DTO_List_TV_brand_models1.Name</option>
-                                                                    }
-                                                                    else
-                                                                    {
-                                                                        <option value=@index> @DTO_List_TV_brand_models1.Name</option>
-                                                                    }
-                                                                    index++;
+                                                                if (index == 0)
+                                                                {
+                                                                    <option value=@index selected> @DTO_List_TV_brand_models1.Name</option>
                                                                 }
+                                                                else
+                                                                {
+                                                                    <option value=@index> @DTO_List_TV_brand_models1.Name</option>
+                                                                }
+                                                                index++;
                                                             }
                                                         }
+                                                    }
 
-                                                    </select>*@
+                                                </select>*@
                                                 </div>
                                             </div>
 
@@ -256,46 +270,50 @@
                                                 <div class="input-group">
                                                     <span class="input-group-text"><i class="fa-solid ri-folder-add-fill"></i></span>
 
-                                                    @*@Html.DropDownList("List_DTO_List_TV_technologies", "-- Seleccione la tecnología --")*@
+                                                    @*@Html.DropDownList("Technology", new SelectList(ViewBag.List_DTO_List_TV_technologies, "Value", "Text"), "-- Seleccione la tecnología --")*@
 
-                                                    @*@Html.DropDownListFor(x => x.Technology, new SelectList(ViewBag.List_DTO_List_TV_technologies, "Value", "Key"))*@
-                                                    @Html.DropDownList("Technology", new SelectList(ViewBag.List_DTO_List_TV_technologies, "Value", "Text"), "-- Seleccione la tecnología --")
+
+                                                    @Html.DropDownList("Technology_ID", ViewBag.List_DTO_List_TV_technologies, "-- Seleccione la tecnología --", new
+                                               {
+                                                   @onchange = "ddl_warrant_technology_onChange(this.value)",
+                                                   @class = "form-select"
+                                               })
 
 
 
                                                     @*@Html.DropDownList("List_DTO_List_TV_technologies", "-- Seleccione la tecnología --")*@
 
                                                     @*@Html.DropDownList("List_DTO_List_TV_technologies", new SelectListItem[] { new SelectListItem() { Text = "Newest to Oldest", Value = "0" }, new SelectListItem() { Text = "Oldest to Newest", Value = "1" } },
-        new { onchange = "ddl_warrant_technology_onChange(this.options[this.selectedIndex].value);" })*@
+                                                new { onchange = "ddl_warrant_technology_onChange(this.options[this.selectedIndex].value);" })*@
 
 
 
                                                     @*<select asp-for="Model.Technology" class="form-select" asp-items="Model.List_DTO_List_TV_technologies">
-            <option value="">-- Seleccione la tecnología --</option>
-        </select>*@
+                                                    <option value="">-- Seleccione la tecnología --</option>
+                                                </select>*@
 
                                                     @*<select id="ddl_warrant_technology" class="form-select" onchange="ddl_warrant_technology_onChange()" name="Technology">
-            <option selected>Seleccione la tecnología</option>
-            @{
-                index = 0;
-                if (Model.List_DTO_List_TV_technologies != null)
-                {
-                    foreach (DTO_List_TV_technologies DTO_List_TV_technologies1 in Model.List_DTO_List_TV_technologies)
-                    {
-                        if (index == 0)
-                        {
-                            <option value=@index selected> @DTO_List_TV_technologies1.Name</option>
-                        }
-                        else
-                        {
-                            <option value=@index> @DTO_List_TV_technologies1.Name</option>
-                        }
-                        index++;
-                    }
-                }
-            }
+                                                    <option selected>Seleccione la tecnología</option>
+                                                    @{
+                                                        index = 0;
+                                                        if (Model.List_DTO_List_TV_technologies != null)
+                                                        {
+                                                            foreach (DTO_List_TV_technologies DTO_List_TV_technologies1 in Model.List_DTO_List_TV_technologies)
+                                                            {
+                                                                if (index == 0)
+                                                                {
+                                                                    <option value=@index selected> @DTO_List_TV_technologies1.Name</option>
+                                                                }
+                                                                else
+                                                                {
+                                                                    <option value=@index> @DTO_List_TV_technologies1.Name</option>
+                                                                }
+                                                                index++;
+                                                            }
+                                                        }
+                                                    }
 
-        </select>*@
+                                                </select>*@
                                                 </div>
                                             </div>
 
@@ -396,7 +414,7 @@
                                         @*<button type="submit" class="btn btn-light">Cancel</button>*@
 
 
-                                        @Html.HiddenFor(m => m.User_client_ID)
+                                        @Html.HiddenFor(m => m.Person_ID)
 
 
                                         @* // Acciones *@

@@ -16,7 +16,9 @@ namespace Services.Chempe
         private readonly IConfiguration _configuration;
 
         /* ------------ DYNAMIC ENTITIES ------------ */
-        private readonly Service_Person_client _service_User_client;
+        private readonly Service_Person_client _service_Person_client;
+
+        /* ------------ STATIC ENTITIES ------------ */
 
         Configurations _configurations = new();
 
@@ -25,7 +27,7 @@ namespace Services.Chempe
             _chempedb_context = chempedb_context;
             _configuration = configuration;
 
-            _service_User_client = service_User_client;
+            _service_Person_client = service_User_client;
         }
 
         #region public methods
@@ -103,9 +105,8 @@ namespace Services.Chempe
         public Request Create_request(VM_Request_create vm_Request_create)
         {
             Request request = new();
-            request.Datetime_request = DateTime.UtcNow;
 
-            Person_client user_client = _service_User_client.GetUserById(vm_Request_create.User_client_ID);
+            Person_client user_client = _service_Person_client.GetUserById(vm_Request_create.Person_ID);
             if (user_client != null)
             {
                 request.User_request = user_client;
@@ -115,7 +116,6 @@ namespace Services.Chempe
             }
             return request;
         }
-
 
         #endregion
 

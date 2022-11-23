@@ -24,6 +24,7 @@ namespace Domain.Chempe
 
         public Request()
         {
+            Datetime_request = DateTime.UtcNow;
         }
 
     }

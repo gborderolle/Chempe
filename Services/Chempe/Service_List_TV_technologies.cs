@@ -14,7 +14,9 @@ namespace Services.Chempe
         private readonly Chempedb_context _chempedb_context;
         private readonly IConfiguration _configuration;
 
-        Configurations _configurations = new();
+        /* ------------ DYNAMIC ENTITIES ------------ */
+        /* ------------ STATIC ENTITIES ------------ */
+
 
         public Service_List_TV_technologies(Chempedb_context chempedb_context, IConfiguration configuration)
         {
@@ -35,7 +37,7 @@ namespace Services.Chempe
 
         internal List_TV_technologies GetTechnologyByID(int technology)
         {
-            throw new NotImplementedException();
+            return _chempedb_context.List_TV_technologies.FirstOrDefault(x => x.List_TV_technologies_ID == technology);
         }
     }
 }

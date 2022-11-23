@@ -14,15 +14,22 @@ namespace Services.Chempe
     {
         private readonly IConfiguration _configuration;
         private readonly Chempedb_context _chempedb_context;
+
+        /* ------------ DYNAMIC ENTITIES ------------ */
         private readonly Service_Global_variables _service_Global_variables;
+        private readonly Service_Request _service_Request;
 
-        Configurations _configurations = new();
+        /* ------------ STATIC ENTITIES ------------ */
 
-        public Service_Person(Chempedb_context chempedb_context, IConfiguration configuration, Service_Global_variables service_Global_variables)
+
+
+        public Service_Person(Chempedb_context chempedb_context, IConfiguration configuration, Service_Global_variables service_Global_variables,
+            Service_Request service_Request)
         {
             _configuration = configuration;
             _chempedb_context = chempedb_context;
             _service_Global_variables = service_Global_variables;
+            _service_Request = service_Request;
         }
 
         #region Private methods
@@ -43,7 +50,7 @@ namespace Services.Chempe
             {
                 //.Include("Person_client")
 
-                Person person = _chempedb_context.Person.Include("Person_client").Include("List_documents.Documents_type").FirstOrDefault(e => e.Email == email); 
+                Person person = _chempedb_context.Person.Include("List_documents.Documents_type").FirstOrDefault(e => e.Email == email); 
                 dto_person = Utls.mapper.Map<DTO_Person>(person);
             }
             return dto_person;

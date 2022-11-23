@@ -28,7 +28,6 @@ namespace Services.Chempe
             Televisor
         }
 
-
         public enum Nombres_espanol_enum
         {
             Documento_de_identidad

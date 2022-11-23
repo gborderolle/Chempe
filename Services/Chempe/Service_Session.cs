@@ -14,6 +14,9 @@ namespace Services.Chempe
     {
         private readonly IHttpContextAccessor _httpContextAccessor;
 
+        /* ------------ DYNAMIC ENTITIES ------------ */
+        /* ------------ STATIC ENTITIES ------------ */
+
         public Service_Session(IHttpContextAccessor httpContextAccessor)
         {
             _httpContextAccessor = httpContextAccessor;

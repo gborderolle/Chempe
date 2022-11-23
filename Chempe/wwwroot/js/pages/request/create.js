@@ -6,13 +6,14 @@ DTO_New_request
 */
 
 $(function () {
-    var panel_tv = $(".panel_tv");
-    if (panel_tv !== null && panel_tv !== undefined) {
-        panel_tv.show();
-    }});
+    //var panel_tv = $(".panel_tv");
+    //if (panel_tv !== null && panel_tv !== undefined) {
+    //    panel_tv.show();
+    //}
+});
 
 function ddl_warrant_type_onChange() {
-    var ddl_warrant_type = $("#ddl_warrant_type :selected").text();
+    var ddl_warrant_type = $("#Warrant_type_ID :selected").text();
     var panel = $(".panel");
 
     // hide all panels

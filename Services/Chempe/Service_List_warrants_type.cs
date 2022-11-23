@@ -14,7 +14,9 @@ namespace Services.Chempe
         private readonly Chempedb_context _chempedb_context;
         private readonly IConfiguration _configuration;
 
-        Configurations _configurations = new();
+        /* ------------ DYNAMIC ENTITIES ------------ */
+        /* ------------ STATIC ENTITIES ------------ */
+
 
         public Service_List_warrants_type(Chempedb_context chempedb_context, IConfiguration configuration)
         {
@@ -32,5 +34,20 @@ namespace Services.Chempe
             }
             return List_DTO_List_warrants_type;
         }
+
+        internal string GetWarrantTypeByID(int warrant_type_ID)
+        {
+            string result = string.Empty;
+            if (warrant_type_ID > 0)
+            {
+                List_warrants_type list_warrants_type = _chempedb_context.List_warrants_type.Find(warrant_type_ID);
+                if (list_warrants_type != null)
+                {
+                    result = list_warrants_type.Name;
+                }
+            }
+            return result;
+        }
+
     }
 }

@@ -13,7 +13,12 @@ namespace Services.Chempe
     {
         private readonly IConfiguration _configurations;
         private readonly Chempedb_context _chempedb_context;
+
+        /* ------------ DYNAMIC ENTITIES ------------ */
         private readonly Service_Global_variables _service_global_variables;
+
+        /* ------------ STATIC ENTITIES ------------ */
+
 
         public Service_Logs(IConfiguration configuration, Chempedb_context chempedb_context, Service_Global_variables service_global_variables)
         {

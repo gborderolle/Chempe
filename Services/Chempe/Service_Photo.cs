@@ -12,9 +12,12 @@ namespace Services.Chempe
     {
         private readonly Chempedb_context _chempedb_context;
         private readonly IConfiguration _configuration;
+
+        /* ------------ DYNAMIC ENTITIES ------------ */
         private readonly Service_Person _service_Person;
 
-        Configurations _configurations = new();
+        /* ------------ STATIC ENTITIES ------------ */
+
 
         public Service_Photo(Chempedb_context chempedb_context, IConfiguration configuration, Service_Person service_Person)
         {

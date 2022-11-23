@@ -16,6 +16,9 @@ namespace Services.Chempe
         private readonly Chempedb_context _chempedb_context;
         private readonly IConfiguration _configuration;
 
+        /* ------------ DYNAMIC ENTITIES ------------ */
+        /* ------------ STATIC ENTITIES ------------ */
+
         public Service_Person_client(Chempedb_context chempedb_context, IConfiguration configuration)
         {
             _chempedb_context = chempedb_context;
@@ -84,10 +87,14 @@ namespace Services.Chempe
             return null;
         }
 
+        /// <summary>
+        /// Find() es más eficiente, se usa sólo para IDs
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public Person_client GetUserById(int id)
         {
-            var appUser = _chempedb_context.User_client.Find(id);
-            return appUser;
+            return _chempedb_context.User_client.Find(id);
         }
 
         public DTO_Person_client Get_DTOUser_clientByID(int id)

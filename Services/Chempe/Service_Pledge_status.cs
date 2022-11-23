@@ -8,7 +8,8 @@ namespace Services.Chempe
         private readonly Chempedb_context _chempedb_context;
         private readonly IConfiguration _configuration;
 
-        Configurations _configurations = new();
+        /* ------------ DYNAMIC ENTITIES ------------ */
+        /* ------------ STATIC ENTITIES ------------ */
 
         public Service_Pledge_status(Chempedb_context chempedb_context, IConfiguration configuration)
         {
