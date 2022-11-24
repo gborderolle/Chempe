@@ -4,11 +4,11 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Domain.Chempe
 {
-    [Table("Approval")]
-    public class Approval
+    [Table("Pledge_Approval")]
+    public class Pledge_Approval
     {
         [Key]
-        public int Approval_ID { get; set; }
+        public int Pledge_Approval_ID { get; set; }
         
         public DateTime Datetime_approval { get; set; }
         
@@ -23,12 +23,12 @@ namespace Domain.Chempe
         public Pledge Pledge { get; set; }
         
         // FK ------------------
-        [ForeignKey("User_chempe_ID")]
-        public Person_user User_approval { get; set; }
-        public int User_chempe_ID { get; set; }
+        [ForeignKey("Person_user_ID")]
+        public Person_user Person_user { get; set; }
+        public int Person_user_ID { get; set; }
         // FK ------------------
 
-        public Approval()
+        public Pledge_Approval()
         {
         }
     }

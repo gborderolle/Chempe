@@ -22,22 +22,22 @@ namespace Domain.Chempe
 
         // FK ------------------
         [ForeignKey("Request_ID")]
-        public Request Request { get; set; }
+        public Pledge_Request Request { get; set; }
         public int? Request_ID { get; set; }
 
         // FK ------------------
         [ForeignKey("Approval_ID")]
-        public Approval Approval { get; set; }
+        public Pledge_Approval Approval { get; set; }
         public int? Approval_ID { get; set; }
 
         // FK ------------------
         [ForeignKey("Acceptance_ID")]
-        public Acceptance Acceptance { get; set; }
+        public Pledge_Acceptance Acceptance { get; set; }
         public int? Acceptance_ID { get; set; }
 
         // FK ------------------
         [ForeignKey("Assignment_ID")]
-        public Assignment Assignment { get; set; }
+        public Pledge_Assignment Assignment { get; set; }
         public int? Assignment_ID { get; set; }
 
         // FK ------------------

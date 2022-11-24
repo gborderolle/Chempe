@@ -3,7 +3,7 @@ using Microsoft.Extensions.Configuration;
 
 namespace Services.Chempe
 {
-    public class Service_Assignment
+    public class Service_Pledge_Assignment
     {
         private readonly Chempedb_context _chempedb_context;
         private readonly IConfiguration _configuration;
@@ -12,7 +12,7 @@ namespace Services.Chempe
         /* ------------ STATIC ENTITIES ------------ */
 
 
-        public Service_Assignment(Chempedb_context chempedb_context, IConfiguration configuration)
+        public Service_Pledge_Assignment(Chempedb_context chempedb_context, IConfiguration configuration)
         {
             _chempedb_context = chempedb_context;
             _configuration = configuration;

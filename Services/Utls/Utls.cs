@@ -29,14 +29,14 @@ namespace Services.Utils
             config.CreateMap<List_TV_technologies, DTO_List_TV_technologies>();
 
             /* ------------ DYNAMIC ENTITIES ------------ */
-            config.CreateMap<DTO_Acceptance, Acceptance>();
-            config.CreateMap<Acceptance, DTO_Acceptance>();
+            config.CreateMap<DTO_Pledge_Acceptance, Pledge_Acceptance>();
+            config.CreateMap<Pledge_Acceptance, DTO_Pledge_Acceptance>();
 
-            config.CreateMap<DTO_Approval, Approval>();
-            config.CreateMap<Approval, DTO_Approval>();
+            config.CreateMap<DTO_Pledge_Approval, Pledge_Approval>();
+            config.CreateMap<Pledge_Approval, DTO_Pledge_Approval>();
 
-            config.CreateMap<DTO_Assignment, Assignment>();
-            config.CreateMap<Assignment, DTO_Person>();
+            config.CreateMap<DTO_Pledge_Assignment, Pledge_Assignment>();
+            config.CreateMap<Pledge_Assignment, DTO_Person>();
 
             config.CreateMap<DTO_Document, Document>();
             config.CreateMap<Document, DTO_Document>();
@@ -59,8 +59,8 @@ namespace Services.Utils
             config.CreateMap<DTO_Pledge_status, Pledge_status>();
             config.CreateMap<Pledge_status, DTO_Pledge_status>();
 
-            config.CreateMap<DTO_Request, Request>();
-            config.CreateMap<Request, DTO_Request>();
+            config.CreateMap<DTO_Pledge_Request, Pledge_Request>();
+            config.CreateMap<Pledge_Request, DTO_Pledge_Request>();
 
             config.CreateMap<DTO_Person_user, Person_user>();
             config.CreateMap<Person_user, DTO_Person_user>();

@@ -14,7 +14,7 @@ namespace Services.Chempe
         /* ------------ DYNAMIC ENTITIES ------------ */
         private readonly Service_Logs _service_logs;
         private readonly Service_Global_variables _service_global_variables;
-        private readonly Service_Request _service_request;
+        private readonly Service_Pledge_Request _service_request;
         private readonly Service_Person _service_person;
         private readonly Service_Warrant _service_warrant;
         private readonly Service_Warrant_TV _service_warrant_TV;
@@ -24,7 +24,7 @@ namespace Services.Chempe
 
 
         public Service_Pledge(Chempedb_context chempedb_context, IConfiguration configuration, Service_Logs service_logs, Service_Global_variables service_global_variables,
-            Service_Request service_request, Service_Person service_person, Service_Warrant service_Warrant, Service_Warrant_TV service_Warrant_TV, Service_List_warrants_type service_List_warrants_type)
+            Service_Pledge_Request service_request, Service_Person service_person, Service_Warrant service_Warrant, Service_Warrant_TV service_Warrant_TV, Service_List_warrants_type service_List_warrants_type)
         {
             _chempedb_context = chempedb_context;
             _configuration = configuration;
@@ -67,7 +67,7 @@ namespace Services.Chempe
                 }
             }
 
-            Request request = _service_request.Create_request(vm_Request_create);
+            Pledge_Request request = _service_request.Create_request(vm_Request_create);
             if (request != null)
             {
                 Pledge pledge = new();

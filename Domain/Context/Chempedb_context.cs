@@ -14,19 +14,19 @@ namespace Domain.Context
         public virtual DbSet<List_warrants_type> List_warrants_type { get; set; }
 
         // -------- DATOS DINÁMICOS --------
-        public virtual DbSet<Acceptance> Acceptance { get; set; }
-        public virtual DbSet<Approval> Approval { get; set; }
-        public virtual DbSet<Assignment> Assignment { get; set; }
+        public virtual DbSet<Pledge_Acceptance> Acceptance { get; set; }
+        public virtual DbSet<Pledge_Approval> Approval { get; set; }
+        public virtual DbSet<Pledge_Assignment> Assignment { get; set; }
         public virtual DbSet<Document> Document { get; set; }
         public virtual DbSet<Logs> Logs { get; set; }
         public virtual DbSet<Person> Person { get; set; }
         public virtual DbSet<Photo> Photo { get; set; }
         public virtual DbSet<Pledge> Pledge { get; set; }
         public virtual DbSet<Pledge_status> Pledge_status { get; set; }
-        public virtual DbSet<Request> Request { get; set; }
-        public virtual DbSet<Person_user> User_chempe { get; set; }
-        public virtual DbSet<Person_client> User_client { get; set; }
-        public virtual DbSet<Person_investor> User_investor { get; set; }
+        public virtual DbSet<Pledge_Request> Request { get; set; }
+        public virtual DbSet<Person_user> Person_user { get; set; }
+        public virtual DbSet<Person_client> Person_client { get; set; }
+        public virtual DbSet<Person_investor> Person_investor { get; set; }
         public virtual DbSet<User_Session> User_Session { get; set; }
         public virtual DbSet<Warrant> Warrant { get; set; }
         public virtual DbSet<Warrant_TV> Warrant_TV { get; set; }

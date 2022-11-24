@@ -353,3 +353,5 @@ D:\Documents\GitHub\Chempe\Chempe\obj\Debug\net5.0\Chempe.csproj.CopyComplete
 D:\Documents\GitHub\Chempe\Chempe\obj\Debug\net5.0\Chempe.genruntimeconfig.cache
 C:\Users\Gonzalo\Documents\GitHub\Chempe\Chempe\obj\Debug\net5.0\Razor\Views\Request\Create.cshtml.g.cs
 D:\Documents\GitHub\Chempe\Chempe\obj\Debug\net5.0\Razor\Views\Request\Create.cshtml.g.cs
+C:\Users\Gonzalo\Documents\GitHub\Chempe\Chempe\obj\Debug\net5.0\Razor\Views\Approval\Create.cshtml.g.cs
+C:\Users\Gonzalo\Documents\GitHub\Chempe\Chempe\obj\Debug\net5.0\Razor\Views\Approval\Index.cshtml.g.cs

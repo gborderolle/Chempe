@@ -5,7 +5,7 @@
 
 @using Newtonsoft.Json
 @using Services.DTOs
-@model IEnumerable<Services.DTOs.DTO_Request>
+@model IEnumerable<Services.DTOs.DTO_Pledge_Request>
 
 
 
@@ -44,8 +44,8 @@
                         <div class="card card-shadow mb-0 h-100" id="">
                             <div class="card-header card-header-action pointer" onclick="accordionOnClick(1)">
                                 <h6>
-                                    Solicitudes de créditos en proceso de aprobación
-                                    <span class="badge badge-sm badge-light ms-1" id="">240</span>
+                                    Solicitudes de créditos pendientes de aprobación
+                                    <span class="badge badge-sm badge-light ms-1" id="">@Model.Count()</span>
                                 </h6>
                                 <div class="card-action-wrap">
                                     <a class="btn btn-sm btn-primary ms-3" href="@Url.Action("Create", "Request")"><span><span class="icon"><span class="feather-icon"><i data-feather="plus"></i></span></span><span class="btn-text">Nuevo</span></span></a>
@@ -63,9 +63,8 @@
                                                     </span>
                                                 </th>
 
-
                                                 <th>
-                                                    @Html.DisplayNameFor(model => model.Request_ID)
+                                                    @Html.DisplayNameFor(model => model.Pledge_Request_ID)
                                                 </th>
                                                 <th>
                                                     Progreso de la solicitud
@@ -94,7 +93,7 @@
                                                                 <div class="avatar avatar-xs avatar-rounded">
                                                                     @*<img src="~/img/logo-avatar-3.png" alt="user" class="avatar-img">*@
 
-                                                                    @Html.ActionLink(item.Request_ID.ToString(), "Details", new { id = item.Request_ID })
+                                                                    @Html.ActionLink(item.Pledge_Request_ID.ToString(), "Details", new { id = item.Pledge_Request_ID })
 
                                                                 </div>
                                                             </div>
@@ -124,26 +123,21 @@
                                                     <td>
                                                         <div class="d-flex align-items-center">
 
-
-                                                            @*@Html.ActionLink("Edit", "Edit", new { id = item.Request_ID })|
-        @Html.ActionLink("Details", "Details", new { id = item.Request_ID })|
-        @Html.ActionLink("Delete", "Delete", new { id = item.Request_ID })*@
-
-                                                            <a class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover" data-bs-toggle="tooltip" data-placement="top" title="" data-bs-original-title="Detalles" href="@Url.Action("Details", "Details", new { id = item.Request_ID })">
+                                                            <a class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover" data-bs-toggle="tooltip" data-placement="top" title="" data-bs-original-title="Detalles" href="@Url.Action("Details", "Details", new { id = item.Pledge_Request_ID })">
                                                                 <span class="icon">
                                                                     <span class="feather-icon">
                                                                         <i data-feather="edit-2"></i>
                                                                     </span>
                                                                 </span>
                                                             </a>
-                                                            <a class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover" data-bs-toggle="tooltip" data-placement="top" title="" data-bs-original-title="Modificar" href="@Url.Action("Edit", "Request", new { id = item.Request_ID })">
+                                                            <a class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover" data-bs-toggle="tooltip" data-placement="top" title="" data-bs-original-title="Modificar" href="@Url.Action("Edit", "Request", new { id = item.Pledge_Request_ID })">
                                                                 <span class="icon">
                                                                     <span class="feather-icon">
                                                                         <i data-feather="edit-2"></i>
                                                                     </span>
                                                                 </span>
                                                             </a>
-                                                            <a class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover del-button" data-bs-toggle="tooltip" data-placement="top" title="" data-bs-original-title="Borrar" href="@Url.Action("Delete", "Delete", new { id = item.Request_ID })">
+                                                            <a class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover del-button" data-bs-toggle="tooltip" data-placement="top" title="" data-bs-original-title="Borrar" href="@Url.Action("Delete", "Delete", new { id = item.Pledge_Request_ID })">
                                                                 <span class="icon">
                                                                     <span class="feather-icon">
                                                                         <i data-feather="trash"></i>
@@ -172,203 +166,3 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <h2>Listado de solicitudes</h2>
-
-    <p>@Html.ActionLink("Crear nuevo", "Create")</p>
-
-    <table border="1">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Request_ID)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Datetime_request)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.User_request)
-            </th>
-            <th>
-                @*@Html.DisplayNameFor(model => model.Pledge)*@
-            </th>
-
-            <th></th>
-        </tr>
-
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.ActionLink(item.Request_ID.ToString(), "Details", new { id = item.Request_ID })|
-                    @*@Html.DisplayFor(modelItem => item.Request_ID)*@
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Datetime_request)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.User_request)
-                </td>
-                <td>
-                    @*@Html.DisplayFor(modelItem => item.Pledge)*@
-                    @*@Html.ActionLink(item.Pledge.ToString(), "Details", "Pledge", new { id = item.Request_ID })|*@
-                </td>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.Request_ID })|
-                    @Html.ActionLink("Details", "Details", new { id = item.Request_ID })|
-                    @Html.ActionLink("Delete", "Delete", new { id = item.Request_ID })
-                </td>
-            </tr>
-        }
-    </table>
-
-
-
-
-
-
-
-    <div class="hk-pg-body">
-        <div class="tab-content">
-            <div class="tab-pane fade show active" id="tab_block_1">
-
-
-
-
-
-                <div class="row" id="">
-                    <div class="col-md-12 mb-md-4 mb-3" id="">
-                        <div class="card card-shadow mb-0 h-100" id="">
-                            <div class="card-header card-header-action pointer" onclick="accordionOnClick(1)">
-                                <h6>
-                                    Solicitudes de créditos en proceso de aprobación
-                                    <span class="badge badge-sm badge-light ms-1" id="">240</span>
-                                </h6>
-
-                                <div class="card-action-wrap">
-                                    <button class="btn btn-sm btn-primary ms-3"><span><span class="icon"><span class="feather-icon"><i data-feather="plus"></i></span></span><span class="btn-text">Nuevo</span></span></button>
-                                    @*<a class="btn btn-sm btn-primary ms-3" href="@Url.Action("Create", "Request")"><span><span class="icon"><span class="feather-icon"><i data-feather="plus"></i></span></span><span class="btn-text">Nuevo</span></span></a>*@
-                                </div>
-                            </div>
-                            <div class="card-body" id="accordion1">
-                                <div class="contact-list-view">
-                                    <table id="datable_1" class="table nowrap w-100 mb-5">
-                                        <thead>
-                                            <tr>
-                                                <th>
-                                                    <span class="form-check fs-6 mb-0">
-                                                        <input type="checkbox" class="form-check-input check-select-all" id="customCheck1">
-                                                        <label class="form-check-label" for="customCheck1"></label>
-                                                    </span>
-                                                </th>
-                                                <th>Name</th>
-                                                <th class="w-25">Usage</th>
-                                                <th>Last Update</th>
-                                                <th>Tags</th>
-                                                <th></th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>
-                                                </td>
-                                                <td>
-                                                    <div class="media align-items-center">
-                                                        <div class="media-head me-2">
-                                                            <div class="avatar avatar-xs avatar-rounded">
-                                                                <img src="~/img/logo-avatar-3.png" alt="user" class="avatar-img">
-                                                            </div>
-                                                        </div>
-                                                        <div class="media-body">
-                                                            <div class="text-high-em">Coursera</div>
-                                                            <div class="fs-7"><a href="#" class="table-link-text link-medium-em">coursera.com</a></div>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="progress-lb-wrap">
-                                                        <div class="d-flex align-items-center">
-                                                            <div class="progress progress-bar-rounded progress-bar-xs flex-1">
-                                                                <div class="progress-bar bg-primary w-50" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                                                            </div>
-                                                            <div class="fs-8 ms-3">50%</div>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>24 Aug, 2022</td>
-                                                <td>
-                                                    <span class="badge badge-soft-secondary my-1  me-2">education</span>
-                                                    <span class="badge badge-soft-secondary  my-1  me-2">admin</span>
-                                                    <span class="badge badge-soft-secondary  my-1  me-2">+3</span>
-                                                </td>
-                                                <td>
-                                                    <div class="d-flex align-items-center">
-                                                        <a class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover" data-bs-toggle="tooltip" data-placement="top" title="" data-bs-original-title="Edit" href="#"><span class="icon"><span class="feather-icon"><i data-feather="edit-2"></i></span></span></a>
-                                                        <a class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover del-button" data-bs-toggle="tooltip" data-placement="top" title="" data-bs-original-title="Delete" href="#"><span class="icon"><span class="feather-icon"><i data-feather="trash"></i></span></span></a>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                </td>
-                                                <td>
-                                                    <div class="media align-items-center">
-                                                        <div class="media-head me-2">
-                                                            <div class="avatar avatar-xs avatar-rounded">
-                                                                <img src="~/img/logo-avatar-5.png" alt="user" class="avatar-img">
-                                                            </div>
-                                                        </div>
-                                                        <div class="media-body">
-                                                            <div class="text-high-em">PCD</div>
-                                                            <div class="fs-7"><a href="#" class="table-link-text link-medium-em">pcdeals.com</a></div>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="progress-lb-wrap">
-                                                        <div class="d-flex align-items-center">
-                                                            <div class="progress progress-bar-rounded progress-bar-xs flex-1">
-                                                                <div class="progress-bar bg-grey w-30" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
-                                                            </div>
-                                                            <div class="fs-8 ms-3">30%</div>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>13 July, 2022</td>
-                                                <td>
-                                                    <span class="badge badge-soft-secondary my-1  me-2">Portal</span>
-                                                    <span class="badge badge-soft-secondary  my-1  me-2">admin</span>
-                                                    <span class="badge badge-soft-secondary  my-1  me-2">+3</span>
-                                                </td>
-                                                <td>
-                                                    <div class="d-flex align-items-center">
-                                                        <a class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover" data-bs-toggle="tooltip" data-placement="top" title="" data-bs-original-title="Edit" href="#"><span class="icon"><span class="feather-icon"><i data-feather="edit-2"></i></span></span></a>
-                                                        <a class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover del-button" data-bs-toggle="tooltip" data-placement="top" title="" data-bs-original-title="Delete" href="#"><span class="icon"><span class="feather-icon"><i data-feather="trash"></i></span></span></a>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-            </div>
-        </div>
-    </div>

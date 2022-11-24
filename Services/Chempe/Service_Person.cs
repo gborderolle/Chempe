@@ -17,14 +17,14 @@ namespace Services.Chempe
 
         /* ------------ DYNAMIC ENTITIES ------------ */
         private readonly Service_Global_variables _service_Global_variables;
-        private readonly Service_Request _service_Request;
+        private readonly Service_Pledge_Request _service_Request;
 
         /* ------------ STATIC ENTITIES ------------ */
 
 
 
         public Service_Person(Chempedb_context chempedb_context, IConfiguration configuration, Service_Global_variables service_Global_variables,
-            Service_Request service_Request)
+            Service_Pledge_Request service_Request)
         {
             _configuration = configuration;
             _chempedb_context = chempedb_context;

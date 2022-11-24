@@ -4,25 +4,25 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Domain.Chempe
 {
-    [Table("Assignment")]
-    public class Assignment
+    [Table("Pledge_Assignment")]
+    public class Pledge_Assignment
     {
         [Key]
-        public int Assignment_ID { get; set; }
+        public int Pledge_Assignment_ID { get; set; }
         
         public DateTime Datetime_assignment { get; set; }
         
         // FK ------------------
-        [ForeignKey("User_investor_ID")]
-        public Person_investor User_assignment { get; set; }
-        public int User_investor_ID { get; set; }
+        [ForeignKey("Person_investor_ID")]
+        public Person_investor Person_investor { get; set; }
+        public int Person_investor_ID { get; set; }
 
         // FK ------------------ recibe (sin FK)
         [ForeignKey("Pledge_ID")]
         public Pledge Pledge { get; set; }
         // FK ------------------
 
-        public Assignment()
+        public Pledge_Assignment()
         {
         }
     }

@@ -4,25 +4,25 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Domain.Chempe
 {
-    [Table("Request")]
-    public class Request
+    [Table("Pledge_Request")]
+    public class Pledge_Request
     {
         [Key]
-        public int Request_ID { get; set; }
+        public int Pledge_Request_ID { get; set; }
         
         public DateTime Datetime_request { get; set; }
         
         // FK ------------------
-        [ForeignKey("User_client_ID")]
+        [ForeignKey("Person_client_ID")]
         public Person_client User_request { get; set; }
-        public int User_client_ID { get; set; }
+        public int Person_client_ID { get; set; }
 
         // FK ------------------ recibe (sin FK)
         [ForeignKey("Pledge_ID")]
         public Pledge Pledge { get; set; }
         // FK ------------------
 
-        public Request()
+        public Pledge_Request()
         {
             Datetime_request = DateTime.UtcNow;
         }

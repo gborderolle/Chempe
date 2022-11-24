@@ -42,9 +42,9 @@ namespace Chempe
 
 
             /* ------------ DYNAMIC ENTITIES ------------ */
-            services.AddTransient<Service_Acceptance>();
-            services.AddTransient<Service_Approval>();
-            services.AddTransient<Service_Assignment>();
+            services.AddTransient<Service_Pledge_Acceptance>();
+            services.AddTransient<Service_Pledge_Approval>();
+            services.AddTransient<Service_Pledge_Assignment>();
             services.AddTransient<Service_Document>();
             services.AddTransient<Service_Global_variables>();
             services.AddTransient<Service_Logs>();
@@ -52,7 +52,7 @@ namespace Chempe
             services.AddTransient<Service_Photo>();
             services.AddTransient<Service_Pledge>();
             services.AddTransient<Service_Pledge_status>();
-            services.AddTransient<Service_Request>();
+            services.AddTransient<Service_Pledge_Request>();
             services.AddTransient<Service_Person_client>();
             services.AddTransient<Service_Person_user>();
             services.AddTransient<Service_Person_investor>();

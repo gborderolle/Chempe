@@ -46,7 +46,7 @@ namespace Services.Chempe
 
                 Person_client user_client = new();
 
-                _chempedb_context.User_client.Add(user_client);
+                _chempedb_context.Person_client.Add(user_client);
                 _chempedb_context.SaveChanges();
 
                 Person person = new();
@@ -67,7 +67,7 @@ namespace Services.Chempe
         public List<DTO_Person_client> Get_ListDTOUser_clients()
         {
             List<DTO_Person_client> list_dto_person_client = new();
-            List<Person_client> list_user_client = _chempedb_context.User_client.ToList();
+            List<Person_client> list_user_client = _chempedb_context.Person_client.ToList();
             if (list_user_client != null && list_user_client.Count > 0)
             {
                 foreach (Person_client user_client in list_user_client)
@@ -94,7 +94,7 @@ namespace Services.Chempe
         /// <returns></returns>
         public Person_client GetUserById(int id)
         {
-            return _chempedb_context.User_client.Find(id);
+            return _chempedb_context.Person_client.Find(id);
         }
 
         public DTO_Person_client Get_DTOUser_clientByID(int id)
@@ -106,7 +106,7 @@ namespace Services.Chempe
         {
             if (!Email.Equals(""))
             {
-                var appUser = _chempedb_context.User_client.Where(a => a.Person.Email == Email).FirstOrDefault();
+                var appUser = _chempedb_context.Person_client.Where(a => a.Person.Email == Email).FirstOrDefault();
                 return appUser;
             }
             else
@@ -119,7 +119,7 @@ namespace Services.Chempe
         public bool TryValidateUser(string username, string password, out List<Claim> claims)
         {
             claims = new List<Claim>();
-            var appUser = _chempedb_context.User_client.Where(a => a.Person.Email == username).Where(a => a.Person.Password == password).FirstOrDefault();
+            var appUser = _chempedb_context.Person_client.Where(a => a.Person.Email == username).Where(a => a.Person.Password == password).FirstOrDefault();
             if (appUser is null)
             {
                 return false;
@@ -169,7 +169,7 @@ namespace Services.Chempe
             appUser.Email = claims.GetClaim(ClaimTypes.Email);
             appUser.Mobile = claims.GetClaim(ClaimTypes.MobilePhone);
             appUser.Roles = "NewUser";*/
-            var entity = _chempedb_context.User_client.Add(appUser);
+            var entity = _chempedb_context.Person_client.Add(appUser);
             _chempedb_context.SaveChanges();
             return entity.Entity;
         }

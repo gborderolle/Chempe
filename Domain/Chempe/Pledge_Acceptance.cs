@@ -4,20 +4,20 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Domain.Chempe
 {
-    [Table("Acceptance")]
-    public class Acceptance
+    [Table("Pledge_Acceptance")]
+    public class Pledge_Acceptance
     {
         [Key]
-        public int Acceptance_ID { get; set; }
+        public int Pledge_Acceptance_ID { get; set; }
         
         public DateTime Datetime_acceptance { get; set; }
 
         // FK ------------------ recibe (sin FK)
-        [ForeignKey("User_client_ID")]
-        public Person_client User_acceptance { get; set; }
+        [ForeignKey("Person_client_ID")]
+        public Person_client Person_client { get; set; }
         // FK ------------------
         
-        public Acceptance()
+        public Pledge_Acceptance()
         {
         }
     }

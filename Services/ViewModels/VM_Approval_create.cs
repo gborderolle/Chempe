@@ -5,13 +5,13 @@ namespace Services.ViewModels
     /// <summary>
     /// ModelView que carga la vista para guardado de datos del form
     /// </summary>
-    public class VM_Request_create
+    public class VM_Approval_create
     {
 
-        /* ------------ Request properties ------------ */
-        public int Request_ID { get; set; }
+        /* ------------ Approval properties ------------ */
+        public int Approval_ID { get; set; }
         public int Person_ID { get; set; } // ?? Person_ID o Person_client_ID ??
-        public DateTime Datetime_request { get; set; }
+        public DateTime Datetime_approval { get; set; }
         public int Pledge_ID { get; set; }
 
         /* ------------ Warrant properties ------------ */
