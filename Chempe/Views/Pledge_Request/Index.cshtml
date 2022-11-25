@@ -48,7 +48,7 @@
                                     <span class="badge badge-sm badge-light ms-1" id="">@Model.Count()</span>
                                 </h6>
                                 <div class="card-action-wrap">
-                                    <a class="btn btn-sm btn-primary ms-3" href="@Url.Action("Create", "Request")"><span><span class="icon"><span class="feather-icon"><i data-feather="plus"></i></span></span><span class="btn-text">Nuevo</span></span></a>
+                                    <a class="btn btn-sm btn-primary ms-3" href="@Url.Action("Create", "Pledge_Request")"><span><span class="icon"><span class="feather-icon"><i data-feather="plus"></i></span></span><span class="btn-text">Nuevo</span></span></a>
                                 </div>
                             </div>
                             <div class="card-body" id="accordion1">
@@ -123,21 +123,21 @@
                                                     <td>
                                                         <div class="d-flex align-items-center">
 
-                                                            <a class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover" data-bs-toggle="tooltip" data-placement="top" title="" data-bs-original-title="Detalles" href="@Url.Action("Details", "Details", new { id = item.Pledge_Request_ID })">
+                                                            <a class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover" data-bs-toggle="tooltip" data-placement="top" title="" data-bs-original-title="Detalles" href="@Url.Action("Details", "Pledge_Request", new { id = item.Pledge_Request_ID })">
                                                                 <span class="icon">
                                                                     <span class="feather-icon">
                                                                         <i data-feather="edit-2"></i>
                                                                     </span>
                                                                 </span>
                                                             </a>
-                                                            <a class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover" data-bs-toggle="tooltip" data-placement="top" title="" data-bs-original-title="Modificar" href="@Url.Action("Edit", "Request", new { id = item.Pledge_Request_ID })">
+                                                            <a class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover" data-bs-toggle="tooltip" data-placement="top" title="" data-bs-original-title="Modificar" href="@Url.Action("Edit", "Pledge_Request", new { id = item.Pledge_Request_ID })">
                                                                 <span class="icon">
                                                                     <span class="feather-icon">
                                                                         <i data-feather="edit-2"></i>
                                                                     </span>
                                                                 </span>
                                                             </a>
-                                                            <a class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover del-button" data-bs-toggle="tooltip" data-placement="top" title="" data-bs-original-title="Borrar" href="@Url.Action("Delete", "Delete", new { id = item.Pledge_Request_ID })">
+                                                            <a class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover del-button" data-bs-toggle="tooltip" data-placement="top" title="" data-bs-original-title="Borrar" href="@Url.Action("Delete", "Pledge_Request", new { id = item.Pledge_Request_ID })">
                                                                 <span class="icon">
                                                                     <span class="feather-icon">
                                                                         <i data-feather="trash"></i>
