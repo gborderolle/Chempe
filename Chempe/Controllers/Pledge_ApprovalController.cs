@@ -9,14 +9,14 @@ using System.Collections.Generic;
 
 namespace Chempe.Controllers
 {
-    public class RequestController : Controller
+    public class Pledge_ApprovalController : Controller
     {
         private IWebHostEnvironment _webHostEnvironment;
 
         /* ------------ DYNAMIC ENTITIES ------------ */
         private readonly Service_Logs _service_logs;
         private readonly Service_Global_variables _service_global_variables;
-        private readonly Service_Pledge_Request _service_request;
+        private readonly Service_Pledge_Approval _service_approval;
         private readonly Service_Person _service_person;
         private readonly Service_Warrant _service_warrant;
         private readonly Service_Warrant_TV _service_warrant_TV;
@@ -28,14 +28,14 @@ namespace Chempe.Controllers
         private readonly Service_List_TV_technologies _service_List_TV_technologies;
         private readonly Service_List_warrants_type _service_List_warrants_type;
 
-        public RequestController(IWebHostEnvironment webHostEnvironment, Service_Logs service_logs, Service_Global_variables service_global_variables,
-            Service_Pledge_Request service_request, Service_Person service_person, Service_Warrant service_Warrant, Service_Warrant_TV service_Warrant_TV, Service_Pledge service_pledge,
+        public Pledge_ApprovalController(IWebHostEnvironment webHostEnvironment, Service_Logs service_logs, Service_Global_variables service_global_variables,
+            Service_Pledge_Approval service_approval, Service_Person service_person, Service_Warrant service_Warrant, Service_Warrant_TV service_Warrant_TV, Service_Pledge service_pledge,
             Service_List_TV_brands service_List_TV_brands, Service_List_TV_brand_models service_List_TV_brand_models, Service_List_TV_technologies service_List_TV_technologies, Service_List_warrants_type service_List_warrants_type)
         {
             _webHostEnvironment = webHostEnvironment;
             _service_logs = service_logs;
             _service_global_variables = service_global_variables;
-            _service_request = service_request;
+            _service_approval = service_approval;
             _service_person = service_person;
             _service_warrant = service_Warrant;
             _service_warrant_TV = service_Warrant_TV;
@@ -50,7 +50,7 @@ namespace Chempe.Controllers
 
         public IActionResult Index()
         {
-            List<DTO_Pledge_Request> list_dto_request = _service_request.Get_ListDTORequests();
+            List<DTO_Pledge_Approval> list_dto_request = _service_approval.Get_ListDTOApprovals();
             if (list_dto_request != null)
             {
                 return View(list_dto_request);
@@ -60,7 +60,7 @@ namespace Chempe.Controllers
 
         public IActionResult Details(int id)
         {
-            DTO_Pledge_Request dto_request = _service_request.Get_DTORequestByID(id);
+            DTO_Pledge_Approval dto_request = _service_approval.Get_DTOApprovalByID(id);
             if (dto_request != null)
             {
                 return View(dto_request);
@@ -164,10 +164,10 @@ namespace Chempe.Controllers
         {
             if (id > 0)
             {
-                DTO_Pledge_Request dto_Request = _service_request.Get_DTORequestByID(id);
-                if (dto_Request != null)
+                DTO_Pledge_Approval dto_Approval = _service_approval.Get_DTOApprovalByID(id);
+                if (dto_Approval != null)
                 {
-                    return View(dto_Request);
+                    return View(dto_Approval);
                 }
             }
             return View();
@@ -179,13 +179,13 @@ namespace Chempe.Controllers
         {
             if (id > 0)
             {
-                DTO_Pledge_Request dto_Request = _service_request.Get_DTORequestByID(id);
-                if (dto_Request != null)
+                DTO_Pledge_Approval dto_Approval = _service_approval.Get_DTOApprovalByID(id);
+                if (dto_Approval != null)
                 {
-                    TryUpdateModelAsync<IDTO_Pledge_Request>(dto_Request); // La interfaz protege los campos read-only del form (medida de Seguridad)
+                    TryUpdateModelAsync<IDTO_Pledge_Approval>(dto_Approval); // La interfaz protege los campos read-only del form (medida de Seguridad)
                     if (ModelState.IsValid)
                     {
-                        _service_request.Update_request(dto_Request);
+                        _service_approval.Update_approval(dto_Approval);
                         return RedirectToAction("Index");
                     }
                 }

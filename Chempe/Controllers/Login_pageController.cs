@@ -78,8 +78,8 @@ namespace Chempe.Controllers
 
                         //login_result = RedirectToAction("Dashboard", "User_client");
                         //login_result = RedirectToAction("Index", "Person");
-                        login_result = RedirectToAction("Index", "Request");
-                        //login_result = RedirectToAction("Index", "Approval");
+                        login_result = RedirectToAction("Index", "Pledge_Request");
+                        //login_result = RedirectToAction("Index", "Pledge_Approval");
                     }
                     catch (Exception e)
                     {

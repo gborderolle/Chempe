@@ -30,6 +30,11 @@ namespace Services.ViewModels
         public string Inches { get; set; }
         public string IsSmart { get; set; }
 
+        /* ------------ Public methods ------------ */
+        public string Datetime_toString(DateTime dt)
+        {
+            return dt.ToString("dd MMM, yyyy");
+        }
 
     }
 }
