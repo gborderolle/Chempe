@@ -1,7 +1,6 @@
 ﻿using Domain.Chempe;
 using Domain.Context;
 using Microsoft.Extensions.Configuration;
-using System;
 
 namespace Services.Chempe
 {
@@ -20,9 +19,14 @@ namespace Services.Chempe
             _configuration = configuration;
         }
 
+        #region public methods        
+
         internal Person_user GetUserById(int id)
         {
             return _chempedb_context.Person_user.Find(id);
         }
+
+        #endregion
+
     }
 }

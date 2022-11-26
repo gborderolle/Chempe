@@ -1,0 +1,152 @@
+﻿@{
+    ViewData["Title"] = "Listado de aceptaciones";
+    Layout = "/Views/Shared/_Layout_client.cshtml";
+}
+
+@using Newtonsoft.Json
+@using Services.DTOs
+@model IEnumerable<Services.DTOs.DTO_Pledge_Acceptance>
+<!-- Page Header -->
+<div class="hk-pg-header">
+    <div class="d-flex">
+        <div class="d-flex flex-wrap justify-content-between flex-1">
+            <div class="mb-lg-0 mb-2 me-8">
+                <h1 class="pg-title">Listado de aceptaciones</h1>
+                @*<p>Listado de solicitudes</p>*@
+            </div>
+            @*<div class="pg-header-action-wrap">
+                    <div class="input-group w-300p">
+                        <span class="input-affix-wrapper">
+                            <span class="input-prefix"><span class="feather-icon"><i data-feather="calendar"></i></span></span>
+                            <input class="form-control form-wth-icon" name="datetimes" value="Aug 18,2020 - Aug 19, 2020">
+                        </span>
+                    </div>
+                </div>*@
+        </div>
+    </div>
+</div>
+<!-- /Page Header -->
+<!-- Page Body -->
+<div class="hk-pg-body">
+    <div class="tab-content">
+        <div class="tab-pane fade show active" id="tab_block_1">
+
+
+            <div class="row" id="">
+                <div class="col-md-12 mb-md-4 mb-3" id="">
+                    <div class="card card-shadow mb-0 h-100" id="">
+                        <div class="card-header card-header-action pointer" onclick="accordionOnClick(1)">
+                            <h6>
+                                Solicitudes de créditos aprobados pendientes de aceptación
+                                <span class="badge badge-sm badge-light ms-1" id="">@Model.Count()</span>
+                            </h6>
+                            <div class="card-action-wrap">
+                                <a class="btn btn-sm btn-primary ms-3" href="@Url.Action("Create", "Pledge_Acceptance")"><span><span class="icon"><span class="feather-icon"><i data-feather="plus"></i></span></span><span class="btn-text">Nuevo</span></span></a>
+                            </div>
+                        </div>
+                        <div class="card-body" id="accordion1">
+                            <div class="contact-list-view">
+                                <table id="datable_1" class="table nowrap w-100 mb-5">
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                                <span class="form-check fs-6 mb-0">
+                                                    <input type="checkbox" class="form-check-input check-select-all" id="customCheck1">
+                                                    <label class="form-check-label" for="customCheck1"></label>
+                                                </span>
+                                            </th>
+                                            <th>
+                                                @Html.DisplayNameFor(model => model.Pledge_Acceptance_ID)
+                                            </th>
+                                            <th>
+                                                Progreso de la solicitud
+                                            </th>
+                                            <th>
+                                                @Html.DisplayNameFor(model => model.Datetime_acceptance)
+                                            </th>
+                                            <th>
+                                                @Html.DisplayNameFor(model => model.User_acceptance)
+                                            </th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var item in Model)
+                                        {
+                                            <tr>
+                                                <td>
+                                                </td>
+                                                <td>
+                                                    <div class="media align-items-center">
+                                                        <div class="media-head me-2">
+                                                            <div class="avatar avatar-xs avatar-rounded">
+                                                                @*<img src="~/img/logo-avatar-3.png" alt="user" class="avatar-img">*@
+
+                                                                @Html.ActionLink(item.Pledge_Acceptance_ID.ToString(), "Details", new { id = item.Pledge_Acceptance_ID })
+
+                                                            </div>
+                                                        </div>
+                                                        @*<div class="media-body">
+                                                                <div class="text-high-em">Coursera</div>
+                                                                <div class="fs-7"><a href="#" class="table-link-text link-medium-em">coursera.com</a></div>
+                                                            </div>*@
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="progress-lb-wrap">
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="progress progress-bar-rounded progress-bar-xs flex-1">
+                                                                <div class="progress-bar bg-primary w-50" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            </div>
+                                                            <div class="fs-8 ms-3">50%</div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.Datetime_acceptance)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.User_acceptance)
+                                                </td>
+                                                <td>
+                                                    <div class="d-flex align-items-center">
+
+                                                        <a class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover" data-bs-toggle="tooltip" data-placement="top" title="" data-bs-original-title="Detalles" href="@Url.Action("Details", "Pledge_Approval", new { id = item.Pledge_Acceptance_ID })">
+                                                            <span class="icon">
+                                                                <span class="feather-icon">
+                                                                    <i data-feather="edit-2"></i>
+                                                                </span>
+                                                            </span>
+                                                        </a>
+                                                        <a class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover" data-bs-toggle="tooltip" data-placement="top" title="" data-bs-original-title="Modificar" href="@Url.Action("Edit", "Pledge_Approval", new { id = item.Pledge_Acceptance_ID })">
+                                                            <span class="icon">
+                                                                <span class="feather-icon">
+                                                                    <i data-feather="edit-2"></i>
+                                                                </span>
+                                                            </span>
+                                                        </a>
+                                                        <a class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover del-button" data-bs-toggle="tooltip" data-placement="top" title="" data-bs-original-title="Borrar" href="@Url.Action("Delete", "Pledge_Approval", new { id = item.Pledge_Acceptance_ID })">
+                                                            <span class="icon">
+                                                                <span class="feather-icon">
+                                                                    <i data-feather="trash"></i>
+                                                                </span>
+                                                            </span>
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+

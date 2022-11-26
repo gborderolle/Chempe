@@ -1,0 +1,22 @@
+﻿@{
+    ViewData["Title"] = "Detalle de la aceptación";
+    Layout = "/Views/Shared/_Layout_client.cshtml";
+}
+
+@using Newtonsoft.Json
+@using Services.DTOs
+@model Services.DTOs.DTO_Pledge_Acceptance
+
+<h2>Detalle de la aceptación</h2>
+
+<table>
+    <tr>
+        <td>Solicitud ID:</td>
+        <td>@Model.Pledge_Acceptance_ID</td>
+    </tr>
+    <tr>
+        <td>Fecha de solicitud:</td>
+        <td>@Model.Datetime_acceptance</td>
+    </tr>
+</table>
+@Html.ActionLink("Volver", "Index")

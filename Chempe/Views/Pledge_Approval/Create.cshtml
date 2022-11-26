@@ -16,13 +16,11 @@
     @Html.ValidationSummary(true)
     <fieldset>
 
-
         <section id="sec_6" class="hk-section">
             <div class="hk-sec-title">
                 <h5>Inicio de nueva solicitud de crédito</h5>
                 <p>Ingrese sus datos básicos, por favor. Más adelante se le pedirá validar su identidad para mantener la seguridad del servicio.</p>
             </div>
-
 
             <div class="col-12">
                 <div class="alert alert-info card card-border card-int mb-4" role="alert">
@@ -34,8 +32,6 @@
                     </div>
                 </div>
             </div>
-
-
 
             <div class="hk-example card card-shadow card-wth-tabs">
 
@@ -146,7 +142,6 @@
                                 <div class="row">
                                     <div class="col">
 
-
                                         @* // Fila 1: Marca + Modelo *@
                                         <div class="form-group row">
 
@@ -180,12 +175,7 @@
                                                 </div>
                                             </div>
 
-
-
-
-
                                         </div>
-
 
                                         @* // Fila 2: Tecnología + Smart *@
                                         <div class="form-group row" style="margin-bottom:0;">
@@ -206,9 +196,6 @@
                                                 </div>
                                             </div>
 
-
-
-
                                             @* // Ítem 2: Smart *@
                                             <div class="input-group col">
                                                 <div class="form-check">
@@ -220,11 +207,6 @@
                                                 </div>
                                             </div>
 
-
-
-
-
-
                                         </div>
 
 
@@ -234,15 +216,6 @@
                         </div>
                     </div>
                 </div>
-
-
-
-
-
-
-
-
-
 
                 <div class="card-header">
                     <ul class="nav nav-line nav-tabs nav-sm nav-light card-header-tabs">
@@ -289,10 +262,7 @@
                                                 <label class="form-check-label pointer" for="input_checkTerms">Los valores declarados corresponden a la realidad del bien.</label>
                                             </div>
                                         </div>
-
-
                                         <hr style="border-bottom: 1px solid rgb(64 62 62)" />
-
                                         <div class="form-group">
                                             <div class="form-check">
                                                 <input class="form-check-input pointer" id="input_checkTerms" type="checkbox">
@@ -306,7 +276,6 @@
                                         <input type="submit" class="btn btn-primary me-1" onclick="btn_submit()" value="Iniciar solicitud">
                                         @Html.ActionLink("Volver", "Index", new { role = "button" }, new { @class = "btn btn-light" })
 
-
                                     </div>
                                 </div>
                             </div>
@@ -314,14 +283,11 @@
                     </div>
                 </div>
 
-
-
             </div>
         </section>
 
     </fieldset>
 }
-
 
 @section scripts{
     <!-- Jasny-bootstrap JS -->

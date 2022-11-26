@@ -1,4 +1,5 @@
-﻿using Domain.Context;
+﻿using Domain.Chempe;
+using Domain.Context;
 using Microsoft.Extensions.Configuration;
 
 namespace Services.Chempe
@@ -17,6 +18,16 @@ namespace Services.Chempe
             _chempedb_context = chempedb_context;
             _configuration = configuration;
         }
+
+        #region public methods        
+
+        internal Person_investor GetUserById(int id)
+        {
+            return _chempedb_context.Person_investor.Find(id);
+        }
+
+        #endregion
+
     }
 }
 

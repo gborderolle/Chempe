@@ -7,7 +7,6 @@ namespace Services.ViewModels
     /// </summary>
     public class VM_Approval_create
     {
-
         /* ------------ Approval properties ------------ */
         public int Approval_ID { get; set; }
         public int Person_ID { get; set; } // ?? Person_ID o Person_client_ID ??
