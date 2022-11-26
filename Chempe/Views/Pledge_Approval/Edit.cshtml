@@ -97,7 +97,7 @@
                                                 <label class="form-label" for="input_borndate">Fecha de compra</label>
                                                 <div class="input-group">
                                                     <span class="input-group-text"><i class="fa fa-calendar"></i></span>
-                                                    <input type="text" class="form-control datepicker" id="input_borndate" placeholder="Fecha de compra" name="Datetime_purchase" value="@Model.Datetime_toString(Model.Datetime_purchase)">
+                                                    <input type="text" class="form-control datepicker" id="input_borndate" placeholder="Fecha de compra" name="Datetime_purchase" value="">
                                                 </div>
                                             </div>
 
@@ -106,7 +106,7 @@
                                                 <label class="form-label" for="input_phone">Precio de compra</label>
                                                 <div class="input-group">
                                                     <span class="input-group-text"><i class="fa fa-money-bill"></i></span>
-                                                    <input type="number" class="form-control" id="input_price" placeholder="" name="Purchase_import" value="@Model.Purchase_import.ToString()">
+                                                    <input type="number" class="form-control" id="input_price" placeholder="" name="Purchase_import" value="">
                                                 </div>
                                             </div>
 
@@ -289,7 +289,7 @@
                                             </div>
                                         </div>
 
-                                        @Html.HiddenFor(m => m.Person_ID)
+                                        @*@Html.HiddenFor(m => m.Person_ID)*@
 
 
                                         @* // Acciones *@

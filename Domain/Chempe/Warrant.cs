@@ -32,7 +32,7 @@ namespace Domain.Chempe
         public Pledge Pledge { get; set; }
         
         // FK ------------------
-        [ForeignKey("List_goods_type_ID")]
+        [ForeignKey("List_warrant_type_ID")]
         public List_warrants_type Warrant_type { get; set; }
         public int? List_warrant_type_ID { get; set; }
         // FK ------------------

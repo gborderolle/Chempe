@@ -63,14 +63,14 @@ namespace Services.Chempe
         {
             Pledge_Approval approval = new();
 
-            Person_user person_user = _service_Person_user.GetUserById(vm_Approval_create.Person_ID);
-            if (person_user != null)
-            {
-                approval.Person_user = person_user;
+            //Person_user person_user = _service_Person_user.GetUserById(vm_Approval_create.Person_ID);
+            //if (person_user != null)
+            //{
+            //    approval.Person_user = person_user;
 
-                _chempedb_context.Pledge_Approval.Add(approval);
-                _chempedb_context.SaveChanges();
-            }
+            //    _chempedb_context.Pledge_Approval.Add(approval);
+            //    _chempedb_context.SaveChanges();
+            //}
             return approval;
         }
 

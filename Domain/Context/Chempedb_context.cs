@@ -7,7 +7,6 @@ namespace Domain.Context
     {
         // -------- DATOS ESTÁTICOS --------
         public virtual DbSet<List_documents_type> List_documents_type { get; set; }
-        public virtual DbSet<List_warrants_type> List_goods_type { get; set; }
         public virtual DbSet<List_TV_brands> List_TV_brands { get; set; }
         public virtual DbSet<List_TV_brand_models> List_TV_brand_models { get; set; }
         public virtual DbSet<List_TV_technologies> List_TV_technologies { get; set; }

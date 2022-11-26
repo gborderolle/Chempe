@@ -46,22 +46,23 @@ namespace Services.Chempe
         /// <param name="vm_Request_create"></param>
         public void Create_Pledge(VM_Request_create vm_Request_create)
         {
+            Pledge pledge = new();
             string Warrant_type_str = (string)vm_Request_create.Warrant_type_ID;
             int Warrant_type_ID = 0;
             if (!int.TryParse(Warrant_type_str, out Warrant_type_ID))
             {
                 Warrant_type_ID = 0;
             }
-            Warrant warrant = null;
+            Warrant_TV warrant = null; // ToDo: mejorar el uso de la herencia
 
-            string Warrant_type_name = _service_List_warrants_type.GetWarrantTypeByID(Warrant_type_ID);
+            string Warrant_type_name = _service_List_warrants_type.GetWarrantTypeNameByID(Warrant_type_ID);
             if (!string.IsNullOrWhiteSpace(Warrant_type_name))
             {
                 switch (Warrant_type_name)
                 {
                     case nameof(Service_Global_variables.Warrants_type_enum.Televisor):
                         {
-                            warrant = (Warrant_TV)_service_warrant_TV.Create_warrant_TV(vm_Request_create);
+                            warrant = (Warrant_TV)_service_warrant_TV.Create_warrant_TV(vm_Request_create, pledge);
                             break;
                         }
                 }
@@ -70,9 +71,10 @@ namespace Services.Chempe
             Pledge_Request request = _service_request.Create_request(vm_Request_create);
             if (request != null)
             {
-                Pledge pledge = new();
-                pledge.Warrant = warrant;
+                pledge.Warrant_TV = warrant;
                 pledge.Request = request;
+
+                request.Pledge = pledge;
 
                 _chempedb_context.Pledge.Add(pledge);
                 _chempedb_context.SaveChanges();

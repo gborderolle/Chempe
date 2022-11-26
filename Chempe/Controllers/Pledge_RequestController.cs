@@ -90,18 +90,11 @@ namespace Chempe.Controllers
 
         public IActionResult User_details(int id)
         {
-            //DTO_Pledge_Request dto_request = _service_request.Get_DTORequestByID(id);
-            //if (dto_request != null)
-            //{
-            //    return View(dto_request);
-            //}
-
-            DTO_Pledge_Request dto_request = _service_request.Get_DTORequestByID(id);
-            if (dto_request != null)
+            if (id > 0)
             {
-                return View(dto_request);
+                return RedirectToAction("Create", "Pledge_Approval", new { DTO_Pledge_Request_ID = id });
             }
-            return View();
+            return RedirectToAction("Index", "Home");
         }
 
         #region CRUD methods
@@ -127,7 +120,7 @@ namespace Chempe.Controllers
                     {
                         selectList.Add(new SelectListItem
                         {
-                            Value = element.DTO_List_warrants_type_ID.ToString(),
+                            Value = element.List_warrants_type_ID.ToString(),
                             Text = element.Name
                         });
                     }
@@ -147,18 +140,6 @@ namespace Chempe.Controllers
                     ViewBag.List_DTO_List_TV_brands = selectList;
 
                     // Model
-                    //List<DTO_List_TV_brand_models> DTO_List_TV_brand_models = _service_List_TV_brand_models.Get_DTO_List_TV_brand_models();
-                    //selectList = new List<SelectListItem>();
-                    //foreach (var element in DTO_List_TV_brand_models)
-                    //{
-                    //    selectList.Add(new SelectListItem
-                    //    {
-                    //        Value = element.List_TV_brand_models_ID.ToString(),
-                    //        Text = element.Name
-                    //    });
-                    //}
-                    //ViewBag.List_DTO_List_TV_brand_models = selectList;
-
                     ViewBag.List_DTO_List_TV_brand_models = new List<SelectListItem>();
 
                     // Technology

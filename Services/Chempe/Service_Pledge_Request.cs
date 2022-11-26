@@ -17,15 +17,17 @@ namespace Services.Chempe
 
         /* ------------ DYNAMIC ENTITIES ------------ */
         private readonly Service_Person_client _service_Person_client;
+        private readonly Service_Pledge _service_pledge;
 
         /* ------------ STATIC ENTITIES ------------ */
 
-        public Service_Pledge_Request(Chempedb_context chempedb_context, IConfiguration configuration, Service_Person_client service_User_client)
+        public Service_Pledge_Request(Chempedb_context chempedb_context, IConfiguration configuration, Service_Person_client service_User_client, Service_Pledge service_pledge)
         {
             _chempedb_context = chempedb_context;
             _configuration = configuration;
 
             _service_Person_client = service_User_client;
+            _service_pledge = service_pledge;
         }
 
         #region public methods
@@ -38,7 +40,6 @@ namespace Services.Chempe
             {
                 foreach (Pledge_Request request in list_request)
                 {
-                    // ERROR: request no trae PLEDGE
                     DTO_Pledge_Request dto_request = Utls.mapper.Map<DTO_Pledge_Request>(request);
                     list_dto_request.Add(dto_request);
                 }
@@ -51,7 +52,7 @@ namespace Services.Chempe
             DTO_Pledge_Request dto_request = new();
             if (id > 0)
             {
-                Pledge_Request request = _chempedb_context.Pledge_Request.Include(e => e.Person_client).Include(e => e.Pledge).FirstOrDefault(e => e.Pledge_Request_ID == id);
+                Pledge_Request request = _chempedb_context.Pledge_Request.Include(e => e.Person_client).Include(e => e.Pledge.Warrant_TV.Warrant_type).FirstOrDefault(e => e.Pledge_Request_ID == id);
                 dto_request = Utls.mapper.Map<DTO_Pledge_Request>(request);
             }
             return dto_request;
@@ -64,7 +65,6 @@ namespace Services.Chempe
         public Pledge_Request Create_request(VM_Request_create vm_Request_create)
         {
             Pledge_Request request = new();
-
             Person_client user_client = _service_Person_client.GetUserById(vm_Request_create.Person_ID);
             if (user_client != null)
             {
@@ -115,7 +115,6 @@ namespace Services.Chempe
                 }
             }
         }
-
 
         #endregion
 

@@ -35,7 +35,7 @@ namespace Services.Chempe
             return List_DTO_List_warrants_type;
         }
 
-        internal string GetWarrantTypeByID(int warrant_type_ID)
+        internal string GetWarrantTypeNameByID(int warrant_type_ID)
         {
             string result = string.Empty;
             if (warrant_type_ID > 0)
@@ -45,6 +45,16 @@ namespace Services.Chempe
                 {
                     result = list_warrants_type.Name;
                 }
+            }
+            return result;
+        }
+
+        internal List_warrants_type GetWarrantTypeByID(int warrant_type_ID)
+        {
+            List_warrants_type result = null;
+            if (warrant_type_ID > 0)
+            {
+                result = _chempedb_context.List_warrants_type.Find(warrant_type_ID);
             }
             return result;
         }

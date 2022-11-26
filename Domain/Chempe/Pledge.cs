@@ -17,7 +17,7 @@ namespace Domain.Chempe
         
         // FK ------------------
         [ForeignKey("Warrant_ID")]
-        public Warrant Warrant { get; set; }
+        public Warrant_TV Warrant_TV { get; set; }
         public int? Warrant_ID { get; set; }
 
         // FK ------------------
