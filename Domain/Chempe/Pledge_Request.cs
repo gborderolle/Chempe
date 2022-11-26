@@ -14,7 +14,7 @@ namespace Domain.Chempe
         
         // FK ------------------
         [ForeignKey("Person_client_ID")]
-        public Person_client User_request { get; set; }
+        public Person_client Person_client { get; set; }
         public int Person_client_ID { get; set; }
 
         // FK ------------------ recibe (sin FK)

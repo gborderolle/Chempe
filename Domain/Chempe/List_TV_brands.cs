@@ -25,6 +25,7 @@ namespace Domain.Chempe
 
         public List_TV_brands()
         {
+            List_TV_brand_models = new ();
         }
 
         public List_TV_brands(string name, string description="")

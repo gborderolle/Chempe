@@ -40,13 +40,26 @@ namespace Domain.Context
                 List_TV_brands List_TV_brands2 = new("Panasonic", null);
                 List_TV_brands List_TV_brands3 = new("Samsung", null);
                 List_TV_brands List_TV_brands4 = new("LG", null);
+
+
+                /* ------------ List_TV_brand_models ------------ */
+                List_TV_brand_models List_TV_brand_models1 = new("Bravia", null);
+                List_TV_brand_models List_TV_brand_models2 = new("XR", null);
+                List_TV_brand_models List_TV_brand_models3 = new("F_HD", null);
+                List_TV_brands1.List_TV_brand_models.Add(List_TV_brand_models1);
+                List_TV_brands1.List_TV_brand_models.Add(List_TV_brand_models2);
+                List_TV_brands1.List_TV_brand_models.Add(List_TV_brand_models3);
+
+                List_TV_brand_models List_TV_brand_models4 = new("Vesa", null);
+                List_TV_brand_models List_TV_brand_models5 = new("OLED", null);
+                List_TV_brands3.List_TV_brand_models.Add(List_TV_brand_models4);
+                List_TV_brands3.List_TV_brand_models.Add(List_TV_brand_models5);
+
                 _chempedb_context.List_TV_brands.Add(List_TV_brands1);
                 _chempedb_context.List_TV_brands.Add(List_TV_brands2);
                 _chempedb_context.List_TV_brands.Add(List_TV_brands3);
                 _chempedb_context.List_TV_brands.Add(List_TV_brands4);
 
-                /* ------------ List_TV_brand_models ------------ */
-                List_TV_brand_models List_TV_brand_models1 = new("Bravia", List_TV_brands1, null);
 
                 /* ------------ List_TV_technologies ------------ */
                 List_TV_technologies List_TV_technologies1 = new("LED", null);

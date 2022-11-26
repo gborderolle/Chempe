@@ -36,7 +36,7 @@ namespace Services.Chempe
             DTO_Pledge_Assignment dto_assignment = new();
             if (id > 0)
             {
-                Pledge_Assignment assignment = _chempedb_context.Assignment.FirstOrDefault(e => e.Pledge_Assignment_ID == id);
+                Pledge_Assignment assignment = _chempedb_context.Pledge_Assignment.FirstOrDefault(e => e.Pledge_Assignment_ID == id);
                 dto_assignment = Utls.mapper.Map<DTO_Pledge_Assignment>(assignment);
             }
             return dto_assignment;
@@ -45,7 +45,7 @@ namespace Services.Chempe
         public List<DTO_Pledge_Assignment> Get_ListDTOAssignments()
         {
             List<DTO_Pledge_Assignment> list_dto_assignment = new();
-            List<Pledge_Assignment> list_assignment = _chempedb_context.Assignment.ToList();
+            List<Pledge_Assignment> list_assignment = _chempedb_context.Pledge_Assignment.ToList();
             if (list_assignment != null && list_assignment.Count > 0)
             {
                 foreach (Pledge_Assignment assignment in list_assignment)
@@ -70,7 +70,7 @@ namespace Services.Chempe
             {
                 assignment.Person_investor = person_investor;
 
-                _chempedb_context.Assignment.Add(assignment);
+                _chempedb_context.Pledge_Assignment.Add(assignment);
                 _chempedb_context.SaveChanges();
             }
             return assignment;
@@ -81,7 +81,7 @@ namespace Services.Chempe
             if (dto_assignment != null)
             {
                 Pledge_Assignment assignment = Utls.mapper.Map<Pledge_Assignment>(dto_assignment);
-                _chempedb_context.Assignment.Add(assignment);
+                _chempedb_context.Pledge_Assignment.Add(assignment);
                 _chempedb_context.SaveChanges();
             }
         }
@@ -93,7 +93,7 @@ namespace Services.Chempe
                 Pledge_Assignment assignment = Utls.mapper.Map<Pledge_Assignment>(dto_Assignment);
                 if (assignment != null)
                 {
-                    _chempedb_context.Assignment.Update(assignment);
+                    _chempedb_context.Pledge_Assignment.Update(assignment);
                     _chempedb_context.SaveChanges();
                 }
             }
@@ -109,7 +109,7 @@ namespace Services.Chempe
                     Pledge_Assignment assignment = Utls.mapper.Map<Pledge_Assignment>(dto_Assignment);
                     if (assignment != null)
                     {
-                        _chempedb_context.Assignment.Remove(assignment);
+                        _chempedb_context.Pledge_Assignment.Remove(assignment);
                         _chempedb_context.SaveChanges();
                     }
                 }

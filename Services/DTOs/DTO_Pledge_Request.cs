@@ -9,17 +9,18 @@ namespace Services.DTOs
     public interface IDTO_Pledge_Request
     {
         public int Pledge_Request_ID { get; set; }
-        public DTO_Person_client User_request { get; set; }
         public DateTime Datetime_request { get; set; }
-        //public DTO_Pledge Pledge { get; set; }
+        public DTO_Person_client Person_client { get; set; }
+        public int Person_client_ID { get; set; }
+        public DTO_Pledge Pledge { get; set; }
     }
 
     public class DTO_Pledge_Request : IDTO_Pledge_Request
     {
         public int Pledge_Request_ID { get; set; }
-        public DTO_Person_client User_request { get; set; }
         public DateTime Datetime_request { get; set; }
-        //public DTO_Pledge Pledge { get; set; }
-
+        public DTO_Person_client Person_client { get; set; }
+        public int Person_client_ID { get; set; }
+        public DTO_Pledge Pledge { get; set; }
     }
 }

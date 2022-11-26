@@ -36,7 +36,7 @@ namespace Services.Chempe
             DTO_Pledge_Acceptance dto_acceptance = new();
             if (id > 0)
             {
-                Pledge_Acceptance acceptance = _chempedb_context.Acceptance.FirstOrDefault(e => e.Pledge_Acceptance_ID == id);
+                Pledge_Acceptance acceptance = _chempedb_context.Pledge_Acceptance.FirstOrDefault(e => e.Pledge_Acceptance_ID == id);
                 dto_acceptance = Utls.mapper.Map<DTO_Pledge_Acceptance>(acceptance);
             }
             return dto_acceptance;
@@ -45,7 +45,7 @@ namespace Services.Chempe
         public List<DTO_Pledge_Acceptance> Get_ListDTOApprovals()
         {
             List<DTO_Pledge_Acceptance> list_dto_acceptance = new();
-            List<Pledge_Acceptance> list_acceptance = _chempedb_context.Acceptance.ToList();
+            List<Pledge_Acceptance> list_acceptance = _chempedb_context.Pledge_Acceptance.ToList();
             if (list_acceptance != null && list_acceptance.Count > 0)
             {
                 foreach (Pledge_Acceptance acceptance in list_acceptance)
@@ -70,7 +70,7 @@ namespace Services.Chempe
             {
                 acceptance.Person_client = person_client;
 
-                _chempedb_context.Acceptance.Add(acceptance);
+                _chempedb_context.Pledge_Acceptance.Add(acceptance);
                 _chempedb_context.SaveChanges();
             }
             return acceptance;
@@ -81,7 +81,7 @@ namespace Services.Chempe
             if (dto_acceptance != null)
             {
                 Pledge_Acceptance acceptance = Utls.mapper.Map<Pledge_Acceptance>(dto_acceptance);
-                _chempedb_context.Acceptance.Add(acceptance);
+                _chempedb_context.Pledge_Acceptance.Add(acceptance);
                 _chempedb_context.SaveChanges();
             }
         }
@@ -91,7 +91,7 @@ namespace Services.Chempe
             DTO_Pledge_Acceptance dto_acceptance = new();
             if (id > 0)
             {
-                Pledge_Acceptance acceptance = _chempedb_context.Acceptance.FirstOrDefault(e => e.Pledge_Acceptance_ID == id);
+                Pledge_Acceptance acceptance = _chempedb_context.Pledge_Acceptance.FirstOrDefault(e => e.Pledge_Acceptance_ID == id);
                 dto_acceptance = Utls.mapper.Map<DTO_Pledge_Acceptance>(acceptance);
             }
             return dto_acceptance;
@@ -100,7 +100,7 @@ namespace Services.Chempe
         public List<DTO_Pledge_Acceptance> Get_ListDTOAcceptances()
         {
             List<DTO_Pledge_Acceptance> list_dto_acceptance = new();
-            List<Pledge_Acceptance> list_acceptance = _chempedb_context.Acceptance.ToList();
+            List<Pledge_Acceptance> list_acceptance = _chempedb_context.Pledge_Acceptance.ToList();
             if (list_acceptance != null && list_acceptance.Count > 0)
             {
                 foreach (Pledge_Acceptance acceptance in list_acceptance)
@@ -119,7 +119,7 @@ namespace Services.Chempe
                 Pledge_Acceptance acceptance = Utls.mapper.Map<Pledge_Acceptance>(dto_Approval);
                 if (acceptance != null)
                 {
-                    _chempedb_context.Acceptance.Update(acceptance);
+                    _chempedb_context.Pledge_Acceptance.Update(acceptance);
                     _chempedb_context.SaveChanges();
                 }
             }
@@ -135,7 +135,7 @@ namespace Services.Chempe
                     Pledge_Acceptance acceptance = Utls.mapper.Map<Pledge_Acceptance>(dto_Approval);
                     if (acceptance != null)
                     {
-                        _chempedb_context.Acceptance.Remove(acceptance);
+                        _chempedb_context.Pledge_Acceptance.Remove(acceptance);
                         _chempedb_context.SaveChanges();
                     }
                 }

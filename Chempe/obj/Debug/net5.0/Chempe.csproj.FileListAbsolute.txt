@@ -332,7 +332,6 @@ D:\Documents\GitHub\Chempe\Chempe\obj\Debug\net5.0\Razor\Views\Person\Edit.cshtm
 D:\Documents\GitHub\Chempe\Chempe\obj\Debug\net5.0\Razor\Views\Person\Index.cshtml.g.cs
 D:\Documents\GitHub\Chempe\Chempe\obj\Debug\net5.0\Razor\Views\Shared\Error.cshtml.g.cs
 D:\Documents\GitHub\Chempe\Chempe\obj\Debug\net5.0\Razor\Views\Shared\_Layout.cshtml.g.cs
-D:\Documents\GitHub\Chempe\Chempe\obj\Debug\net5.0\Razor\Views\Shared\_Layout_chempe.cshtml.g.cs
 D:\Documents\GitHub\Chempe\Chempe\obj\Debug\net5.0\Razor\Views\Shared\_Layout_client.cshtml.g.cs
 D:\Documents\GitHub\Chempe\Chempe\obj\Debug\net5.0\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
 D:\Documents\GitHub\Chempe\Chempe\obj\Debug\net5.0\Razor\Views\Testing\Test_fileUpload.cshtml.g.cs
@@ -359,7 +358,6 @@ D:\Documents\GitHub\Chempe\Chempe\obj\Debug\net5.0\Razor\Views\Pledge_Approval\D
 D:\Documents\GitHub\Chempe\Chempe\obj\Debug\net5.0\Razor\Views\Pledge_Approval\Edit.cshtml.g.cs
 D:\Documents\GitHub\Chempe\Chempe\obj\Debug\net5.0\Razor\Views\Pledge_Approval\Index.cshtml.g.cs
 D:\Documents\GitHub\Chempe\Chempe\obj\Debug\net5.0\Razor\Views\Pledge_Request\Create.cshtml.g.cs
-D:\Documents\GitHub\Chempe\Chempe\obj\Debug\net5.0\Razor\Views\Pledge_Request\Details.cshtml.g.cs
 D:\Documents\GitHub\Chempe\Chempe\obj\Debug\net5.0\Razor\Views\Pledge_Request\Index.cshtml.g.cs
 D:\Documents\GitHub\Chempe\Chempe\obj\Debug\net5.0\Razor\Views\Pledge_Acceptance\Create.cshtml.g.cs
 D:\Documents\GitHub\Chempe\Chempe\obj\Debug\net5.0\Razor\Views\Pledge_Acceptance\Details.cshtml.g.cs
@@ -369,3 +367,8 @@ D:\Documents\GitHub\Chempe\Chempe\obj\Debug\net5.0\Razor\Views\Pledge_Assignment
 D:\Documents\GitHub\Chempe\Chempe\obj\Debug\net5.0\Razor\Views\Pledge_Assignment\Details.cshtml.g.cs
 D:\Documents\GitHub\Chempe\Chempe\obj\Debug\net5.0\Razor\Views\Pledge_Assignment\Edit.cshtml.g.cs
 D:\Documents\GitHub\Chempe\Chempe\obj\Debug\net5.0\Razor\Views\Pledge_Assignment\Index.cshtml.g.cs
+D:\Documents\GitHub\Chempe\Chempe\obj\Debug\net5.0\Razor\Views\Shared\_Layout_user.cshtml.g.cs
+D:\Documents\GitHub\Chempe\Chempe\obj\Debug\net5.0\Razor\Views\Pledge_Request\Client_index.cshtml.g.cs
+D:\Documents\GitHub\Chempe\Chempe\obj\Debug\net5.0\Razor\Views\Pledge_Request\User_index.cshtml.g.cs
+D:\Documents\GitHub\Chempe\Chempe\obj\Debug\net5.0\Razor\Views\Pledge_Request\Client_details.cshtml.g.cs
+D:\Documents\GitHub\Chempe\Chempe\obj\Debug\net5.0\Razor\Views\Pledge_Request\User_details.cshtml.g.cs

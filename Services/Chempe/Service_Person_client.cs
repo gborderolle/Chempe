@@ -70,9 +70,10 @@ namespace Services.Chempe
             List<Person_client> list_user_client = _chempedb_context.Person_client.ToList();
             if (list_user_client != null && list_user_client.Count > 0)
             {
-                foreach (Person_client user_client in list_user_client)
+                foreach (Person_client person_client in list_user_client)
                 {
-                    DTO_Person_client dto_person_client = Utls.mapper.Map<DTO_Person_client>(user_client);
+                    DTO_Person_client dto_person_client = Utls.mapper.Map<DTO_Person_client>(person_client);
+                    //dto_person_client.Fullname = person_client.Person.Full_name;
                     list_dto_person_client.Add(dto_person_client);
                 }
             }

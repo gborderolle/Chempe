@@ -1,5 +1,6 @@
 ﻿using Domain.Chempe;
 using Domain.Context;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Services.DTOs;
 using Services.Utils;
@@ -32,11 +33,12 @@ namespace Services.Chempe
         public List<DTO_Pledge_Request> Get_ListDTORequests()
         {
             List<DTO_Pledge_Request> list_dto_request = new();
-            List<Pledge_Request> list_request = _chempedb_context.Request.ToList();
+            List<Pledge_Request> list_request = _chempedb_context.Pledge_Request.Include(e => e.Person_client.Person).Include(e => e.Pledge).ToList();
             if (list_request != null && list_request.Count > 0)
             {
                 foreach (Pledge_Request request in list_request)
                 {
+                    // ERROR: request no trae PLEDGE
                     DTO_Pledge_Request dto_request = Utls.mapper.Map<DTO_Pledge_Request>(request);
                     list_dto_request.Add(dto_request);
                 }
@@ -49,7 +51,7 @@ namespace Services.Chempe
             DTO_Pledge_Request dto_request = new();
             if (id > 0)
             {
-                Pledge_Request request = _chempedb_context.Request.FirstOrDefault(e => e.Pledge_Request_ID == id);
+                Pledge_Request request = _chempedb_context.Pledge_Request.Include(e => e.Person_client).Include(e => e.Pledge).FirstOrDefault(e => e.Pledge_Request_ID == id);
                 dto_request = Utls.mapper.Map<DTO_Pledge_Request>(request);
             }
             return dto_request;
@@ -66,9 +68,9 @@ namespace Services.Chempe
             Person_client user_client = _service_Person_client.GetUserById(vm_Request_create.Person_ID);
             if (user_client != null)
             {
-                request.User_request = user_client;
+                request.Person_client = user_client;
 
-                _chempedb_context.Request.Add(request);
+                _chempedb_context.Pledge_Request.Add(request);
                 _chempedb_context.SaveChanges();
             }
             return request;
@@ -79,7 +81,7 @@ namespace Services.Chempe
             if (dto_request != null)
             {
                 Pledge_Request request = Utls.mapper.Map<Pledge_Request>(dto_request);
-                _chempedb_context.Request.Add(request);
+                _chempedb_context.Pledge_Request.Add(request);
                 _chempedb_context.SaveChanges();
             }
         }
@@ -91,7 +93,7 @@ namespace Services.Chempe
                 Pledge_Request request = Utls.mapper.Map<Pledge_Request>(dto_Request);
                 if (request != null)
                 {
-                    _chempedb_context.Request.Update(request);
+                    _chempedb_context.Pledge_Request.Update(request);
                     _chempedb_context.SaveChanges();
                 }
             }
@@ -107,7 +109,7 @@ namespace Services.Chempe
                     Pledge_Request request = Utls.mapper.Map<Pledge_Request>(dto_Request);
                     if (request != null)
                     {
-                        _chempedb_context.Request.Remove(request);
+                        _chempedb_context.Pledge_Request.Remove(request);
                         _chempedb_context.SaveChanges();
                     }
                 }

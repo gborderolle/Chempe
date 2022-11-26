@@ -6,6 +6,7 @@ using Services.Chempe;
 using Services.DTOs;
 using Services.ViewModels;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Chempe.Controllers
 {
@@ -45,7 +46,6 @@ namespace Chempe.Controllers
             _service_List_TV_brand_models = service_List_TV_brand_models;
             _service_List_TV_technologies = service_List_TV_technologies;
             _service_List_warrants_type = service_List_warrants_type;
-
         }
 
         public IActionResult Index()
@@ -58,8 +58,44 @@ namespace Chempe.Controllers
             return View();
         }
 
-        public IActionResult Details(int id)
+        public IActionResult Client_index()
         {
+            List<DTO_Pledge_Request> list_dto_request = _service_request.Get_ListDTORequests();
+            if (list_dto_request != null)
+            {
+                return View(list_dto_request);
+            }
+            return View();
+        }
+        
+        public IActionResult User_index()
+        {
+            List<DTO_Pledge_Request> list_dto_request = _service_request.Get_ListDTORequests();
+            if (list_dto_request != null)
+            {
+                return View(list_dto_request);
+            }
+            return View();
+        }
+
+        public IActionResult Client_details(int id)
+        {
+            DTO_Pledge_Request dto_request = _service_request.Get_DTORequestByID(id);
+            if (dto_request != null)
+            {
+                return View(dto_request);
+            }
+            return View();
+        }
+
+        public IActionResult User_details(int id)
+        {
+            //DTO_Pledge_Request dto_request = _service_request.Get_DTORequestByID(id);
+            //if (dto_request != null)
+            //{
+            //    return View(dto_request);
+            //}
+
             DTO_Pledge_Request dto_request = _service_request.Get_DTORequestByID(id);
             if (dto_request != null)
             {
@@ -111,17 +147,19 @@ namespace Chempe.Controllers
                     ViewBag.List_DTO_List_TV_brands = selectList;
 
                     // Model
-                    List<DTO_List_TV_brand_models> DTO_List_TV_brand_models = _service_List_TV_brand_models.Get_DTO_List_TV_brand_models();
-                    selectList = new List<SelectListItem>();
-                    foreach (var element in DTO_List_TV_brand_models)
-                    {
-                        selectList.Add(new SelectListItem
-                        {
-                            Value = element.List_TV_brand_models_ID.ToString(),
-                            Text = element.Name
-                        });
-                    }
-                    ViewBag.List_DTO_List_TV_brand_models = selectList;
+                    //List<DTO_List_TV_brand_models> DTO_List_TV_brand_models = _service_List_TV_brand_models.Get_DTO_List_TV_brand_models();
+                    //selectList = new List<SelectListItem>();
+                    //foreach (var element in DTO_List_TV_brand_models)
+                    //{
+                    //    selectList.Add(new SelectListItem
+                    //    {
+                    //        Value = element.List_TV_brand_models_ID.ToString(),
+                    //        Text = element.Name
+                    //    });
+                    //}
+                    //ViewBag.List_DTO_List_TV_brand_models = selectList;
+
+                    ViewBag.List_DTO_List_TV_brand_models = new List<SelectListItem>();
 
                     // Technology
                     List<DTO_List_TV_technologies> DTO_List_TV_technologies = _service_List_TV_technologies.Get_DTO_List_TV_technologies();
@@ -205,7 +243,22 @@ namespace Chempe.Controllers
             return View();
         }
 
-        #endregion CRUD methods
+        #endregion 
+
+        #region Ajax calls
+
+        [HttpPost]
+        public JsonResult GetModelsByBrandID(string ddl_brand) //It will be fired from Jquery ajax call
+        {
+            JsonResult result = null;
+            if (!string.IsNullOrWhiteSpace(ddl_brand))
+            {
+                result = Json(_service_List_TV_brand_models.GetJSM_List_TV_brand_modelsByBrandID(ddl_brand));
+            }
+            return result;
+        }
+
+        #endregion
 
     }
 }

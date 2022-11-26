@@ -30,11 +30,10 @@ namespace Domain.Chempe
         {
         }
 
-        public List_TV_brand_models(string name, List_TV_brands list_TV_brands, string description = "")
+        public List_TV_brand_models(string name, string description = "")
         {
             Name = name;
             Description = description;
-            List_TV_brands = list_TV_brands;
         }
     }
 }

@@ -34,7 +34,7 @@ namespace Services.Chempe
             DTO_Pledge_Approval dto_approval = new();
             if (id > 0)
             {
-                Pledge_Approval approval = _chempedb_context.Approval.FirstOrDefault(e => e.Pledge_Approval_ID == id);
+                Pledge_Approval approval = _chempedb_context.Pledge_Approval.FirstOrDefault(e => e.Pledge_Approval_ID == id);
                 dto_approval = Utls.mapper.Map<DTO_Pledge_Approval>(approval);
             }
             return dto_approval;
@@ -43,7 +43,7 @@ namespace Services.Chempe
         public List<DTO_Pledge_Approval> Get_ListDTOApprovals()
         {
             List<DTO_Pledge_Approval> list_dto_approval = new();
-            List<Pledge_Approval> list_approval = _chempedb_context.Approval.ToList();
+            List<Pledge_Approval> list_approval = _chempedb_context.Pledge_Approval.ToList();
             if (list_approval != null && list_approval.Count > 0)
             {
                 foreach (Pledge_Approval approval in list_approval)
@@ -68,7 +68,7 @@ namespace Services.Chempe
             {
                 approval.Person_user = person_user;
 
-                _chempedb_context.Approval.Add(approval);
+                _chempedb_context.Pledge_Approval.Add(approval);
                 _chempedb_context.SaveChanges();
             }
             return approval;
@@ -79,7 +79,7 @@ namespace Services.Chempe
             if (dto_approval != null)
             {
                 Pledge_Approval approval = Utls.mapper.Map<Pledge_Approval>(dto_approval);
-                _chempedb_context.Approval.Add(approval);
+                _chempedb_context.Pledge_Approval.Add(approval);
                 _chempedb_context.SaveChanges();
             }
         }
@@ -91,7 +91,7 @@ namespace Services.Chempe
                 Pledge_Approval approval = Utls.mapper.Map<Pledge_Approval>(dto_Approval);
                 if (approval != null)
                 {
-                    _chempedb_context.Approval.Update(approval);
+                    _chempedb_context.Pledge_Approval.Update(approval);
                     _chempedb_context.SaveChanges();
                 }
             }
@@ -107,7 +107,7 @@ namespace Services.Chempe
                     Pledge_Approval approval = Utls.mapper.Map<Pledge_Approval>(dto_Approval);
                     if (approval != null)
                     {
-                        _chempedb_context.Approval.Remove(approval);
+                        _chempedb_context.Pledge_Approval.Remove(approval);
                         _chempedb_context.SaveChanges();
                     }
                 }
