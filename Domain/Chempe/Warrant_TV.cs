@@ -28,8 +28,5 @@ namespace Domain.Chempe
         public int? List_TV_technologies_ID { get; set; }
         // FK ------------------
 
-
-
-
     }
 }

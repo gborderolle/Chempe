@@ -41,7 +41,6 @@ namespace Domain.Context
                 List_TV_brands List_TV_brands3 = new("Samsung", null);
                 List_TV_brands List_TV_brands4 = new("LG", null);
 
-
                 /* ------------ List_TV_brand_models ------------ */
                 List_TV_brand_models List_TV_brand_models1 = new("Bravia", null);
                 List_TV_brand_models List_TV_brand_models2 = new("XR", null);

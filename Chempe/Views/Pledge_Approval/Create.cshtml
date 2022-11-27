@@ -1,5 +1,5 @@
 ﻿@{
-    ViewData["Title"] = "Nueva solicitud de crédito";
+    ViewData["Title"] = "Nueva aprobación de solicitud de crédito";
     Layout = "/Views/Shared/_Layout_client.cshtml";
 }
 
@@ -18,7 +18,7 @@
 
         <section id="sec_6" class="hk-section">
             <div class="hk-sec-title">
-                <h5>Inicio de nueva solicitud de crédito</h5>
+                <h5>Nueva aprobación de solicitud de crédito</h5>
                 <p>Ingrese sus datos básicos, por favor. Más adelante se le pedirá validar su identidad para mantener la seguridad del servicio.</p>
             </div>
 
@@ -64,12 +64,7 @@
                                                 <div class="input-group">
                                                     <span class="input-group-text"><i class="fa-solid ri-folder-add-fill"></i></span>
 
-                                                    @Html.DropDownList("Warrant_type_ID", ViewBag.List_DTO_List_warrants_type, "-- Seleccione la clasificación --", new
-                                               {
-                                                   @onchange = "ddl_warrant_type_onChange(this.value)",
-                                                   @class = "form-select"
-                                               })
-
+                                                    <input type="text" class="form-control" id="input_name" placeholder="Nombre completo" name="full_name" value="@Model.DTO_Pledge.Warrant_TV.Warrant_type.ToString()" readonly>
                                                 </div>
                                             </div>
 
@@ -150,12 +145,8 @@
                                                 <label class="form-label" for="input_phone">Marca</label>
                                                 <div class="input-group">
                                                     <span class="input-group-text"><i class="fa-solid ri-folder-add-fill"></i></span>
+                                                    <input type="text" class="form-control" id="Brand" name="Brand" value="@Model.DTO_Pledge.Warrant_TV.Brand.ToString()" readonly>
 
-                                                    @Html.DropDownList("Brand_ID", ViewBag.List_DTO_List_TV_brands, "-- Seleccione la marca --", new
-{
-@onchange = "ddl_warrant_brand_onChange(this.value)",
-@class = "form-select"
-})
                                                 </div>
                                             </div>
 
@@ -166,11 +157,7 @@
                                                 <div class="input-group">
                                                     <span class="input-group-text"><i class="fa-solid ri-folder-add-fill"></i></span>
 
-                                                    @Html.DropDownList("Model_ID", ViewBag.List_DTO_List_TV_brand_models, "-- Seleccione el modelo --", new
-                                               {
-                                                   @onchange = "ddl_warrant_brand_model_onChange(this.value)",
-                                                   @class = "form-select"
-                                               })
+                                                    <input type="text" class="form-control" id="Model" name="Model" value="@Model.DTO_Pledge.Warrant_TV.Model.ToString()" readonly>
 
                                                 </div>
                                             </div>
@@ -186,12 +173,7 @@
                                                 <div class="input-group">
                                                     <span class="input-group-text"><i class="fa-solid ri-folder-add-fill"></i></span>
 
-
-                                                    @Html.DropDownList("Technology_ID", ViewBag.List_DTO_List_TV_technologies, "-- Seleccione la tecnología --", new
-                                               {
-                                                   @onchange = "ddl_warrant_technology_onChange(this.value)",
-                                                   @class = "form-select"
-                                               })
+                                                    <input type="text" class="form-control" id="Technology" name="Technology" value="@Model.DTO_Pledge.Warrant_TV.Technology.ToString()" readonly>
 
                                                 </div>
                                             </div>
@@ -270,7 +252,7 @@
                                             </div>
                                         </div>
 
-                                        @Html.HiddenFor(m => m.Person_ID)
+                                        @*@Html.HiddenFor(m => m.Person_ID)*@
 
                                         @* // Acciones *@
                                         <input type="submit" class="btn btn-primary me-1" onclick="btn_submit()" value="Iniciar solicitud">

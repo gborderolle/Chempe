@@ -17,35 +17,26 @@ namespace Chempe.Controllers
         private readonly Service_Logs _service_logs;
         private readonly Service_Global_variables _service_global_variables;
         private readonly Service_Pledge_Approval _service_approval;
+        private readonly Service_Pledge_Request _service_request;
         private readonly Service_Person _service_person;
         private readonly Service_Warrant _service_warrant;
         private readonly Service_Warrant_TV _service_warrant_TV;
         private readonly Service_Pledge _service_pledge;
 
         /* ------------ STATIC ENTITIES ------------ */
-        private readonly Service_List_TV_brands _service_List_TV_brands;
-        private readonly Service_List_TV_brand_models _service_List_TV_brand_models;
-        private readonly Service_List_TV_technologies _service_List_TV_technologies;
-        private readonly Service_List_warrants_type _service_List_warrants_type;
 
         public Pledge_ApprovalController(IWebHostEnvironment webHostEnvironment, Service_Logs service_logs, Service_Global_variables service_global_variables,
-            Service_Pledge_Approval service_approval, Service_Person service_person, Service_Warrant service_Warrant, Service_Warrant_TV service_Warrant_TV, Service_Pledge service_pledge,
-            Service_List_TV_brands service_List_TV_brands, Service_List_TV_brand_models service_List_TV_brand_models, Service_List_TV_technologies service_List_TV_technologies, Service_List_warrants_type service_List_warrants_type)
+            Service_Pledge_Approval service_approval, Service_Pledge_Request service_request, Service_Person service_person, Service_Warrant service_Warrant, Service_Warrant_TV service_Warrant_TV, Service_Pledge service_pledge)
         {
             _webHostEnvironment = webHostEnvironment;
             _service_logs = service_logs;
             _service_global_variables = service_global_variables;
             _service_approval = service_approval;
+            _service_request = service_request;
             _service_person = service_person;
             _service_warrant = service_Warrant;
             _service_warrant_TV = service_Warrant_TV;
             _service_pledge = service_pledge;
-
-            _service_List_TV_brands = service_List_TV_brands;
-            _service_List_TV_brand_models = service_List_TV_brand_models;
-            _service_List_TV_technologies = service_List_TV_technologies;
-            _service_List_warrants_type = service_List_warrants_type;
-
         }
 
         public IActionResult Index()
@@ -72,71 +63,16 @@ namespace Chempe.Controllers
 
         [HttpGet]
         [ActionName("Create")]
-        public IActionResult Create_Get()
+        public IActionResult Create_Get(int DTO_Pledge_Request_ID)
         {
-            List<DTO_Document> list_documents = new();
-            string session_user = HttpContext.Session.GetString("SessionUser");
-            if (!string.IsNullOrWhiteSpace(session_user))
+            if (DTO_Pledge_Request_ID > 0)
             {
-                DTO_Person dto_person = _service_person.Get_DTOPersonByEmail(session_user);
-                if (dto_person != null)
+                DTO_Pledge_Request dto_request = _service_request.Get_DTORequestByID(DTO_Pledge_Request_ID);
+                if (dto_request != null && dto_request.Pledge != null)
                 {
-                    VM_Request_create vm_Request_create = new();
-                    vm_Request_create.Person_ID = dto_person.Person_ID; //ToDo: resolver ID. User_client hereda de Person? o un Person tiene uno de cada tipo?
-
-                    // Warrant type
-                    List<DTO_List_warrants_type> DTO_List_warrants_type = _service_List_warrants_type.Get_DTO_List_warrants_type();
-                    var selectList = new List<SelectListItem>();
-                    foreach (var element in DTO_List_warrants_type)
-                    {
-                        selectList.Add(new SelectListItem
-                        {
-                            Value = element.DTO_List_warrants_type_ID.ToString(),
-                            Text = element.Name
-                        });
-                    }
-                    ViewBag.List_DTO_List_warrants_type = selectList;
-
-                    // Brand
-                    List<DTO_List_TV_brands> DTO_List_TV_brands = _service_List_TV_brands.Get_DTO_List_TV_brands();
-                    selectList = new List<SelectListItem>();
-                    foreach (var element in DTO_List_TV_brands)
-                    {
-                        selectList.Add(new SelectListItem
-                        {
-                            Value = element.List_TV_brands_ID.ToString(),
-                            Text = element.Name
-                        });
-                    }
-                    ViewBag.List_DTO_List_TV_brands = selectList;
-
-                    // Model
-                    List<DTO_List_TV_brand_models> DTO_List_TV_brand_models = _service_List_TV_brand_models.Get_DTO_List_TV_brand_models();
-                    selectList = new List<SelectListItem>();
-                    foreach (var element in DTO_List_TV_brand_models)
-                    {
-                        selectList.Add(new SelectListItem
-                        {
-                            Value = element.List_TV_brand_models_ID.ToString(),
-                            Text = element.Name
-                        });
-                    }
-                    ViewBag.List_DTO_List_TV_brand_models = selectList;
-
-                    // Technology
-                    List<DTO_List_TV_technologies> DTO_List_TV_technologies = _service_List_TV_technologies.Get_DTO_List_TV_technologies();
-                    selectList = new List<SelectListItem>();
-                    foreach (var element in DTO_List_TV_technologies)
-                    {
-                        selectList.Add(new SelectListItem
-                        {
-                            Value = element.List_TV_technologies_ID.ToString(),
-                            Text = element.Name
-                        });
-                    }
-                    ViewBag.List_DTO_List_TV_technologies = selectList;
-
-                    return View(vm_Request_create);
+                    VM_Approval_create vm_Approval_create = new();
+                    vm_Approval_create.DTO_Pledge = dto_request.Pledge;
+                    return View(vm_Approval_create);
                 }
             }
             return RedirectToAction("Index", "Home");
