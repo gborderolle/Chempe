@@ -153,7 +153,6 @@ C:\Users\Gonzalo\Documents\GitHub\Chempe\Chempe\obj\Debug\net5.0\Razor\Views\Per
 C:\Users\Gonzalo\Documents\GitHub\Chempe\Chempe\obj\Debug\net5.0\Razor\Views\Person\Index.cshtml.g.cs
 C:\Users\Gonzalo\Documents\GitHub\Chempe\Chempe\obj\Debug\net5.0\Razor\Views\Shared\Error.cshtml.g.cs
 C:\Users\Gonzalo\Documents\GitHub\Chempe\Chempe\obj\Debug\net5.0\Razor\Views\Shared\_Layout.cshtml.g.cs
-C:\Users\Gonzalo\Documents\GitHub\Chempe\Chempe\obj\Debug\net5.0\Razor\Views\Shared\_Layout_chempe.cshtml.g.cs
 C:\Users\Gonzalo\Documents\GitHub\Chempe\Chempe\obj\Debug\net5.0\Razor\Views\Shared\_Layout_client.cshtml.g.cs
 C:\Users\Gonzalo\Documents\GitHub\Chempe\Chempe\obj\Debug\net5.0\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
 C:\Users\Gonzalo\Documents\GitHub\Chempe\Chempe\obj\Debug\net5.0\Razor\Views\Testing\Test_fileUpload.cshtml.g.cs
@@ -350,7 +349,6 @@ C:\Users\Gonzalo\Documents\GitHub\Chempe\Chempe\obj\Debug\net5.0\Razor\Views\Ple
 C:\Users\Gonzalo\Documents\GitHub\Chempe\Chempe\obj\Debug\net5.0\Razor\Views\Pledge_Approval\Details.cshtml.g.cs
 C:\Users\Gonzalo\Documents\GitHub\Chempe\Chempe\obj\Debug\net5.0\Razor\Views\Pledge_Approval\Index.cshtml.g.cs
 C:\Users\Gonzalo\Documents\GitHub\Chempe\Chempe\obj\Debug\net5.0\Razor\Views\Pledge_Request\Create.cshtml.g.cs
-C:\Users\Gonzalo\Documents\GitHub\Chempe\Chempe\obj\Debug\net5.0\Razor\Views\Pledge_Request\Details.cshtml.g.cs
 C:\Users\Gonzalo\Documents\GitHub\Chempe\Chempe\obj\Debug\net5.0\Razor\Views\Pledge_Request\Index.cshtml.g.cs
 C:\Users\Gonzalo\Documents\GitHub\Chempe\Chempe\obj\Debug\net5.0\Razor\Views\Pledge_Approval\Edit.cshtml.g.cs
 D:\Documents\GitHub\Chempe\Chempe\obj\Debug\net5.0\Razor\Views\Pledge_Approval\Create.cshtml.g.cs
@@ -372,3 +370,16 @@ D:\Documents\GitHub\Chempe\Chempe\obj\Debug\net5.0\Razor\Views\Pledge_Request\Cl
 D:\Documents\GitHub\Chempe\Chempe\obj\Debug\net5.0\Razor\Views\Pledge_Request\User_index.cshtml.g.cs
 D:\Documents\GitHub\Chempe\Chempe\obj\Debug\net5.0\Razor\Views\Pledge_Request\Client_details.cshtml.g.cs
 D:\Documents\GitHub\Chempe\Chempe\obj\Debug\net5.0\Razor\Views\Pledge_Request\User_details.cshtml.g.cs
+C:\Users\Gonzalo\Documents\GitHub\Chempe\Chempe\obj\Debug\net5.0\Razor\Views\Pledge_Acceptance\Create.cshtml.g.cs
+C:\Users\Gonzalo\Documents\GitHub\Chempe\Chempe\obj\Debug\net5.0\Razor\Views\Pledge_Acceptance\Details.cshtml.g.cs
+C:\Users\Gonzalo\Documents\GitHub\Chempe\Chempe\obj\Debug\net5.0\Razor\Views\Pledge_Acceptance\Edit.cshtml.g.cs
+C:\Users\Gonzalo\Documents\GitHub\Chempe\Chempe\obj\Debug\net5.0\Razor\Views\Pledge_Acceptance\Index.cshtml.g.cs
+C:\Users\Gonzalo\Documents\GitHub\Chempe\Chempe\obj\Debug\net5.0\Razor\Views\Pledge_Assignment\Create.cshtml.g.cs
+C:\Users\Gonzalo\Documents\GitHub\Chempe\Chempe\obj\Debug\net5.0\Razor\Views\Pledge_Assignment\Details.cshtml.g.cs
+C:\Users\Gonzalo\Documents\GitHub\Chempe\Chempe\obj\Debug\net5.0\Razor\Views\Pledge_Assignment\Edit.cshtml.g.cs
+C:\Users\Gonzalo\Documents\GitHub\Chempe\Chempe\obj\Debug\net5.0\Razor\Views\Pledge_Assignment\Index.cshtml.g.cs
+C:\Users\Gonzalo\Documents\GitHub\Chempe\Chempe\obj\Debug\net5.0\Razor\Views\Pledge_Request\Client_details.cshtml.g.cs
+C:\Users\Gonzalo\Documents\GitHub\Chempe\Chempe\obj\Debug\net5.0\Razor\Views\Pledge_Request\Client_index.cshtml.g.cs
+C:\Users\Gonzalo\Documents\GitHub\Chempe\Chempe\obj\Debug\net5.0\Razor\Views\Pledge_Request\User_details.cshtml.g.cs
+C:\Users\Gonzalo\Documents\GitHub\Chempe\Chempe\obj\Debug\net5.0\Razor\Views\Pledge_Request\User_index.cshtml.g.cs
+C:\Users\Gonzalo\Documents\GitHub\Chempe\Chempe\obj\Debug\net5.0\Razor\Views\Shared\_Layout_user.cshtml.g.cs
