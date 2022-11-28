@@ -86,3 +86,16 @@ Secondary_coupon_rate: recargo a pagar
 Loan_term: Tiempo de devolución (1, 2 o 3 meses)
 Warrant: Bien prendado
 
+----
+
+Inversores para desarrollar el negocio:
+- Gonzalo Mesorio (UruIT, MiCheque.uy).
+- Vinicius Duarte (CGM&A CGM, inConert), contacto junto a Diego Corubolo.
+CGM&A: líderes en cobranzas, puede servir el perfil de empresas para cobrar las garantías.
+
+
+----
+Dificultades a superar:
+- Ser preferencia en elección de créditos (superar a los "SF: sola firma"). --> Mejorar tasas de interés (el SF tiene el mayor riesgo => tasas más altas).
+- Acietar operativa logística y legal de cobra de garantías (tvs, aires acondicionados, autos).
+--> La asociación es clave.
