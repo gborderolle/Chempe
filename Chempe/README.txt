@@ -99,3 +99,7 @@ Dificultades a superar:
 - Ser preferencia en elección de créditos (superar a los "SF: sola firma"). --> Mejorar tasas de interés (el SF tiene el mayor riesgo => tasas más altas).
 - Acietar operativa logística y legal de cobra de garantías (tvs, aires acondicionados, autos).
 --> La asociación es clave.
+
+- Usar eTickets (obligatorios), los QR para validar la compra. Pedir foto del QR aparte de la factura misma.
+
+
