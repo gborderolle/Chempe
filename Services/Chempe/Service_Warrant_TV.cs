@@ -14,7 +14,7 @@ namespace Services.Chempe
         private readonly Chempedb_context _chempedb_context;
 
         /* ------------ DYNAMIC ENTITIES ------------ */
-        private readonly Service_Pledge _service_pledge;
+        //private readonly Service_Pledge _service_pledge;
 
         /* ------------ STATIC ENTITIES ------------ */
         private readonly Service_List_TV_brands _service_List_TV_brands;
@@ -23,12 +23,12 @@ namespace Services.Chempe
         private readonly Service_List_warrants_type _service_List_warrants_type;
 
 
-        public Service_Warrant_TV(Chempedb_context chempedb_context, IConfiguration configuration, Service_Pledge service_pledge,
+        public Service_Warrant_TV(Chempedb_context chempedb_context, IConfiguration configuration, /*Service_Pledge service_pledge,*/
             Service_List_TV_brands service_List_TV_brands, Service_List_TV_brand_models service_List_TV_brand_models, Service_List_TV_technologies service_List_TV_technologies, Service_List_warrants_type service_List_warrants_type)
         {
             _configuration = configuration;
             _chempedb_context = chempedb_context;
-            _service_pledge = service_pledge;
+            //_service_pledge = service_pledge;
 
             _service_List_TV_brands = service_List_TV_brands;
             _service_List_TV_brand_models = service_List_TV_brand_models;

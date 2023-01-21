@@ -103,3 +103,13 @@ Dificultades a superar:
 - Usar eTickets (obligatorios), los QR para validar la compra. Pedir foto del QR aparte de la factura misma.
 
 
+----
+
+Definición de Casa de empeño de ChatGRP:
+https://beta.openai.com/playground/p/default-chat?model=text-davinci-003
+Una casa de empeño es un negocio que ofrece préstamos al por menor con el título de propiedad utilizado como garantía para los préstamos.
+
+https://chat.openai.com/chat
+Sí, sé lo que es una casa de empeño. Una casa de empeño es una empresa que presta dinero en efectivo a cambio de que la persona entregue un objeto de valor como garantía. La persona puede recuperar su objeto pagando el préstamo más los intereses acordados en un plazo determinado. Si la persona no paga el préstamo a tiempo, la casa de empeño puede vender el objeto para recuperar su dinero prestado.
+
+--
