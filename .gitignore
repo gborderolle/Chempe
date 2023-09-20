@@ -10,3 +10,6 @@ Domain/bin
 Services/bin
 *.csproj
 *.csproj.user
+bin/
+obj/
+.vs/
