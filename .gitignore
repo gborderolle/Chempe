@@ -23,3 +23,5 @@ Domain/bin/
 Domain/bin/*
 Services/bin/
 Services/bin/*
+Domain/obj/Debug/
+Domain/obj/Debug/*

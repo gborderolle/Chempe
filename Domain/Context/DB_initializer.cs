@@ -9,17 +9,11 @@ namespace Domain.Context
     {
         private readonly Chempedb_context _chempedb_context;
         private readonly IConfiguration _configuration;
-        private bool ContextIsLocal = false;
 
         public DB_initializer(Chempedb_context chempedb_context, IConfiguration configuration)
         {
             _chempedb_context = chempedb_context;
             _configuration = configuration;
-
-            if (!bool.TryParse(_configuration.GetConnectionString("ConnectionString_isLocal"), out ContextIsLocal))
-            {
-                ContextIsLocal = false;
-            }
         }
         public void Initialize_data()
         {
@@ -89,12 +83,12 @@ namespace Domain.Context
 
                 /* ------------ Person ------------ */
                 Person Person1 = new();
-                Person1.Identification= "42305298";
+                Person1.Identification = "42305298";
                 Person1.Full_name = "Gonzalo Borderolle";
                 Person1.Phone = "099415831";
                 Person1.Email = "gborderolle@gmail.com";
-                Person1.Password= "1234";
-                Person1.Gender= "M";
+                Person1.Password = "1234";
+                Person1.Gender = "M";
                 Person1.Date_born = DateTime.Now;
                 Person1.Photo = person_photo1;
                 Person1.User_client = new();

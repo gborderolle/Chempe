@@ -30,7 +30,6 @@ namespace Domain.Context
         public virtual DbSet<Warrant> Warrant { get; set; }
         public virtual DbSet<Warrant_TV> Warrant_TV { get; set; }
 
-
         public Chempedb_context(DbContextOptions<Chempedb_context> options)
             : base(options)
         {

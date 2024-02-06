@@ -33,53 +33,15 @@ namespace Services.Chempe
             Documento_de_identidad
         }
 
-        public bool IsLocalhost()
-        {
-            bool contextIsLocal = false;
-            if (!bool.TryParse(_configuration.GetConnectionString("ConnectionString_isLocal"), out contextIsLocal))
-            {
-                contextIsLocal = false;
-            }
-            return contextIsLocal;
-        }
-
         public DateTime GetCurrentTime_Uruguay()
         {
             //return DateTime.Now.ToUniversalTime(); //UTC
             return TimeZoneInfo.ConvertTime(DateTime.Now, TimeZoneInfo.Local, TimeZoneInfo.FindSystemTimeZoneById("Montevideo Standard Time"));
         }
 
-        private bool IsLocalConnection()
-        {
-            bool envIsLocal = false;
-            if (!string.IsNullOrWhiteSpace(_configuration.GetConnectionString("ConnectionString_isLocal")))
-            {
-                if (!bool.TryParse(_configuration.GetConnectionString("ConnectionString_isLocal"), out envIsLocal))
-                {
-                    envIsLocal = false;
-                }
-            }
-            return envIsLocal;
-        }
-
         public string Get_ConnectionString_ChempeDB()
         {
-            string value_return = string.Empty;
-            if (IsLocalConnection())
-            {
-                if (!string.IsNullOrWhiteSpace(_configuration.GetConnectionString("ConnectionString_chempedb")))
-                {
-                    value_return = _configuration.GetConnectionString("ConnectionString_chempedb");
-                }
-            }
-            else
-            {
-                if (!string.IsNullOrWhiteSpace(_configuration.GetConnectionString("ConnectionString_chempedb_remoto")))
-                {
-                    value_return = _configuration.GetConnectionString("ConnectionString_chempedb_remoto");
-                }
-            }
-            return value_return;
+            return _configuration.GetConnectionString("ConnectionString_chempedb");
         }
 
         public string Get_GenericConfigurationKey(string key)

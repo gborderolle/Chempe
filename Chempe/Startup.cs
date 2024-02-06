@@ -60,22 +60,7 @@ namespace Chempe
             services.AddTransient<Service_Warrant_TV>();
             services.AddTransient<Service_Session>();
 
-
-            bool contextIsLocal = false;
-            if (!bool.TryParse(_configuration.GetConnectionString("ConnectionString_isLocal"), out contextIsLocal))
-            {
-                contextIsLocal = false;
-            }
-
-            if (contextIsLocal)
-            {
-                services.AddDbContext<Chempedb_context>(e => e.UseSqlServer(_configuration.GetConnectionString("ConnectionString_chempedb")));
-            }
-            else
-            {
-                services.AddDbContext<Chempedb_context>(e => e.UseSqlServer(_configuration.GetConnectionString("ConnectionString_chempedb_remote")));
-            }
-
+            services.AddDbContext<Chempedb_context>(e => e.UseSqlServer(_configuration.GetConnectionString("ConnectionString_chempedb")));
             services.AddSession(Options =>
             {
                 Options.IdleTimeout = TimeSpan.FromSeconds(3600);
@@ -173,11 +158,11 @@ namespace Chempe
         //pattern: "{controller=User_client}/{action=New_request}/{id?}");
 
         //pattern: "{controller}/{action}/{identification}", new { controller = "User_client", action = "client_validation", identification = "42305298" });
-        
+
         pattern: "{controller}/{action}/{identification}", new { controller = "Login_page", action = "Login", identification = "42305298" });
 
 
-        });
+            });
 
             app.UseExceptionHandler("/page_404");
             //return System.Threading.Tasks.Task.CompletedTask;
