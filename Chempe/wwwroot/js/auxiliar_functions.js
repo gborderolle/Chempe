@@ -110,7 +110,6 @@ function zero_or_isNaN(str) {
     return return_value;
 }
 
-
 function check_zeros(value) {
     return value.replace(/0/g, "");
 } 

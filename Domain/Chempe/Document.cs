@@ -24,8 +24,8 @@ namespace Domain.Chempe
         public bool IsDeleted { get; set; } = false;
 
         // FK ------------------
-        [ForeignKey("Person_ID")]
-        public Person Person { get; set; } // n - 1
+        //[ForeignKey("Person_ID")]
+        //public Person Person { get; set; } // n - 1
         // FK ------------------
 
         public Document()

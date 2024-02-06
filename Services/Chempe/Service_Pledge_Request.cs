@@ -17,17 +17,17 @@ namespace Services.Chempe
 
         /* ------------ DYNAMIC ENTITIES ------------ */
         private readonly Service_Person_client _service_Person_client;
-        private readonly Service_Pledge _service_pledge;
+        //private readonly Service_Pledge _service_pledge;
 
         /* ------------ STATIC ENTITIES ------------ */
 
-        public Service_Pledge_Request(Chempedb_context chempedb_context, IConfiguration configuration, Service_Person_client service_User_client, Service_Pledge service_pledge)
+        public Service_Pledge_Request(Chempedb_context chempedb_context, IConfiguration configuration, Service_Person_client service_User_client/*, Service_Pledge service_pledge*/)
         {
             _chempedb_context = chempedb_context;
             _configuration = configuration;
 
             _service_Person_client = service_User_client;
-            _service_pledge = service_pledge;
+            //_service_pledge = service_pledge;
         }
 
         #region public methods

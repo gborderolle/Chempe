@@ -23,16 +23,16 @@ namespace Services.Chempe
         private readonly Service_List_warrants_type _service_List_warrants_type;
 
 
-        public Service_Pledge(Chempedb_context chempedb_context, IConfiguration configuration, Service_Logs service_logs, Service_Global_variables service_global_variables,
-            Service_Pledge_Request service_request, Service_Person service_person, Service_Warrant service_Warrant, Service_Warrant_TV service_Warrant_TV, Service_List_warrants_type service_List_warrants_type)
+        public Service_Pledge(Chempedb_context chempedb_context, IConfiguration configuration, Service_Logs service_logs, Service_Global_variables service_global_variables, Service_Person service_person,
+            Service_Pledge_Request service_request, Service_Warrant service_Warrant, Service_Warrant_TV service_Warrant_TV, Service_List_warrants_type service_List_warrants_type)
         {
             _chempedb_context = chempedb_context;
             _configuration = configuration;
 
             _service_logs = service_logs;
             _service_global_variables = service_global_variables;
-            _service_request = service_request;
             _service_person = service_person;
+            _service_request = service_request;
             _service_warrant = service_Warrant;
             _service_warrant_TV = service_Warrant_TV;
             _service_List_warrants_type = service_List_warrants_type;
