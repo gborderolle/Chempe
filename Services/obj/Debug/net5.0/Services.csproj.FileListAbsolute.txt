@@ -1,0 +1,15 @@
+D:\GitHub\Chempe\Services\bin\Debug\net5.0\Services.deps.json
+D:\GitHub\Chempe\Services\bin\Debug\net5.0\Services.dll
+D:\GitHub\Chempe\Services\bin\Debug\net5.0\Services.pdb
+D:\GitHub\Chempe\Services\bin\Debug\net5.0\Domain.dll
+D:\GitHub\Chempe\Services\bin\Debug\net5.0\Domain.pdb
+D:\GitHub\Chempe\Services\obj\Debug\net5.0\Services.csproj.AssemblyReference.cache
+D:\GitHub\Chempe\Services\obj\Debug\net5.0\Services.GeneratedMSBuildEditorConfig.editorconfig
+D:\GitHub\Chempe\Services\obj\Debug\net5.0\Services.AssemblyInfoInputs.cache
+D:\GitHub\Chempe\Services\obj\Debug\net5.0\Services.AssemblyInfo.cs
+D:\GitHub\Chempe\Services\obj\Debug\net5.0\Services.csproj.CoreCompileInputs.cache
+D:\GitHub\Chempe\Services\obj\Debug\net5.0\Services.csproj.CopyComplete
+D:\GitHub\Chempe\Services\obj\Debug\net5.0\Services.dll
+D:\GitHub\Chempe\Services\obj\Debug\net5.0\refint\Services.dll
+D:\GitHub\Chempe\Services\obj\Debug\net5.0\Services.pdb
+D:\GitHub\Chempe\Services\obj\Debug\net5.0\ref\Services.dll
