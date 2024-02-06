@@ -4,14 +4,14 @@
     "D:\\GitHub\\Chempe\\Services\\Services.csproj": {}
   },
   "projects": {
-    "D:\\GitHub\\Chempe\\Domain\\Domain.csproj": {
+    "d:\\GitHub\\Chempe\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\GitHub\\Chempe\\Domain\\Domain.csproj",
+        "projectUniqueName": "d:\\GitHub\\Chempe\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "D:\\GitHub\\Chempe\\Domain\\Domain.csproj",
+        "projectPath": "d:\\GitHub\\Chempe\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\Gonzalo\\.nuget\\packages\\",
-        "outputPath": "D:\\GitHub\\Chempe\\Domain\\obj\\",
+        "outputPath": "d:\\GitHub\\Chempe\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -131,8 +131,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "D:\\GitHub\\Chempe\\Domain\\Domain.csproj": {
-                "projectPath": "D:\\GitHub\\Chempe\\Domain\\Domain.csproj"
+              "d:\\GitHub\\Chempe\\Domain\\Domain.csproj": {
+                "projectPath": "d:\\GitHub\\Chempe\\Domain\\Domain.csproj"
               }
             }
           }

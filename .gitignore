@@ -16,3 +16,10 @@ Services/bin
 Chempe/obj/Debug/net5.0/.NETCoreApp,Version=v5.0.AssemblyAttributes.cs
 Chempe/obj/
 Chempe/obj/*
+Domain/obj/project.nuget.cache
+Domain/obj/
+Domain/obj/*
+Domain/bin/
+Domain/bin/*
+Services/bin/
+Services/bin/*

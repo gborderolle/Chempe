@@ -10201,8 +10201,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "D:\\GitHub\\Chempe\\Domain\\Domain.csproj": {
-              "projectPath": "D:\\GitHub\\Chempe\\Domain\\Domain.csproj"
+            "d:\\GitHub\\Chempe\\Domain\\Domain.csproj": {
+              "projectPath": "d:\\GitHub\\Chempe\\Domain\\Domain.csproj"
             }
           }
         }
