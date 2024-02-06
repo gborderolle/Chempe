@@ -13,3 +13,6 @@ Services/bin
 .vs/Chempe/FileContentIndex/read.lock
 .vs/
 .vs/*
+Chempe/obj/Debug/net5.0/.NETCoreApp,Version=v5.0.AssemblyAttributes.cs
+Chempe/obj/
+Chempe/obj/*
