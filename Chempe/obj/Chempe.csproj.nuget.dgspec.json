@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Gonzalo\\Documents\\GitHub\\Chempe\\Chempe\\Chempe.csproj": {}
+    "D:\\GitHub\\Chempe\\Chempe\\Chempe.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Gonzalo\\Documents\\GitHub\\Chempe\\Chempe\\Chempe.csproj": {
+    "D:\\GitHub\\Chempe\\Chempe\\Chempe.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Gonzalo\\Documents\\GitHub\\Chempe\\Chempe\\Chempe.csproj",
+        "projectUniqueName": "D:\\GitHub\\Chempe\\Chempe\\Chempe.csproj",
         "projectName": "Chempe",
-        "projectPath": "C:\\Users\\Gonzalo\\Documents\\GitHub\\Chempe\\Chempe\\Chempe.csproj",
+        "projectPath": "D:\\GitHub\\Chempe\\Chempe\\Chempe.csproj",
         "packagesPath": "C:\\Users\\Gonzalo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Gonzalo\\Documents\\GitHub\\Chempe\\Chempe\\obj\\",
+        "outputPath": "D:\\GitHub\\Chempe\\Chempe\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
           "C:\\Users\\Gonzalo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,17 +26,19 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "C:\\Program Files\\dotnet\\sdk\\7.0.302\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\Gonzalo\\Documents\\GitHub\\Chempe\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\Gonzalo\\Documents\\GitHub\\Chempe\\Domain\\Domain.csproj"
+              "D:\\GitHub\\Chempe\\Domain\\Domain.csproj": {
+                "projectPath": "D:\\GitHub\\Chempe\\Domain\\Domain.csproj"
               },
-              "C:\\Users\\Gonzalo\\Documents\\GitHub\\Chempe\\Services\\Services.csproj": {
-                "projectPath": "C:\\Users\\Gonzalo\\Documents\\GitHub\\Chempe\\Services\\Services.csproj"
+              "D:\\GitHub\\Chempe\\Services\\Services.csproj": {
+                "projectPath": "D:\\GitHub\\Chempe\\Services\\Services.csproj"
               }
             }
           }
@@ -74,10 +80,17 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[5.0.17, 5.0.17]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -86,21 +99,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Gonzalo\\Documents\\GitHub\\Chempe\\Domain\\Domain.csproj": {
+    "D:\\GitHub\\Chempe\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Gonzalo\\Documents\\GitHub\\Chempe\\Domain\\Domain.csproj",
+        "projectUniqueName": "D:\\GitHub\\Chempe\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\Gonzalo\\Documents\\GitHub\\Chempe\\Domain\\Domain.csproj",
+        "projectPath": "D:\\GitHub\\Chempe\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\Gonzalo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Gonzalo\\Documents\\GitHub\\Chempe\\Domain\\obj\\",
+        "outputPath": "D:\\GitHub\\Chempe\\Domain\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
           "C:\\Users\\Gonzalo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -108,6 +125,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -169,7 +187,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -178,21 +197,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Gonzalo\\Documents\\GitHub\\Chempe\\Services\\Services.csproj": {
+    "D:\\GitHub\\Chempe\\Services\\Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Gonzalo\\Documents\\GitHub\\Chempe\\Services\\Services.csproj",
+        "projectUniqueName": "D:\\GitHub\\Chempe\\Services\\Services.csproj",
         "projectName": "Services",
-        "projectPath": "C:\\Users\\Gonzalo\\Documents\\GitHub\\Chempe\\Services\\Services.csproj",
+        "projectPath": "D:\\GitHub\\Chempe\\Services\\Services.csproj",
         "packagesPath": "C:\\Users\\Gonzalo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Gonzalo\\Documents\\GitHub\\Chempe\\Services\\obj\\",
+        "outputPath": "D:\\GitHub\\Chempe\\Services\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
           "C:\\Users\\Gonzalo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -200,14 +223,15 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\Gonzalo\\Documents\\GitHub\\Chempe\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\Gonzalo\\Documents\\GitHub\\Chempe\\Domain\\Domain.csproj"
+              "D:\\GitHub\\Chempe\\Domain\\Domain.csproj": {
+                "projectPath": "D:\\GitHub\\Chempe\\Domain\\Domain.csproj"
               }
             }
           }
@@ -269,7 +293,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -278,7 +303,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }

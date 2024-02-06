@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "zNp/yegZ9XeubK4i3rfsQn1yfsEdMce9Q7++xcSOuobi8o+95dTNXqPK6Z8eOLnuRBS5yZiAaBifgl9HjNPJpw==",
+  "dgSpecHash": "POGWrMrLzR0OjJjSx6DIKclsMeANUuAvNhuwKuC8IIzx9FaniRDqEVUBbjJMRcDgOlgIXjzAuSkyGwFaMuUxrg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Gonzalo\\Documents\\GitHub\\Chempe\\Chempe\\Chempe.csproj",
+  "projectFilePath": "D:\\GitHub\\Chempe\\Chempe\\Chempe.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Gonzalo\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
     "C:\\Users\\Gonzalo\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
@@ -162,7 +162,8 @@
     "C:\\Users\\Gonzalo\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Users\\Gonzalo\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
     "C:\\Users\\Gonzalo\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512",
-    "C:\\Users\\Gonzalo\\.nuget\\packages\\timezoneconverter\\6.0.1\\timezoneconverter.6.0.1.nupkg.sha512"
+    "C:\\Users\\Gonzalo\\.nuget\\packages\\timezoneconverter\\6.0.1\\timezoneconverter.6.0.1.nupkg.sha512",
+    "C:\\Users\\Gonzalo\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.17\\microsoft.netcore.app.host.win-x64.5.0.17.nupkg.sha512"
   ],
   "logs": []
 }
