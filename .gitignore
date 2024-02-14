@@ -6,3 +6,5 @@ Domain/bin/
 Domain/bin/*
 Services/obj/
 Services/obj/*
+.vs/
+.vs/*
